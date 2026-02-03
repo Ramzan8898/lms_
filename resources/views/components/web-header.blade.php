@@ -14,7 +14,7 @@
 
         <div class="flex items-center gap-3">
 
-            <a href="#"
+            <a href="{{route('login')}}"
                 class="px-5 py-2 rounded-xl border-2 border-gray-800 text-gray-800 font-semibold
                       hover:bg-(--primary)  hover:border-(--primary) hover:text-white transition-all duration-300 ">
                 Student Portal
