@@ -15,5 +15,6 @@ Route::get(
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
+Route::post('/login',[AuthController::class,'store'])->name('auth.login');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
