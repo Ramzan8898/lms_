@@ -9,13 +9,25 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-<body>
-    Hello G
-    <main>
-        @yield('content')
-    </main>
+<body class="bg-gray-100">
 
+    <div class="flex h-screen overflow-hidden">
+
+        <x-dashboard.sidebar />
+
+        <div class="flex-1 flex flex-col">
+
+            <x-dashboard.topbar />
+
+            <main class="flex-1 p-6 overflow-y-auto">
+                @yield('content')
+            </main>
+
+        </div>
+
+    </div>
 
 </body>
+
 
 </html>
