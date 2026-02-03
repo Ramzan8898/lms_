@@ -12,8 +12,8 @@ Route::get(
     }
 )->name('welcome');
 
-
-Route::get('/login', [AuthController::class, 'index'])->name('login');
-Route::post('/login', [AuthController::class, 'store'])->name('login.post');
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

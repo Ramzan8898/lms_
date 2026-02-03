@@ -4,13 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
 </head>
 
-<body class="">
+<body style="background-image: url('/assets/images/image1.png'); background-size: cover; background-repeat: no-repeat;">
     <x-web-header />
     <div>
 
