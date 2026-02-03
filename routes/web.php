@@ -11,4 +11,8 @@ Route::get(
     }
 )->name('welcome');
 
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login');
+
 Route::view('/dashboard', 'layouts.dashboard')->name('dashboard');

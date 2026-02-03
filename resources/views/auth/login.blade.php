@@ -2,12 +2,11 @@
 
 @section('content')
     <div class="text-center mb-8 flex justify-center">
-        <img src="{{ asset('/assets/logo/logo.png') }}" alt="LOGO" class="w-36 h-36 object-contain">
+        <img src="{{ asset('/assets/logo/logo2.png') }}" alt="LOGO" class="w-66 h-auto object-contain">
     </div>
 
     <form method="POST" action="#" class="space-y-5">
         @csrf
-
         <div>
             <label class="text-md font-medium text-white uppercase tracking-wide">Email </label>
             <input type="email" name="email" value="{{ old('email') }}" required
@@ -30,12 +29,9 @@
         <div class="flex justify-center items-center mt-5">
 
             <a href="{{ route('dashboard') }}"
-                class="max-w-fit  uppercase text-center py-2 px-10 rounded-md border-2 border-(--primary) text-(--primary) font-semibold
-            hover:bg-(--primary) hover:text-black transition-all duration-300">
+                class="max-w-fit  uppercase text-center py-2 px-10 rounded-md border-2 border-(--primary) text-(--primary) font-semibold hover:bg-(--primary) hover:text-black transition-all duration-300">
                 Login
             </a>
         </div>
-
-
     </form>
 @endsection
