@@ -10,7 +10,7 @@
 
 
 <body>
- Hello G
+    Hello G
     <main>
         @yield('content')
     </main>
