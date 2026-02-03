@@ -11,7 +11,7 @@
         <div>
             <label class="text-md font-medium text-white uppercase tracking-wide">Email </label>
             <input type="email" name="email" value="{{ old('email') }}" required
-                class="w-full mt-2 px-4 py-3 border border-(--white) rounded-md focus:ring-0.5 focus:ring-(--primary) focus:border-(--primary) outline-none transition">
+                class="w-full mt-2 px-4 py-3 border border-(--white) rounded-md focus:ring-0.5 focus:ring-(--primary) focus:border-(--primary) outline-none transition text-white">
 
             @error('email')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
@@ -21,7 +21,7 @@
         <div>
             <label class="text-md font-medium text-white uppercase tracking-wide">Password</label>
             <input type="password" name="password" required
-                class="w-full mt-2 px-4 py-3 border border-(--white) rounded-md focus:ring-0.5 focus:ring-(--primary) focus:border-(--primary) outline-none transition">
+                class="w-full mt-2 px-4 py-3 border border-(--white) rounded-md focus:ring-0.5 focus:ring-(--primary) focus:border-(--primary) outline-none transition text-white">
 
             @error('password')
                 <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
