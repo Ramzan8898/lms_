@@ -17,6 +17,14 @@ class AdminUserSeeder extends Seeder
                 'password' => Hash::make('iqrash1122'),
                 'role' => 'admin',
                 'email_verified_at' => now(),
+            ],
+
+            ['email' => 'ramzan@lms.com'],
+            [
+                'name' => 'Muhammad Ramzan',
+                'password' => Hash::make('ramzan'),
+                'role' => 'admin',
+                'email_verified_at' => now(),
             ]
         );
     }
