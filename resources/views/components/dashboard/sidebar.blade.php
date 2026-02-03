@@ -17,13 +17,19 @@
             Dashboard
         </a>
 
-        <a href="#"
-            class="block px-4 py-3 rounded-lg hover:bg-white/10 transition">
+        <a href="{{route('admin.users')}}"
+            class="block px-4 py-3 rounded-lg transition
+           {{ $current == 'admin.users'
+                ? 'bg-white text-(--primary)'
+                : 'hover:bg-white/10' }}">
             Users
         </a>
 
-        <a href="#"
-            class="block px-4 py-3 rounded-lg hover:bg-white/10 transition">
+        <a href="{{route('admin.instructor')}}"
+            class="block px-4 py-3 rounded-lg transition
+           {{ $current == 'admin.instructor'
+                ? 'bg-white text-(--primary)'
+                : 'hover:bg-white/10' }}">
             Instructors
         </a>
 
