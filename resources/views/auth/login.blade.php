@@ -23,7 +23,7 @@
                 class="w-full mt-2 px-4 py-3 border border-(--white) rounded-md focus:ring-0.5 focus:ring-(--primary) focus:border-(--primary) outline-none transition text-white">
 
             @error('password')
-                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
             @enderror
         </div>
         <div class="flex justify-center items-center mt-5">
