@@ -11,11 +11,23 @@
 
 :root {
     font-family: var(--font-sans);
+
     --primary: #e3bb45;
+
     --secondary: #0a0a0a;
+    --secondary-2: #121212;
+    --secondary-3: #1a1a1a;
+
     --white: #ffffff;
     --black: #000000;
+
+    --text: #e5e5e5;
+    --muted: #9ca3af;
+
+    --card: #141414;
+    --border: #262626;
 }
+
 
 .label {
     @apply block text-sm font-medium text-gray-700;

@@ -1,78 +1,64 @@
 @php $current = request()->route()->getName(); @endphp
 
-<aside class="w-64 bg-(--secondary) text-white hidden md:flex flex-col">
+<aside class="w-72 bg-(--secondary-3) border-r border-(--border) text-white hidden md:flex flex-col">
 
-    <div class="flex justify-center py-8 border-b border-white/20">
-        <img src="{{ asset('/assets/logo/logo.png') }}"
-            class="w-28 h-28 object-contain">
+    <!-- Logo -->
+    <div class="flex flex-col items-center py-10 border-b border-(--border)">
+        <img src="{{ asset('/assets/logo/logo.png') }}" class="w-24 mb-3">
+        <h2 class="text-lg font-semibold tracking-wide text-(--primary)">LMS Admin</h2>
     </div>
 
-    <nav class="flex-1 px-4 py-6 space-y-2 text-sm font-medium items-center">
+    <!-- Nav -->
+    <nav class="flex-1 px-6 py-8 space-y-3 text-sm font-medium">
+
+        @php
+            function navClass($route, $current)
+            {
+                return $route == $current
+                    ? 'bg-[var(--primary)] text-black shadow-lg'
+                    : 'text-[var(--text)] hover:bg-[var(--secondary-2)]';
+            }
+        @endphp
 
         <a href="{{ route('dashboard') }}"
-            class="block px-4 py-3 rounded-lg transition
-           {{ $current == 'dashboard'
-                ? 'bg-white text-(--primary)'
-                : 'hover:bg-white/10' }}">
+            class="block px-5 py-3 rounded-xl transition {{ navClass('dashboard', $current) }}">
             Dashboard
         </a>
 
-        <a href="{{route('admin.users')}}"
-            class="block px-4 py-3 rounded-lg transition
-           {{ $current == 'admin.users'
-                ? 'bg-white text-(--primary)'
-                : 'hover:bg-white/10' }}">
+        <a href="{{ route('admin.users') }}"
+            class="block px-5 py-3 rounded-xl transition {{ navClass('admin.users', $current) }}">
             Users
         </a>
 
-        <a href="{{route('admin.instructor')}}"
-            class="block px-4 py-3 rounded-lg transition
-           {{ $current == 'admin.instructor'
-                ? 'bg-white text-(--primary)'
-                : 'hover:bg-white/10' }}">
+        <a href="{{ route('admin.instructor') }}"
+            class="block px-5 py-3 rounded-xl transition {{ navClass('admin.instructor', $current) }}">
             Instructors
         </a>
 
-        <a href="{{route('admin.courses')}}"
-            class="block px-4 py-3 rounded-lg transition
-           {{ $current == 'admin.courses'
-                ? 'bg-white text-(--primary)'
-                : 'hover:bg-white/10' }}">
+        <a href="{{ route('admin.courses') }}"
+            class="block px-5 py-3 rounded-xl transition {{ navClass('admin.courses', $current) }}">
             Courses
         </a>
 
-        <a href="{{route('admin.lessons')}}"
-            class="block px-4 py-3 rounded-lg transition
-           {{ $current == 'admin.lessons'
-                ? 'bg-white text-(--primary)'
-                : 'hover:bg-white/10' }}">
+        <a href="{{ route('admin.lessons') }}"
+            class="block px-5 py-3 rounded-xl transition {{ navClass('admin.lessons', $current) }}">
             Lessons
         </a>
 
-        <a href="{{route('admin.students')}}"
-            class="block px-4 py-3 rounded-lg transition
-           {{ $current == 'admin.students'
-                ? 'bg-white text-(--primary)'
-                : 'hover:bg-white/10' }}">
+        <a href="{{ route('admin.students') }}"
+            class="block px-5 py-3 rounded-xl transition {{ navClass('admin.students', $current) }}">
             Students
-        </a>
-
-        <a href="#"
-            class="block px-4 py-3 rounded-lg hover:bg-white/10 transition">
-            Payments
         </a>
 
     </nav>
 
-    <div class="p-4 border-t border-white/20">
-        <form method="POST" action="#">
-            @csrf
-            <button
-                class="w-full py-2 border border-white rounded-lg text-black
-                       bg-white hover:text-(--primary) transition">
-                Logout
-            </button>
-        </form>
+    <!-- Logout -->
+    <div class="p-6 border-t border-(--border)">
+        <button
+            class="w-full py-3 border border-(--primary) rounded-xl text-(--primary)
+                   hover:bg-(--primary) hover:text-black transition">
+            Logout
+        </button>
     </div>
 
 </aside>

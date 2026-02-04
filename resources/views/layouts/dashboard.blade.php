@@ -9,18 +9,20 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
-<body class="bg-gray-100">
+<body class="bg-(--secondary) text-(--text)]">
 
     <div class="flex h-screen overflow-hidden">
 
         <x-dashboard.sidebar />
 
-        <div class="flex-1 flex flex-col">
+        <div class="flex-1 flex flex-col overflow-hidden">
 
             <x-dashboard.topbar />
 
-            <main class="flex-1 p-6 overflow-y-auto">
-                @yield('content')
+            <main class="flex-1 overflow-y-auto p-8 bg-(--secondary-2)">
+                <div class="bg-(--card) border border-(--border) rounded-2xl shadow-2xl p-8 min-h-full">
+                    @yield('content')
+                </div>
             </main>
 
         </div>
@@ -28,6 +30,7 @@
     </div>
 
 </body>
+
 
 
 </html>
