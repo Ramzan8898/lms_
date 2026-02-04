@@ -17,6 +17,9 @@ class InstructorController extends Controller
         $instructors = Instructor::with('user')->latest()->get();
         return view('admin.instructor.index', compact('instructors'));
     }
+
+
+
     public function create()
     {
         return view('admin.instructor.create');
@@ -28,6 +31,7 @@ class InstructorController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
+            'status' => 'required|in:active,inactive',
             'avatar' => 'nullable|image',
         ]);
 
@@ -39,13 +43,13 @@ class InstructorController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
-                'role' => 'instructor',
             ]);
 
-            $avatarPath = null;
-            if ($request->hasFile('avatar')) {
-                $avatarPath = $request->file('avatar')->store('instructors', 'public');
-            }
+            $user->assignRole('instructor');
+
+            $avatarPath = $request->hasFile('avatar')
+                ? $request->file('avatar')->store('instructors', 'public')
+                : null;
 
             Instructor::create([
                 'user_id' => $user->id,
@@ -65,12 +69,11 @@ class InstructorController extends Controller
             DB::commit();
 
             return redirect()
-                ->route('admin.instructor.create')
+                ->route('admin.instructor.index')
                 ->with('success', 'Instructor created successfully!');
         } catch (\Exception $e) {
-
             DB::rollBack();
-            return back()->withErrors($e->getMessage());
+            dd($e->getMessage());
         }
     }
 }

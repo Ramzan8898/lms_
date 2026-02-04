@@ -60,6 +60,7 @@
                     {{ $instructor->user->role }}
                 </td>
 
+
                 {{-- Status --}}
                 <td class="p-4">
                     @if($instructor->status === 'active')
