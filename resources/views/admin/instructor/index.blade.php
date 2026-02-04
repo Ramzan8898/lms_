@@ -57,7 +57,7 @@
 
                 {{-- Role --}}
                 <td class="p-4 capitalize">
-                    {{ $instructor->user->role }}
+                    {{ $instructor->user->getRoleNames()->first() }}
                 </td>
 
 
@@ -78,21 +78,25 @@
                 <td class="p-4 text-right">
                     <div class="flex justify-end gap-2">
 
-                        <a href="#"
+                        <a href="{{ route('admin.instructor.edit', $instructor->id) }}"
                             class="px-4 py-1.5 rounded-md border border-(--primary) text-black
-               hover:bg-(--primary) hover:text-white transition-all duration-200 text-sm font-medium">
+                            hover:bg-(--primary) hover:text-white transition-all duration-200 text-sm font-medium">
                             Edit
                         </a>
 
-                        <form action="#" method="POST">
+                        <form action="{{ route('admin.instructor.destroy', $instructor->id) }}"
+                            method="POST"
+                            onsubmit="return confirm('Are you sure?')">
                             @csrf
                             @method('DELETE')
+
                             <button
                                 class="px-4 py-1.5 rounded-md border border-red-600 text-red-600
-                    hover:bg-red-600 hover:text-white transition-all duration-200 text-sm font-medium">
+        hover:bg-red-600 hover:text-white transition-all duration-200 text-sm font-medium">
                                 Delete
                             </button>
                         </form>
+
 
                     </div>
                 </td>

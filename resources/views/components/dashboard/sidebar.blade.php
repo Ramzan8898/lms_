@@ -33,19 +33,28 @@
             Instructors
         </a>
 
-        <a href="#"
-            class="block px-4 py-3 rounded-lg hover:bg-white/10 transition">
+        <a href="{{route('admin.courses')}}"
+            class="block px-4 py-3 rounded-lg transition
+           {{ $current == 'admin.courses'
+                ? 'bg-white text-(--primary)'
+                : 'hover:bg-white/10' }}">
             Courses
         </a>
 
-        <a href="#"
-            class="block px-4 py-3 rounded-lg hover:bg-white/10 transition">
-            Quizzes
+        <a href="{{route('admin.lessons')}}"
+            class="block px-4 py-3 rounded-lg transition
+           {{ $current == 'admin.lessons'
+                ? 'bg-white text-(--primary)'
+                : 'hover:bg-white/10' }}">
+            Lessons
         </a>
 
-        <a href="#"
-            class="block px-4 py-3 rounded-lg hover:bg-white/10 transition">
-            Certificates
+        <a href="{{route('admin.students')}}"
+            class="block px-4 py-3 rounded-lg transition
+           {{ $current == 'admin.students'
+                ? 'bg-white text-(--primary)'
+                : 'hover:bg-white/10' }}">
+            Students
         </a>
 
         <a href="#"
