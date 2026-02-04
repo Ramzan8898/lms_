@@ -10,13 +10,7 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
-    {
-
-        Role::create(['name' => 'admin']);
-        Role::create(['name' => 'instructor']);
-        Role::create(['name' => 'student']);
-    }
+    public function up(): void {}
 
     /**
      * Reverse the migrations.
