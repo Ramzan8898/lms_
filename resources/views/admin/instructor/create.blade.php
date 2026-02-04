@@ -21,7 +21,7 @@
 
 <div class="">
 
-    <form action="#" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.instructor.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -112,6 +112,12 @@
 
         </div>
 
+        <div class="mt-6">
+            <button type="submit"
+                class="px-6 py-3 border border-blue-600 cursor-pointer text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition">
+                Create Instructor
+            </button>
+        </div>
 
     </form>
 

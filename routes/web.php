@@ -23,9 +23,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
 
-        Route::get('/users',[UserController::class,'index'])->name('admin.users');
-        Route::get('/instructor',[InstructorController::class,'index'])->name('admin.instructor');
-        Route::get('/instructor/create',[InstructorController::class,'create'])->name('admin.instructor.create');
+    Route::get('/users', [UserController::class, 'index'])->name('admin.users');
+    Route::get('/instructor', [InstructorController::class, 'index'])->name('admin.instructor');
+    Route::get('/instructor/create', [InstructorController::class, 'create'])->name('admin.instructor.create');
+    Route::post('/instructor/store', [InstructorController::class, 'store'])->name('admin.instructor.store');
 });
-
-
