@@ -5,27 +5,25 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
-        User::updateOrCreate(
-            ['email' => 'iqrash@lms.com'],
+        $adminRole = Role::create(['name' => 'admin']);
+        $editorRole = Role::create(['name' => 'editor']);
+        $userRole = Role::create(['name' => 'user']);
+
+        $user = User::updateOrCreate(
             [
                 'name' => 'Iqrash Ahmad',
-                'password' => Hash::make('iqrash1122'),
-                'role' => 'admin',
+                'email' => 'iqrash@lms.com',
+                'password' => Hash::make('iqrash'),
                 'email_verified_at' => now(),
             ],
 
-            ['email' => 'ramzan@lms.com'],
-            [
-                'name' => 'Muhammad Ramzan',
-                'password' => Hash::make('ramzan'),
-                'role' => 'admin',
-                'email_verified_at' => now(),
-            ]
         );
+        $user->assignRole($adminRole);
     }
 }
