@@ -1,5 +1,5 @@
-<header class="w-full bg-(--black) shadow-md py-4 fixed">
-    <div class="container mx-auto flex items-center justify-between">
+<header class="w-full bg-(--black) shadow-md py-4 border-b border-yellow-600/30">
+    <div class="flex items-center justify-between container mx-auto ">
 
         <div class="text-center flex justify-center">
             <img src="{{ asset('/assets/logo/logo2.png') }}" alt="LOGO" class="w-46 h-auto object-contain">
