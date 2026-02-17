@@ -1,7 +1,7 @@
 @php $current = request()->route()->getName(); @endphp
 
 <!-- Ultra Premium Admin Header -->
-<header class="relative h-20 bg-gradient-to-r from-[#0a0a0a] via-[#0f0f0f] to-black border-b border-yellow-600/20 flex items-center justify-between px-8 lg:px-12 overflow-hidden backdrop-blur-xl">
+<header class="relative h-24 bg-gradient-to-r  from-[#0a0a0a] via-[#0f0f0f] to-black border-b border-yellow-600/20 flex items-center justify-between px-8 lg:px-12 overflow-hidden backdrop-blur-xl">
 
     <!-- Advanced Background Effects -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
