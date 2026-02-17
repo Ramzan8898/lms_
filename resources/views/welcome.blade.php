@@ -111,320 +111,499 @@
     </section>
 
     <!-- Why Choose Us Section - Ultra Premium -->
-    <section class="relative py-32 px-4 bg-gradient-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
+    <section class="relative py-40 px-4 bg-gradient-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
-            <!-- Gradient Orbs with Animation -->
-            <div class="absolute top-20 left-1/4 w-[500px] h-[500px] bg-yellow-500/5 rounded-full blur-[120px] animate-pulse-slow"></div>
-            <div class="absolute bottom-20 right-1/4 w-[500px] h-[500px] bg-orange-500/5 rounded-full blur-[120px] animate-pulse-slow animation-delay-2000"></div>
+            <!-- Multi-layer Gradient Orbs -->
+            <div class="absolute top-20 left-1/4 w-[600px] h-[600px] bg-gradient-to-r from-yellow-500/10 via-orange-500/10 to-transparent rounded-full blur-[150px] animate-pulse-slow"></div>
+            <div class="absolute bottom-20 right-1/4 w-[600px] h-[600px] bg-gradient-to-l from-yellow-500/10 via-orange-500/10 to-transparent rounded-full blur-[150px] animate-pulse-slow animation-delay-2000"></div>
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-purple-500/5 rounded-full blur-[200px] animate-pulse-slow animation-delay-3000"></div>
 
-            <!-- Animated Grid Pattern -->
+            <!-- Animated Grid Pattern with Movement -->
             <div class="absolute inset-0 opacity-20"
                 style="background-image: 
                      linear-gradient(rgba(255,215,0,0.03) 1px, transparent 1px),
                      linear-gradient(90deg, rgba(255,215,0,0.03) 1px, transparent 1px);
-                     background-size: 50px 50px;">
+                     background-size: 50px 50px;
+                     animation: gridMove 30s linear infinite;">
             </div>
 
-            <!-- Floating Particles -->
+            <!-- Enhanced Floating Particles -->
             <div class="absolute inset-0">
-                <div class="absolute top-1/4 left-1/3 w-2 h-2 bg-yellow-400/30 rounded-full animate-float"></div>
-                <div class="absolute top-2/3 right-1/3 w-3 h-3 bg-orange-400/30 rounded-full animate-float animation-delay-1000"></div>
-                <div class="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-yellow-500/30 rounded-full animate-float animation-delay-2000"></div>
+                <div class="absolute top-1/4 left-1/3 w-2 h-2 bg-yellow-400/30 rounded-full animate-float-slow"></div>
+                <div class="absolute top-2/3 right-1/3 w-3 h-3 bg-orange-400/30 rounded-full animate-float"></div>
+                <div class="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-yellow-500/30 rounded-full animate-float-slower"></div>
+                <div class="absolute top-1/3 right-1/4 w-2.5 h-2.5 bg-yellow-300/30 rounded-full animate-float animation-delay-1500"></div>
+                <div class="absolute bottom-2/3 left-1/4 w-2 h-2 bg-orange-300/30 rounded-full animate-float-slow animation-delay-2500"></div>
             </div>
+
+            <!-- Radial Gradient Overlay -->
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-60"></div>
         </div>
 
-        <div class="relative container mx-auto">
+        <div class="relative container mx-auto z-10">
 
-            <!-- Section Heading -->
-            <div class="text-center mb-16">
-                <h2
-                    class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-                    Why Choose Our Platform
+            <!-- Section Heading with Premium Enhancements -->
+            <div class="text-center mb-24">
+                <!-- Animated Badge -->
+                <div class="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-3 mb-8 relative group cursor-pointer hover:border-yellow-400 transition-all duration-500">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
+                    </span>
+                    <span class="text-yellow-400 font-semibold tracking-wider text-sm group-hover:text-yellow-300 transition-colors">✦ WHY TRUST US ✦</span>
+                    <span class="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-xs font-bold">#1 PLATFORM</span>
+
+                    <!-- Shine Effect -->
+                    <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+                </div>
+
+                <!-- Main Heading with Advanced Gradient -->
+                <h2 class="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
+                    <span class="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">Why</span>
+                    <span class="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600 bg-clip-text text-transparent relative inline-block mx-4">
+                        Choose
+                        <svg class="absolute -bottom-4 left-0 w-full" viewBox="0 0 200 8" fill="none">
+                            <path d="M2 4C50 1 150 1 198 4" stroke="url(#gradient)" stroke-width="4" stroke-linecap="round" />
+                            <defs>
+                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" stop-color="#FBBF24" />
+                                    <stop offset="50%" stop-color="#F97316" />
+                                    <stop offset="100%" stop-color="#EAB308" />
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </span>
+                    <span class="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">Us</span>
                 </h2>
 
-                <!-- Description with Typing Effect (Static but stylish) -->
-                <p class="text-gray-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed relative">
-                    <span class="relative inline-block">
-                        <span class="absolute -left-6 top-0 text-yellow-500 text-2xl">"</span>
-                        We don't just teach, we transform careers with industry-leading courses and expert guidance
-                        <span class="absolute -right-6 bottom-0 text-yellow-500 text-2xl">"</span>
+                <!-- Enhanced Description with Stats -->
+                <p class="text-gray-400 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed relative mb-12">
+                    <span class="absolute -left-8 top-0 text-6xl text-yellow-500/20 font-serif">"</span>
+                    <span class="relative z-10">
+                        We don't just teach, we transform careers with
+                        <span class="text-yellow-400 font-bold">industry-leading courses</span> and
+                        <span class="text-yellow-400 font-bold">expert guidance</span> from top professionals
                     </span>
+                    <span class="absolute -right-8 bottom-0 text-6xl text-yellow-500/20 font-serif">"</span>
                 </p>
+
+                <!-- Quick Stats Row -->
+                <div class="flex flex-wrap justify-center gap-8 mb-8">
+                    <div class="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-3">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">10+</span>
+                        <span class="text-gray-400">Years Experience</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-3">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">50K+</span>
+                        <span class="text-gray-400">Students</span>
+                    </div>
+                    <div class="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-3">
+                        <span class="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">4.9</span>
+                        <span class="text-gray-400">Rating</span>
+                    </div>
+                </div>
 
                 <!-- Decorative Line with Icons -->
                 <div class="flex justify-center items-center gap-4 mt-8">
-                    <div class="w-12 h-0.5 bg-gradient-to-r from-transparent via-yellow-500 to-yellow-500"></div>
-                    <span class="text-yellow-500 text-2xl animate-spin-slow">✦</span>
-                    <div class="w-12 h-0.5 bg-gradient-to-r from-yellow-500 via-yellow-500 to-transparent"></div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-yellow-500 to-yellow-500"></div>
+                    <div class="relative">
+                        <span class="text-yellow-500 text-3xl animate-spin-slow">✦</span>
+                        <span class="absolute inset-0 text-yellow-500 text-3xl animate-ping opacity-20">✦</span>
+                    </div>
+                    <div class="w-16 h-0.5 bg-gradient-to-r from-yellow-500 via-yellow-500 to-transparent"></div>
                 </div>
             </div>
 
-            <!-- Main Features Grid - Premium Cards -->
+            <!-- Main Features Grid - Ultra Premium Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <!-- Card 1 -->
-                <div
-                    class="group relative bg-black/40 backdrop-blur-xl border border-yellow-500/20 rounded-2xl p-8 hover:border-yellow-400 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.4)]">
+                <!-- Card 1 - Premium Courses (Enhanced) -->
+                <div class="group relative perspective-2000">
+                    <!-- 3D Glow Effect -->
+                    <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700 group-hover:duration-300"></div>
 
-                    <div class="flex justify-center mb-6">
-                        <div class="text-6xl text-yellow-400 group-hover:scale-110 transition duration-500">
-                            📖
+                    <!-- Card Container with Advanced 3D Hover -->
+                    <div class="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
+                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/20
+                            transition-all duration-500 ease-out
+                            group-hover:scale-105 group-hover:-translate-y-2
+                            group-hover:rotate-1">
+
+                        <!-- Icon with Advanced Animation -->
+                        <div class="relative mb-6">
+                            <!-- Icon Background Pulse -->
+                            <div class="absolute inset-0 bg-yellow-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                            <!-- Icon Container -->
+                            <div class="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
+                                    flex items-center justify-center mx-auto
+                                    group-hover:scale-110 group-hover:rotate-6
+                                    transition-all duration-500">
+
+                                <!-- Animated Border -->
+                                <div class="absolute inset-0 rounded-2xl border-2 border-yellow-500/0 group-hover:border-yellow-500/50 transition-all duration-500"></div>
+
+                                <!-- Main Icon (Premium Book) -->
+                                <svg class="w-12 h-12 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
+                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.8"
+                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                                </svg>
+
+                                <!-- Shine Effect -->
+                                <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></div>
+                            </div>
+
+                            <!-- Floating Number Badge -->
+                            <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
+                                    flex items-center justify-center text-black font-bold text-lg
+                                    opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100
+                                    transition-all duration-500 delay-100 shadow-lg shadow-yellow-500/30">
+                                01
+                            </div>
                         </div>
-                    </div>
 
                         <!-- Content -->
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500">
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500 text-center">
                             Premium Courses
                         </h3>
 
-                        <p class="text-gray-400 mb-5 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                        <p class="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300 transition-colors duration-500 text-center">
                             Access 500+ industry-leading courses crafted by top experts with real-world projects and hands-on experience.
                         </p>
 
-                        <!-- Stats with Micro-interactions -->
-                        <div class="flex items-center justify-between pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
-                            <div class="flex items-center gap-2">
-                                <span class="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">500+</span>
-                                <span class="text-gray-500 text-sm">Courses</span>
+                        <!-- Enhanced Stats -->
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Total Courses</span>
+                                <span class="text-white font-semibold">500+</span>
                             </div>
-                            <div class="flex items-center gap-1">
-                                <span class="text-yellow-400">★★★★★</span>
-                                <span class="text-gray-400 text-sm">4.9</span>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Avg Rating</span>
+                                <div class="flex items-center gap-2">
+                                    <span class="text-yellow-400">★★★★★</span>
+                                    <span class="text-white font-semibold">4.9</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Updated</span>
+                                <span class="text-green-400 font-semibold">Monthly</span>
+                            </div>
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="mt-4 pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
+                            <div class="flex justify-between text-xs text-gray-500 mb-1">
+                                <span>Completion Rate</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="w-[95%] h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full group-hover:scale-x-105 transition-transform duration-500"></div>
                             </div>
                         </div>
 
                         <!-- Hover Indicator -->
                         <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <span class="text-yellow-400 text-sm flex items-center gap-1">
+                            <span class="text-yellow-400 text-sm flex items-center gap-1 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full">
                                 Learn more <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
                             </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Feature Card 2 - Expert Mentors -->
-                <div class="group relative perspective-1000">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-700"></div>
+                <!-- Card 2 - Expert Mentors (Enhanced) -->
+                <div class="group relative perspective-2000">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700"></div>
 
                     <div class="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
-                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/10
+                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/20
                             transition-all duration-500 ease-out
-                            group-hover:scale-105 group-hover:-translate-y-2">
+                            group-hover:scale-105 group-hover:-translate-y-2
+                            group-hover:-rotate-1">
 
                         <div class="relative mb-6">
                             <div class="absolute inset-0 bg-yellow-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                            <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
-                                    flex items-center justify-center
-                                    group-hover:scale-110 group-hover:-rotate-3
+                            <div class="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
+                                    flex items-center justify-center mx-auto
+                                    group-hover:scale-110 group-hover:-rotate-6
                                     transition-all duration-500">
 
                                 <div class="absolute inset-0 rounded-2xl border-2 border-yellow-500/0 group-hover:border-yellow-500/50 transition-all duration-500"></div>
 
-                                <svg class="w-10 h-10 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
+                                <svg class="w-12 h-12 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.5"
+                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.8"
                                         d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                                 </svg>
 
                                 <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></div>
                             </div>
 
-                            <div class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
+                            <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
                                     flex items-center justify-center text-black font-bold text-lg
                                     opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100
-                                    transition-all duration-500 delay-100">
+                                    transition-all duration-500 delay-100 shadow-lg shadow-yellow-500/30">
                                 02
                             </div>
                         </div>
 
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500">
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500 text-center">
                             Expert Mentors
                         </h3>
 
-                        <p class="text-gray-400 mb-5 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                        <p class="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300 transition-colors duration-500 text-center">
                             Learn from 150+ industry veterans with 10+ years of experience who provide personalized guidance.
                         </p>
 
-                        <div class="flex items-center justify-between pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
-                            <div class="flex items-center gap-2">
-                                <span class="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">150+</span>
-                                <span class="text-gray-500 text-sm">Experts</span>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Expert Mentors</span>
+                                <span class="text-white font-semibold">150+</span>
                             </div>
-                            <div class="flex -space-x-2">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-6 h-6 rounded-full border-2 border-yellow-500/50">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-6 h-6 rounded-full border-2 border-yellow-500/50">
-                                <img src="https://randomuser.me/api/portraits/men/67.jpg" class="w-6 h-6 rounded-full border-2 border-yellow-500/50">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Avg Experience</span>
+                                <span class="text-white font-semibold">12+ Years</span>
+                            </div>
+                            <div class="flex items-center justify-center -space-x-2 mt-2">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-yellow-500/50 hover:scale-110 transition-transform">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-8 h-8 rounded-full border-2 border-yellow-500/50 hover:scale-110 transition-transform">
+                                <img src="https://randomuser.me/api/portraits/men/67.jpg" class="w-8 h-8 rounded-full border-2 border-yellow-500/50 hover:scale-110 transition-transform">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" class="w-8 h-8 rounded-full border-2 border-yellow-500/50 hover:scale-110 transition-transform">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 flex items-center justify-center text-black text-xs font-bold border-2 border-yellow-500/50">+150</div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
+                            <div class="flex justify-between text-xs text-gray-500 mb-1">
+                                <span>Mentor Rating</span>
+                                <span>4.9/5</span>
+                            </div>
+                            <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
+                                <div class="w-[98%] h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
                             </div>
                         </div>
 
                         <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <span class="text-yellow-400 text-sm flex items-center gap-1">
-                                Learn more <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
+                            <span class="text-yellow-400 text-sm flex items-center gap-1 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full">
+                                Meet mentors <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
                             </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Feature Card 3 - Progress Tracking -->
-                <div class="group relative perspective-1000">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-700"></div>
+                <!-- Card 3 - Progress Tracking (Enhanced) -->
+                <div class="group relative perspective-2000">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700"></div>
 
                     <div class="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
-                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/10
+                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/20
                             transition-all duration-500 ease-out
-                            group-hover:scale-105 group-hover:-translate-y-2">
+                            group-hover:scale-105 group-hover:-translate-y-2
+                            group-hover:rotate-1">
 
                         <div class="relative mb-6">
                             <div class="absolute inset-0 bg-yellow-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                            <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
-                                    flex items-center justify-center
-                                    group-hover:scale-110 group-hover:rotate-3
+                            <div class="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
+                                    flex items-center justify-center mx-auto
+                                    group-hover:scale-110 group-hover:rotate-6
                                     transition-all duration-500">
 
                                 <div class="absolute inset-0 rounded-2xl border-2 border-yellow-500/0 group-hover:border-yellow-500/50 transition-all duration-500"></div>
 
-                                <svg class="w-10 h-10 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
+                                <svg class="w-12 h-12 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.5"
+                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.8"
                                         d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                                 </svg>
 
                                 <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></div>
                             </div>
 
-                            <div class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
+                            <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
                                     flex items-center justify-center text-black font-bold text-lg
                                     opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100
-                                    transition-all duration-500 delay-100">
+                                    transition-all duration-500 delay-100 shadow-lg shadow-yellow-500/30">
                                 03
                             </div>
                         </div>
 
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500">
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500 text-center">
                             Progress Tracking
                         </h3>
 
-                        <p class="text-gray-400 mb-5 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
+                        <p class="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300 transition-colors duration-500 text-center">
                             Real-time analytics, personalized insights, and milestone tracking to keep you motivated and on target.
                         </p>
 
-                        <div class="flex items-center justify-between pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
-                            <div class="flex items-center gap-2">
-                                <span class="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">98%</span>
-                                <span class="text-gray-500 text-sm">Success</span>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Success Rate</span>
+                                <span class="text-white font-semibold">98%</span>
                             </div>
-                            <div class="w-16 h-2 bg-white/10 rounded-full overflow-hidden">
-                                <div class="w-[98%] h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Active Users</span>
+                                <span class="text-white font-semibold">45K+</span>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex justify-between text-xs">
+                                    <span class="text-gray-500">Course Progress</span>
+                                    <span class="text-yellow-400">85% Avg</span>
+                                </div>
+                                <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                                    <div class="w-[85%] h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full relative">
+                                        <div class="absolute top-0 right-0 w-1 h-2 bg-white rounded-full animate-ping"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-4 pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
+                            <div class="flex items-center justify-between text-xs text-gray-500">
+                                <span>Milestones Achieved</span>
+                                <span class="text-green-400">+2,345 this week</span>
                             </div>
                         </div>
 
                         <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <span class="text-yellow-400 text-sm flex items-center gap-1">
-                                Learn more <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
+                            <span class="text-yellow-400 text-sm flex items-center gap-1 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full">
+                                Track now <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
                             </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Feature Card 4 - Lifetime Access -->
-                <div class="group relative perspective-1000">
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-700"></div>
+                <!-- Card 4 - Lifetime Access (Enhanced) -->
+                <div class="group relative perspective-2000">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-2xl transition-all duration-700"></div>
 
                     <div class="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
-                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/10
+                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/20
                             transition-all duration-500 ease-out
-                            group-hover:scale-105 group-hover:-translate-y-2">
+                            group-hover:scale-105 group-hover:-translate-y-2
+                            group-hover:-rotate-1">
 
                         <div class="relative mb-6">
                             <div class="absolute inset-0 bg-yellow-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-                            <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
-                                    flex items-center justify-center
-                                    group-hover:scale-110 group-hover:-rotate-3
+                            <div class="relative w-24 h-24 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
+                                    flex items-center justify-center mx-auto
+                                    group-hover:scale-110 group-hover:-rotate-6
                                     transition-all duration-500">
 
                                 <div class="absolute inset-0 rounded-2xl border-2 border-yellow-500/0 group-hover:border-yellow-500/50 transition-all duration-500"></div>
 
-                                <svg class="w-10 h-10 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
+                                <svg class="w-12 h-12 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.5"
+                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.8"
                                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                                 </svg>
 
                                 <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></div>
                             </div>
 
-                            <div class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
+                            <div class="absolute -top-3 -right-3 w-12 h-12 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
                                     flex items-center justify-center text-black font-bold text-lg
                                     opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100
-                                    transition-all duration-500 delay-100">
+                                    transition-all duration-500 delay-100 shadow-lg shadow-yellow-500/30">
                                 04
                             </div>
                         </div>
 
-                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500">
+                        <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500 text-center">
                             Lifetime Access
                         </h3>
 
-                        <p class="text-gray-400 mb-5 leading-relaxed group-hover:text-gray-300 transition-colors duration-500">
-                            One-time payment, forever access. Learn at your own pace with unlimited course updates and support.
+                        <p class="text-gray-400 mb-6 leading-relaxed group-hover:text-gray-300 transition-colors duration-500 text-center">
+                            One-time payment, forever access. Learn at your own pace with unlimited course updates and 24/7 support.
                         </p>
 
-                        <div class="flex items-center justify-between pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
-                            <div class="flex items-center gap-2">
-                                <span class="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">∞</span>
-                                <span class="text-gray-500 text-sm">Unlimited</span>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Access Type</span>
+                                <span class="text-green-400 font-semibold">∞ Unlimited</span>
                             </div>
-                            <div class="flex items-center gap-1 text-yellow-400">
-                                <span>24/7</span>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Support</span>
+                                <span class="text-yellow-400 font-semibold">24/7 Available</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-gray-500 text-sm">Updates</span>
+                                <span class="text-blue-400 font-semibold">Free Forever</span>
+                            </div>
+                        </div>
+
+                        <!-- Price Tag -->
+                        <div class="mt-4 pt-4 border-t border-white/10 group-hover:border-yellow-500/30 transition-colors duration-500">
+                            <div class="text-center">
+                                <span class="text-gray-400 text-sm line-through">$999</span>
+                                <span class="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent block">$499</span>
+                                <span class="text-gray-500 text-xs">One-time payment</span>
                             </div>
                         </div>
 
                         <div class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            <span class="text-yellow-400 text-sm flex items-center gap-1">
-                                Learn more <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
+                            <span class="text-yellow-400 text-sm flex items-center gap-1 bg-black/60 backdrop-blur-sm px-3 py-1 rounded-full">
+                                Get access <span class="text-lg group-hover:translate-x-1 transition-transform">→</span>
                             </span>
                         </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Call to Action Banner -->
+            <div class="mt-20 text-center">
+                <a href="#" class="group relative inline-flex items-center gap-4 px-12 py-5 rounded-full overflow-hidden">
+                    <!-- Background with Gradient -->
+                    <span class="absolute inset-0 bg-gradient-to-r from-yellow-500 to-orange-500"></span>
+                    <span class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+
+                    <!-- Content -->
+                    <span class="relative text-black font-bold text-lg">Explore All Features</span>
+                    <span class="relative w-10 h-10 rounded-full bg-black/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <span class="text-white text-xl group-hover:translate-x-1 transition-transform">→</span>
+                    </span>
+
+                    <!-- Shine Effect -->
+                    <span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent skew-x-12"></span>
+                </a>
+            </div>
+
             <!-- Bottom Stats Bar with Premium Design -->
             <div class="mt-20 relative">
                 <!-- Decorative Line -->
-                <div class="absolute left-1/2 -translate-x-1/2 -top-10 w-px h-20 bg-gradient-to-b from-transparent via-yellow-500/30 to-transparent"></div>
+                <div class="absolute left-1/2 -translate-x-1/2 -top-10 w-px h-20 bg-gradient-to-b from-transparent via-yellow-500/50 to-transparent"></div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 p-10 bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/20">
 
                     <!-- Background Shine -->
-                    <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1500 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"></div>
+                    <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1500 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
 
                     <!-- Stat 1 -->
-                    <div class="text-center relative">
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
                         <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">10+</div>
-                        <div class="text-gray-400 text-sm uppercase tracking-wider">Years Experience</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">Years Excellence</div>
                     </div>
 
                     <!-- Stat 2 -->
-                    <div class="text-center relative">
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
                         <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">50K+</div>
-                        <div class="text-gray-400 text-sm uppercase tracking-wider">Happy Students</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">Active Learners</div>
                     </div>
 
                     <!-- Stat 3 -->
-                    <div class="text-center relative">
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
                         <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">95%</div>
-                        <div class="text-gray-400 text-sm uppercase tracking-wider">Completion Rate</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">Success Rate</div>
                     </div>
 
                     <!-- Stat 4 -->
-                    <div class="text-center relative">
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
                         <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">24/7</div>
-                        <div class="text-gray-400 text-sm uppercase tracking-wider">Support Available</div>
+                        <div class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">Dedicated Support</div>
                     </div>
                 </div>
             </div>
@@ -443,8 +622,40 @@
                 }
             }
 
+            @keyframes float-slow {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-30px);
+                }
+            }
+
+            @keyframes float-slower {
+
+                0%,
+                100% {
+                    transform: translateY(0px);
+                }
+
+                50% {
+                    transform: translateY(-40px);
+                }
+            }
+
             .animate-float {
                 animation: float 6s ease-in-out infinite;
+            }
+
+            .animate-float-slow {
+                animation: float-slow 8s ease-in-out infinite;
+            }
+
+            .animate-float-slower {
+                animation: float-slower 10s ease-in-out infinite;
             }
 
             @keyframes pulse-slow {
@@ -477,19 +688,45 @@
                 animation: spin-slow 12s linear infinite;
             }
 
+            @keyframes gridMove {
+                0% {
+                    transform: translateY(0);
+                }
+
+                100% {
+                    transform: translateY(50px);
+                }
+            }
+
             .animation-delay-1000 {
                 animation-delay: 1s;
+            }
+
+            .animation-delay-1500 {
+                animation-delay: 1.5s;
             }
 
             .animation-delay-2000 {
                 animation-delay: 2s;
             }
 
-            .perspective-1000 {
-                perspective: 1000px;
+            .animation-delay-2500 {
+                animation-delay: 2.5s;
+            }
+
+            .animation-delay-3000 {
+                animation-delay: 3s;
+            }
+
+            .perspective-2000 {
+                perspective: 2000px;
             }
         </style>
     </section>
+
+
+
+
 
     <!-- Popular Courses Section - Ultra Premium -->
     <section class="relative py-32 px-4 bg-black overflow-hidden">
@@ -1905,7 +2142,7 @@
             @keyframes float {
 
                 0%,
-                100% { 
+                100% {
                     transform: translateY(0px);
                 }
 
