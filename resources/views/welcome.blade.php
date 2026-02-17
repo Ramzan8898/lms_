@@ -12,7 +12,7 @@
             style="background-image: radial-gradient(circle at 1px 1px, rgba(255,215,0,0.1) 1px, transparent 0); background-size: 40px 40px;">
         </div>
 
-        <div class="relative container mx-auto px-4 lg:px-8">
+        <div class="relative container mx-auto">
             <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
                 <!-- Left Content -->
                 <div class="text-white max-w-2xl lg:max-w-xl">
@@ -73,7 +73,7 @@
                                 class="absolute inset-0 bg-linear-to-r from-yellow-300 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                             </div>
                         </a>
-                        <a href="#"
+                        <a href="{{ route('web.courses') }}"
                             class="group px-8 py-4 rounded-full font-semibold border-2 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500 hover:text-black hover:border-yellow-500 transition-all duration-500 hover:scale-105 flex items-center space-x-2">
                             <span>View Courses</span>
                             <span class="text-lg">▶</span>

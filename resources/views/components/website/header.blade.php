@@ -1,4 +1,4 @@
-<header class="w-full bg-(--black) shadow-md py-4 border-b border-yellow-600/30 fixed">
+<header class="w-full bg-(--black) shadow-md py-4 border-b border-yellow-600/30 fixed z-999">
     <div class="flex items-center justify-between container mx-auto ">
 
         <a href="{{ route('welcome') }}" class="text-center flex justify-center">
