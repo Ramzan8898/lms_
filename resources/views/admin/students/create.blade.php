@@ -23,7 +23,7 @@
         </div>
 
         <div>
-            <label for="email" class="label">Email</label>
+            <label for="email" class="label">Email</label>  
             <input type="email" name="email" placeholder="Email" class="input">
         </div>
 
