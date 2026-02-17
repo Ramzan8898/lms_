@@ -137,28 +137,11 @@
 
         <div class="relative container mx-auto">
 
-            <!-- Section Header with Premium Animation -->
-            <div class="text-center mb-20">
-                <!-- Animated Badge -->
-                <div class="inline-flex items-center gap-3 bg-white/5 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-2.5 mb-8 relative group cursor-pointer hover:border-yellow-400 transition-all duration-500">
-                    <span class="relative flex h-3 w-3">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-3 w-3 bg-yellow-500"></span>
-                    </span>
-                    <span class="text-yellow-400 font-semibold tracking-wider text-sm group-hover:text-yellow-300 transition-colors">✦ WHY TRUST US ✦</span>
-
-                    <!-- Shine Effect -->
-                    <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
-                </div>
-
-                <!-- Main Heading with Advanced Gradient -->
-                <h2 class="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-                    <span class="bg-gradient-to-r from-white via-gray-300 to-white bg-clip-text text-transparent">Why</span>
-                    <span class="bg-gradient-to-r from-yellow-400 via-orange-500 to-yellow-600 bg-clip-text text-transparent relative inline-block mx-4">
-                        Choose Us
-                        <!-- Animated Underline -->
-                        <span class="absolute -bottom-4 left-0 w-full h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"></span>
-                    </span>
+            <!-- Section Heading -->
+            <div class="text-center mb-16">
+                <h2
+                    class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                    Why Choose Our Platform
                 </h2>
 
                 <!-- Description with Typing Effect (Static but stylish) -->
@@ -181,50 +164,15 @@
             <!-- Main Features Grid - Premium Cards -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <!-- Feature Card 1 - Premium Courses -->
-                <div class="group relative perspective-1000">
-                    <!-- 3D Glow Effect -->
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-xl transition-all duration-700 group-hover:duration-300"></div>
+                <!-- Card 1 -->
+                <div
+                    class="group relative bg-black/40 backdrop-blur-xl border border-yellow-500/20 rounded-2xl p-8 hover:border-yellow-400 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.4)]">
 
-                    <!-- Card Container with 3D Hover -->
-                    <div class="relative bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8 
-                            hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/10
-                            transition-all duration-500 ease-out
-                            group-hover:scale-105 group-hover:-translate-y-2">
-
-                        <!-- Icon with Advanced Animation -->
-                        <div class="relative mb-6">
-                            <!-- Icon Background Pulse -->
-                            <div class="absolute inset-0 bg-yellow-500/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                            <!-- Icon Container -->
-                            <div class="relative w-20 h-20 rounded-2xl bg-gradient-to-br from-yellow-500/20 to-orange-500/20 
-                                    flex items-center justify-center
-                                    group-hover:scale-110 group-hover:rotate-3
-                                    transition-all duration-500">
-
-                                <!-- Animated Border -->
-                                <div class="absolute inset-0 rounded-2xl border-2 border-yellow-500/0 group-hover:border-yellow-500/50 transition-all duration-500"></div>
-
-                                <!-- Main Icon -->
-                                <svg class="w-10 h-10 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-500"
-                                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.5"
-                                        d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-
-                                <!-- Shine Effect on Hover -->
-                                <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></div>
-                            </div>
-
-                            <!-- Floating Number Badge -->
-                            <div class="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 
-                                    flex items-center justify-center text-black font-bold text-lg
-                                    opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100
-                                    transition-all duration-500 delay-100">
-                                01
-                            </div>
+                    <div class="flex justify-center mb-6">
+                        <div class="text-6xl text-yellow-400 group-hover:scale-110 transition duration-500">
+                            📖
                         </div>
+                    </div>
 
                         <!-- Content -->
                         <h3 class="text-2xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-500">
