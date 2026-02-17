@@ -67,8 +67,8 @@
                     </div>
 
                     <!-- Main Image Container -->
-                    <div class="relative rounded-3xl overflow-hidden border border-yellow-500/30 backdrop-blur-sm">
-                        <img src="{{ asset('assets/images/bgImage.png') }}"
+                    <div class="relative rounded-3xl overflow-hidden backdrop-blur-sm">
+                        <img src="{{ asset('assets/images/about.png') }}"
                             class="w-full h-auto transform group-hover:scale-105 transition-transform duration-700 ease-out">
 
                         <!-- Overlay Gradient -->

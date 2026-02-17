@@ -12,8 +12,14 @@ class CourseController extends Controller
 {
     public function index()
     {
-        $courses = Course::with('instructor.user')->latest()->get();
+        $courses = Course::with('instructor.user',)->latest()->get();
         return view('admin.courses.index', compact('courses'));
+    }
+
+        public function ShowAllLessons()
+    {
+        $courses = Course::with('lessons',)->get();
+        return view('students.lessons.index', compact('courses'));
     }
 
 

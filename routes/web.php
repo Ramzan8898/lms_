@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Students\StudentLessons;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -31,9 +32,6 @@ Route::get('/web-contact', function () {
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
-
-
-
 Route::post('/login', [AuthController::class, 'store'])->name('auth.login');
 
 
@@ -83,4 +81,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/students/edit/{student}', [StudentController::class, 'edit'])->name('admin.students.edit');
     Route::put('/students/update/{student}', [StudentController::class, 'update'])->name('admin.students.update');
     Route::delete('/students/destroy/{student}', [StudentController::class, 'destroy'])->name('admin.students.destroy');
+
+    Route::get('/studentsLessons', [CourseController::class, 'ShowAllLessons'])->name('admin.students.lessons');
 });

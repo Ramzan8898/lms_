@@ -26,9 +26,10 @@ class StudentController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required|unique:users,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
             'status' => 'required',
+            'avatar' => 'nullable|image|max:2048'
         ]);
 
         DB::beginTransaction();
@@ -40,8 +41,18 @@ class StudentController extends Controller
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
             ]);
+
+            if (!\Spatie\Permission\Models\Role::where('name', 'student')->exists()) {
+                \Spatie\Permission\Models\Role::create(['name' => 'student']);
+            }
+
             $user->assignRole('student');
-            $avatar = $request->file('avatar')?->store('students', 'public');
+
+            $avatar = null;
+
+            if ($request->hasFile('avatar')) {
+                $avatar = $request->file('avatar')->store('students', 'public');
+            }
 
             Student::create([
                 'user_id' => $user->id,
@@ -57,9 +68,10 @@ class StudentController extends Controller
                 ->with('success', 'Student created!');
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
+            return back()->with('error', $e->getMessage());
         }
     }
+
 
 
     public function edit(Student $student)
