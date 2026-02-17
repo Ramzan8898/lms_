@@ -4,7 +4,7 @@
 
 <div class="flex items-center justify-between mb-6">
     <div>
-        <h1 class="text-2xl font-bold">Students</h1>
+        <h1 class="text-2xl font-bold text-white">Students</h1>
         <x-dashboard.breadcrumbs :items="[
             ['label' => 'Students']
         ]" />

@@ -2,11 +2,9 @@
 
 @section('content')
 
-<h1 class="text-2xl font-bold mb-6">Edit User</h1>
-{{-- Header + Breadcrumbs --}}
 <div class="flex items-center justify-between mb-6">
     <div>
-        <h1 class="text-2xl font-bold">Edit User</h1>
+        <h1 class="text-2xl font-bold text-white">Edit User</h1>
 
         <x-dashboard.breadcrumbs :items="[
             ['label' => 'Users', 'url' => route('admin.users')],
