@@ -59,7 +59,7 @@
             <!-- Section Heading -->
             <div class="text-center mb-16">
                 <h2
-                    class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent">
+                    class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-200 via-yellow-400 to-yellow-600 bg-clip-text text-transparent">
                     Why Choose Our Platform
                 </h2>
                 <p class="text-gray-400 mt-4 max-w-2xl mx-auto">
@@ -72,7 +72,7 @@
 
                 <!-- Card 1 -->
                 <div
-                    class="group relative bg-black/40 backdrop-blur-xl border border-yellow-500/20 rounded-2xl p-8 hover:border-yellow-400 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.4)]">
+                    class="group relative bg-black backdrop-blur-xl border border-yellow-500/20 rounded-2xl p-8 hover:border-yellow-400 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,215,0,0.4)]">
 
                     <div class="flex justify-center mb-6">
                         <div class="text-6xl text-yellow-400 group-hover:scale-110 transition duration-500">
