@@ -1957,7 +1957,7 @@
             @keyframes float {
 
                 0%,
-                100% {
+                100% { 
                     transform: translateY(0px);
                 }
 
