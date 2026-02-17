@@ -13,7 +13,7 @@
 
 <body class="font-['Inter']">
 
-    <div class="flex-1 flex flex-col overflow-hidden">
+    <div class="flex flex-col overflow-hidden">
 
         <x-website.header />
 

@@ -423,15 +423,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- View All Courses Button -->
-            <div class="text-center mt-16">
-                <a href="#"
-                    class="inline-flex items-center space-x-3 px-10 py-4 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full text-white font-semibold hover:bg-linear-to-r hover:from-yellow-500 hover:to-orange-500 hover:text-black hover:border-transparent transition-all duration-500 group">
-                    <span>View All Courses</span>
-                    <span class="text-xl group-hover:translate-x-2 transition-transform">→</span>
-                </a>
-            </div>
         </div>
     </section>
 

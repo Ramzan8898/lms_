@@ -182,7 +182,7 @@
 
                     <!-- CTA Buttons with Premium Effects -->
                     <div class="flex flex-wrap gap-5 pt-5">
-                        <a href="#"
+                        <a href="{{ route('web.courses') }}"
                             class="group relative px-8 py-4 rounded-2xl bg-linear-to-r from-yellow-400 to-orange-500 text-black font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,170,0,0.5)]">
                             <span class="relative z-10 flex items-center space-x-2">
                                 <span>Explore Courses</span>
