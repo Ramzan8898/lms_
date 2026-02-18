@@ -14,24 +14,30 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-//courses Route Web Page
-Route::get('/web-courses', function () {
-    return view('website.pages.courses');
-})->name('web.courses');
 
-Route::get('/web-about', function () {
-    return view('website.pages.about');
-})->name('web.about');
+Route::prefix('lms')->group(function () {
+    //courses Route Web Page
+    Route::get('/web-courses', function () {
+        return view('website.pages.courses');
+    })->name('web.courses');
 
+    Route::get('/web-about', function () {
+        return view('website.pages.about');
+    })->name('web.about');
 
-Route::get('/web-contact', function () {
-    return view('website.pages.contact');
-})->name('web.contact');
+    Route::get('/web-contact', function () {
+        return view('website.pages.contact');
+    })->name('web.contact');
 
+    Route::get('/register', function () {
+        return view('auth.register');
+    })->name('web.register');
 
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+    Route::get('/login', function () {
+        return view('auth.login');
+    })->name('web.login');
+});
+
 Route::post('/login', [AuthController::class, 'store'])->name('auth.login');
 
 

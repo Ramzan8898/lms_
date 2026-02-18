@@ -15,9 +15,8 @@
         <source src="{{ asset('assets/images/background.mp4') }}" type="video/mp4">
     </video>
 
-    <div class="fixed inset-0 bg-black/60 -z-10"></div>
 
-    <div class="w-full max-w-md bg-[#00000060] backdrop-blur-md p-8 rounded-2xl shadow-2xl">
+    <div class="w-full p-8 rounded-2xl container">
         @yield('content')
     </div>
 

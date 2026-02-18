@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="flex flex-wrap gap-6">
-                        <a href="#"
+                        <a href="{{route('web.register')}}"
                             class="group relative px-8 py-4 rounded-full font-semibold bg-linear-to-r from-yellow-400 to-orange-500 text-black transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,170,0,0.5)] flex items-center space-x-2 overflow-hidden">
                             <span class="relative z-10">Get Started</span>
                             <span class="relative z-10 text-xl group-hover:translate-x-1 transition-transform">→</span>
