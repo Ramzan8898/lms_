@@ -7,7 +7,7 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Laravel') }} - Modern Learning Platform</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
@@ -22,9 +22,7 @@
             <x-dashboard.topbar />
 
             <main class="flex-1 overflow-y-auto p-8 bg-(--secondary-2)">
-                <div class="bg-(--card) border border-(--border) rounded-2xl shadow-2xl p-8 min-h-full">
-                    @yield('content')
-                </div>
+                @yield('content')
             </main>
 
         </div>
@@ -52,7 +50,5 @@
         })();
     </script>
 </body>
-
-
 
 </html>
