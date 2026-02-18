@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ config('app.name') }} | Login</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body class="min-h-screen flex items-center justify-center bg-black relative overflow-hidden">
@@ -16,7 +16,7 @@
     </video>
 
 
-    <div class="w-full p-8 rounded-2xl container">
+    <div class="w-full rounded-2xl container">
         @yield('content')
     </div>
 

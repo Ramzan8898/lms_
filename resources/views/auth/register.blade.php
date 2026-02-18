@@ -103,7 +103,7 @@
                     <div>
                         <label class="block text-sm text-gray-400 mb-2">Full Name</label>
                         <input type="text" name="name" value="{{ old('name') }}" required
-                            class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-xl text-white
+                            class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
                                   focus:outline-none focus:border-yellow-500/40 transition-all">
                     </div>
 
@@ -111,24 +111,61 @@
                     <div>
                         <label class="block text-sm text-gray-400 mb-2">Email Address</label>
                         <input type="email" name="email" value="{{ old('email') }}" required
-                            class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-xl text-white
+                            class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
                                   focus:outline-none focus:border-yellow-500/40 transition-all">
                     </div>
 
                     <!-- Password -->
+                    <!-- Password Field with Font Awesome -->
                     <div>
                         <label class="block text-sm text-gray-400 mb-2">Password</label>
-                        <input type="password" name="password" required
-                            class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-xl text-white
+                        <div class="relative">
+                            <input type="password" name="password" id="password2" required
+                                class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
                                   focus:outline-none focus:border-yellow-500/40 transition-all">
+                            <button type="button" onclick="togglePasswordFA('password2', this)"
+                                class="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity">
+                                <i
+                                    class="fas fa-eye text-lg bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent"></i>
+                            </button>
+                        </div>
                     </div>
 
-                    <!-- Confirm Password -->
+                    <!-- Confirm Password Field with Font Awesome -->
                     <div>
                         <label class="block text-sm text-gray-400 mb-2">Confirm Password</label>
-                        <input type="password" name="password_confirmation" required
-                            class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-xl text-white
+                        <div class="relative">
+                            <input type="password" name="password_confirmation" required
+                                class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
                                   focus:outline-none focus:border-yellow-500/40 transition-all">
+                        </div>
+                    </div>
+
+                    <script>
+                        function togglePasswordFA(inputId, button) {
+                            const input = document.getElementById(inputId);
+                            const icon = button.querySelector('i');
+
+                            if (input.type === 'password') {
+                                input.type = 'text';
+                                icon.classList.remove('fa-eye');
+                                icon.classList.add('fa-eye-slash');
+                            } else {
+                                input.type = 'password';
+                                icon.classList.remove('fa-eye-slash');
+                                icon.classList.add('fa-eye');
+                            }
+                        }
+                    </script>
+
+                    <div>
+                        <label class="block text-md text-gray-400 mb-2"> I want to </label>
+                        <select
+                            class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-md text-white focus:outline-none focus:border-yellow-500/40 transition-all appearance-none cursor-pointer">
+                            <option class="bg-gray-800 text-white" value="learn">LEARN NEW SKILLS</option>
+                            <option class="bg-gray-800 text-white" value="teach">TEACH / MENTOR</option>
+                        </select>
+                        <!-- we simulate the "▼" via browser default, fine -->
                     </div>
 
                     <!-- Terms -->
