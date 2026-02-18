@@ -96,13 +96,13 @@
                 </div>
 
                 <!-- FORM -->
-                <form method="POST" action="{{ route('web.register') }}" class="space-y-5">
+                <form method="POST" action="{{ route('auth.register') }}" class="space-y-5">
                     @csrf
 
                     <!-- Name -->
                     <div>
                         <label class="block text-sm text-gray-400 mb-2">Full Name</label>
-                        <input type="text" name="name" value="{{ old('name') }}" required
+                        <input type="text" name="name" value="{{ old('name') }}" required placeholder="John Doe"
                             class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
                                   focus:outline-none focus:border-yellow-500/40 transition-all">
                     </div>
@@ -111,6 +111,7 @@
                     <div>
                         <label class="block text-sm text-gray-400 mb-2">Email Address</label>
                         <input type="email" name="email" value="{{ old('email') }}" required
+                            placeholder="johndoe@gmail.com"
                             class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
                                   focus:outline-none focus:border-yellow-500/40 transition-all">
                     </div>
@@ -156,16 +157,6 @@
                             }
                         }
                     </script>
-
-                    <div>
-                        <label class="block text-md text-gray-400 mb-2"> I want to </label>
-                        <select
-                            class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-md text-white focus:outline-none focus:border-yellow-500/40 transition-all appearance-none cursor-pointer">
-                            <option class="bg-gray-800 text-white" value="learn">LEARN NEW SKILLS</option>
-                            <option class="bg-gray-800 text-white" value="teach">TEACH / MENTOR</option>
-                        </select>
-                        <!-- we simulate the "▼" via browser default, fine -->
-                    </div>
 
                     <!-- Terms -->
                     <div class="flex items-start gap-3">
