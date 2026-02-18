@@ -116,7 +116,6 @@
                     </div>
 
                     <!-- Password -->
-                    <!-- Password Field with Font Awesome -->
                     <div>
                         <label class="block text-sm text-gray-400 mb-2">Password</label>
                         <div class="relative">
