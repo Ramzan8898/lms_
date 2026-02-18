@@ -32,7 +32,7 @@ class CourseController extends Controller
 
     public function enroll(Course $course)
     {
-        $course = Course::with('lessons',)->find($course->id);       
+        $course = Course::with('lessons',)->find($course->id);
         return view('students.lessons.enroll',compact('course'));
     }
 
