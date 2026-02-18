@@ -38,14 +38,16 @@ Route::prefix('lms')->group(function () {
     })->name('web.login');
 });
 
+Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
 Route::post('/login', [AuthController::class, 'store'])->name('auth.login');
 
 
 
 
 /* 🔒 Protected Routes */
-Route::middleware('auth')->group(function () {
+Route::middleware('auth', 'prevent.back')->group(function () {
 
+    Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('dashboard');
 

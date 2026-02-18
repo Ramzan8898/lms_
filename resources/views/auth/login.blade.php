@@ -74,8 +74,8 @@
                         <div>
                             <label class="block text-sm text-gray-400 mb-2">Email Address</label>
                             <input type="email" name="email" value="{{ old('email') }}" required
-                                class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-xl text-white
-                                      focus:outline-none focus:border-yellow-500/40 transition-all">
+                                class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
+                                  focus:outline-none focus:border-yellow-500/40 transition-all">
                             @error('email')
                                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                             @enderror
@@ -85,8 +85,8 @@
                         <div>
                             <label class="block text-sm text-gray-400 mb-2">Password</label>
                             <input type="password" name="password" required
-                                class="w-full px-4 py-4 bg-white/5 border border-yellow-500/20 rounded-xl text-white
-                                      focus:outline-none focus:border-yellow-500/40 transition-all">
+                                class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
+                                  focus:outline-none focus:border-yellow-500/40 transition-all">
                             @error('password')
                                 <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                             @enderror
@@ -108,7 +108,7 @@
                         <!-- Button -->
                         <button type="submit"
                             class="w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold
-                                   rounded-xl transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-500/30">
+                                   rounded-xl transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-500/30 cursor-pointer">
                             Sign In →
                         </button>
 
