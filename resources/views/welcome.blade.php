@@ -1,7 +1,7 @@
 @extends('layouts.website')
 @section('content')
     <!-- Hero Section (Aapka wala, thoda enhanced) -->
-    <section class="relative bg-black overflow-hidden pt-20 pb-32">
+    <section class="relative bg-black overflow-hidden py-32">
         <div class="absolute inset-0 bg-linear-to-br from-black via-[#1a0f00] to-black"></div>
         <div class="absolute right-0 top-1/3 w-150 h-150 bg-yellow-600/10 blur-[150px] rounded-full animate-pulse-slow">
         </div>
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="flex flex-wrap gap-6">
-                        <a href="#"
+                        <a href="{{route('web.register')}}"
                             class="group relative px-8 py-4 rounded-full font-semibold bg-linear-to-r from-yellow-400 to-orange-500 text-black transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,170,0,0.5)] flex items-center space-x-2 overflow-hidden">
                             <span class="relative z-10">Get Started</span>
                             <span class="relative z-10 text-xl group-hover:translate-x-1 transition-transform">→</span>
@@ -88,7 +88,7 @@
                     </div>
                     <div class="relative">
                         <img src="{{ asset('/assets/images/ChatGPT Image Feb 16, 2026, 02_22_42 PM.png') }}"
-                            class="w-full max-w-2xl drop-shadow-[0_0_60px_rgba(255,170,0,0.3)] group-hover:scale-105 transition-transform duration-700">
+                            class="w-full max-w-3xl drop-shadow-[0_0_60px_rgba(255,170,0,0.3)] group-hover:scale-105 transition-transform duration-700">
                         <div
                             class="absolute -bottom-6 -left-6 bg-black/60 backdrop-blur-xl border border-yellow-500/30 rounded-2xl p-4 animate-float">
                             <div class="flex items-center gap-3">
@@ -120,7 +120,7 @@
     </section>
 
     <!-- Why Choose Us Section - Ultra Premium -->
-    <section class="relative py-40 px-4 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
+    <section class="relative py-25 px-4 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -166,7 +166,7 @@
         <div class="relative container mx-auto z-10">
 
             <!-- Section Heading with Premium Enhancements -->
-            <div class="text-center mb-24">
+            <div class="text-center mb-8">
                 <!-- Animated Badge -->
                 <div
                     class="inline-flex items-center gap-3 bg-linear-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-3 mb-8 relative group cursor-pointer hover:border-yellow-400 transition-all duration-500">
@@ -239,6 +239,13 @@
                         <span
                             class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">4.9</span>
                         <span class="text-gray-400">Rating</span>
+                    </div>
+
+                    <div
+                        class="flex items-center gap-3 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-3">
+                        <span
+                            class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">24/7</span>
+                        <span class="text-gray-400">Support</span>
                     </div>
                 </div>
 
@@ -638,84 +645,6 @@
                 </div>
             </div>
 
-            <!-- Call to Action Banner -->
-            <div class="mt-20 text-center">
-                <a href="#"
-                    class="group relative inline-flex items-center gap-4 px-12 py-5 rounded-full overflow-hidden">
-                    <!-- Background with Gradient -->
-                    <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
-                    <span
-                        class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-
-                    <!-- Content -->
-                    <span class="relative text-black font-bold text-lg">Explore All Features</span>
-                    <span
-                        class="relative w-10 h-10 rounded-full bg-black/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span class="text-white text-xl group-hover:translate-x-1 transition-transform">→</span>
-                    </span>
-
-                    <!-- Shine Effect -->
-                    <span
-                        class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-12"></span>
-                </a>
-            </div>
-
-            <!-- Bottom Stats Bar with Premium Design -->
-            <div class="mt-20 relative">
-                <!-- Decorative Line -->
-                <div
-                    class="absolute left-1/2 -translate-x-1/2 -top-10 w-px h-20 bg-linear-to-b from-transparent via-yellow-500/50 to-transparent">
-                </div>
-
-                <div
-                    class="grid grid-cols-2 md:grid-cols-4 gap-6 p-10 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/20">
-
-                    <!-- Background Shine -->
-                    <div
-                        class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1500 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12">
-                    </div>
-
-                    <!-- Stat 1 -->
-                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                            10+</div>
-                        <div
-                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
-                            Years Excellence</div>
-                    </div>
-
-                    <!-- Stat 2 -->
-                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                            50K+</div>
-                        <div
-                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
-                            Active Learners</div>
-                    </div>
-
-                    <!-- Stat 3 -->
-                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                            95%</div>
-                        <div
-                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
-                            Success Rate</div>
-                    </div>
-
-                    <!-- Stat 4 -->
-                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
-                        <div
-                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                            24/7</div>
-                        <div
-                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
-                            Dedicated Support</div>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <style>
@@ -833,12 +762,8 @@
         </style>
     </section>
 
-
-
-
-
     <!-- Popular Courses Section - Ultra Premium -->
-    <section class="relative py-32 px-4 bg-black overflow-hidden">
+    <section class="relative py-25 bg-black/96 overflow-hidden">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -1504,7 +1429,7 @@
 
             <!-- View All Courses Button with Premium Effects -->
             <div class="text-center mt-16">
-                <a href="#"
+                <a href="{{ route('web.courses') }}"
                     class="group relative inline-flex items-center gap-4 px-10 py-5 rounded-full overflow-hidden">
                     <!-- Background with Gradient -->
                     <span
@@ -1528,39 +1453,6 @@
                 </a>
             </div>
 
-            <!-- Bottom Stats Row -->
-            <div class="mt-20 grid grid-cols-3 md:grid-cols-5 gap-4">
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        500+</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Total Courses</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        50K+</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Enrollments</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        150+</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Mentors</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        4.9</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Avg Rating</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        24/7</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Support</div>
-                </div>
-            </div>
         </div>
 
         <style>
@@ -1638,9 +1530,8 @@
         </style>
     </section>
 
-
     <!-- About Section - Premium -->
-    <section class="py-24 px-4 bg-linear-to-b from-black to-[#0a0a0a]">
+    <section class="py-25 bg-linear-to-b from-black to-[#0a0a0a]">
         <div class="container mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Left - Image -->
@@ -1731,13 +1622,8 @@
         </div>
     </section>
 
-
-
-
-
-
     <!-- Testimonials Section - Ultra Premium -->
-    <section class="relative py-32 px-4 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
+    <section class="relative py-25 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -2180,31 +2066,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Trust Indicators -->
-            <div class="mt-20">
-                <!-- Company Logos / Trusted By -->
-                <div class="text-center mb-10">
-                    <p class="text-gray-500 text-sm uppercase tracking-wider mb-6">Trusted by students from</p>
-                    <div class="flex flex-wrap justify-center items-center gap-8 opacity-50">
-                        <span class="text-white text-2xl font-bold">Google</span>
-                        <span class="text-white text-2xl font-bold">Microsoft</span>
-                        <span class="text-white text-2xl font-bold">Amazon</span>
-                        <span class="text-white text-2xl font-bold">Meta</span>
-                        <span class="text-white text-2xl font-bold">Adobe</span>
-                        <span class="text-white text-2xl font-bold">OpenAI</span>
-                    </div>
-                </div>
-
-                <!-- Navigation Dots -->
-                <div class="flex justify-center items-center gap-3 mt-12">
-                    <button class="w-3 h-3 rounded-full bg-yellow-500 ring-4 ring-yellow-500/30"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
-                </div>
-            </div>
         </div>
 
         <style>
@@ -2282,13 +2143,8 @@
         </style>
     </section>
 
-
-
-
-
-
     <!-- CTA Section - Ultra Premium Conversion Optimized -->
-    <section class="relative py-32 px-4 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
+    <section class="relative py-25 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -2325,9 +2181,9 @@
             </div>
         </div>
 
-        <div class="container mx-auto">
+        <div class="">
             <!-- Main CTA Card -->
-            <div class="relative max-w-6xl mx-auto">
+            <div class="relative container  mx-auto">
                 <!-- Premium Glow Effect -->
                 <div
                     class="absolute -inset-1 bg-linear-to-r from-yellow-500 to-orange-500 rounded-3xl opacity-20 blur-2xl animate-pulse-slow">
@@ -2564,34 +2420,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Bottom Stats Row -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        50K+</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Active Students</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        500+</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Premium Courses</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        98%</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Success Rate</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        24/7</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Support</div>
-                </div>
-            </div>
         </div>
 
         <style>
@@ -2692,7 +2520,6 @@
             }
         </style>
     </section>
-
 
     <style>
         @keyframes float {

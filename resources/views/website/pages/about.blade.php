@@ -89,8 +89,7 @@
                                             <p class="text-2xl font-bold text-yellow-400">50K+</p>
                                         </div>
                                     </div>
-                                    <div
-                                        class="h-10 w-px bg-linear-to-b from-transparent via-yellow-500/50 to-transparent">
+                                    <div class="h-10 w-px bg-linear-to-b from-transparent via-yellow-500/50 to-transparent">
                                     </div>
                                     <div class="flex items-center space-x-3">
                                         <div class="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center">
@@ -182,7 +181,7 @@
 
                     <!-- CTA Buttons with Premium Effects -->
                     <div class="flex flex-wrap gap-5 pt-5">
-                        <a href="#"
+                        <a href="{{ route('web.courses') }}"
                             class="group relative px-8 py-4 rounded-2xl bg-linear-to-r from-yellow-400 to-orange-500 text-black font-semibold overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,170,0,0.5)]">
                             <span class="relative z-10 flex items-center space-x-2">
                                 <span>Explore Courses</span>
@@ -202,31 +201,61 @@
                 </div>
             </div>
 
-            <!-- Premium Stats Bar -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-24 pt-12 border-t border-white/10">
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl md:text-4xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        500+</div>
-                    <div class="text-gray-400 text-sm uppercase tracking-wider">Premium Courses</div>
+
+            <!-- Bottom Stats Bar with Premium Design -->
+            <div class="mt-20 relative">
+                <!-- Decorative Line -->
+                <div
+                    class="absolute left-1/2 -translate-x-1/2 -top-10 w-px h-20 bg-linear-to-b from-transparent via-yellow-500/50 to-transparent">
                 </div>
-                <div class="text-center group cursor-pointer">
+
+                <div
+                    class="grid grid-cols-2 md:grid-cols-4 gap-6 p-10 bg-linear-to-b from-white/10 to-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl relative overflow-hidden group hover:border-yellow-500/30 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-500/20">
+
+                    <!-- Background Shine -->
                     <div
-                        class="text-3xl md:text-4xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        50K+</div>
-                    <div class="text-gray-400 text-sm uppercase tracking-wider">Active Students</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl md:text-4xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        150+</div>
-                    <div class="text-gray-400 text-sm uppercase tracking-wider">Expert Mentors</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl md:text-4xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        98%</div>
-                    <div class="text-gray-400 text-sm uppercase tracking-wider">Success Rate</div>
+                        class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1500 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12">
+                    </div>
+
+                    <!-- Stat 1 -->
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
+                        <div
+                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                            10+</div>
+                        <div
+                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
+                            Years Excellence</div>
+                    </div>
+
+                    <!-- Stat 2 -->
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
+                        <div
+                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                            50K+</div>
+                        <div
+                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
+                            Active Learners</div>
+                    </div>
+
+                    <!-- Stat 3 -->
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
+                        <div
+                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                            95%</div>
+                        <div
+                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
+                            Success Rate</div>
+                    </div>
+
+                    <!-- Stat 4 -->
+                    <div class="text-center relative transform group/stat hover:scale-110 transition-all duration-300">
+                        <div
+                            class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
+                            24/7</div>
+                        <div
+                            class="text-gray-400 text-sm uppercase tracking-wider group-hover/stat:text-yellow-400 transition-colors">
+                            Dedicated Support</div>
+                    </div>
                 </div>
             </div>
         </div>
