@@ -49,7 +49,7 @@ Route::middleware('auth', 'prevent.back')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])
-        ->name('dashboard');
+        ->name('admin.dashboard');
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');
     Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('admin.users.edit');
@@ -57,7 +57,7 @@ Route::middleware('auth', 'prevent.back')->group(function () {
     Route::delete('/users/destroy/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
 
     //instructor
-    Route::get('/instructor', [InstructorController::class, 'index'])->name('admin.instructor');
+    Route::get('/instructor', [InstructorController::class, 'index'])->name('admin.instructors');
     Route::get('/instructor/create', [InstructorController::class, 'create'])->name('admin.instructor.create');
     Route::post('/instructor/store', [InstructorController::class, 'store'])->name('admin.instructor.store');
     Route::get('/instructor/edit/{instructor}', [InstructorController::class, 'edit'])->name('admin.instructor.edit');

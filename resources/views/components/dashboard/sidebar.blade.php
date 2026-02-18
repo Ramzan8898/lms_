@@ -1,5 +1,5 @@
 <!-- Ultra Premium Admin Sidebar -->
-<aside class="w-80 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-black border-r border-yellow-600/20 text-white hidden md:flex flex-col relative overflow-hidden backdrop-blur-xl">
+<aside class="w-80 bg-linear-to-b from-[#0a0a0a] via-[#0f0f0f] to-black border-r border-yellow-600/20 text-white hidden md:flex flex-col relative overflow-hidden backdrop-blur-xl">
 
     <!-- Advanced Background Effects -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -18,27 +18,27 @@
     <!-- Premium Logo Section with Enhanced Design -->
     <div class="relative flex flex-col items-center py-5 border-b border-yellow-600/20 group">
         <!-- Logo Glow Effect -->
-        <div class="absolute -inset-10 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+        <div class="absolute -inset-10 bg-linear-to-r from-yellow-500/10 to-orange-500/10 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
         <!-- Logo Container with Premium Effects -->
         <div class="relative mb-4 transform group-hover:scale-105 transition-all duration-700">
             <!-- Multi-layer Glow -->
-            <div class="absolute -inset-4 bg-gradient-to-r from-yellow-500/30 to-orange-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-700"></div>
-            <div class="absolute -inset-2 bg-gradient-to-r from-yellow-500/50 to-orange-500/50 rounded-full blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-700 delay-100"></div>
+            <div class="absolute -inset-4 bg-linear-to-r from-yellow-500/30 to-orange-500/30 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-700"></div>
+            <div class="absolute -inset-2 bg-linear-to-r from-yellow-500/50 to-orange-500/50 rounded-full blur-lg opacity-0 group-hover:opacity-40 transition-opacity duration-700 delay-100"></div>
 
             <!-- Logo Image -->
             <img src="/assets/logo/logo.png" alt="Logo" class="w-32 h-auto object-contain drop-shadow-[0_0_15px_rgba(255,215,0,0.3)] group-hover:drop-shadow-[0_0_30px_rgba(255,215,0,0.5)] transition-all duration-700 relative z-10">
         </div>
 
         <!-- Decorative Bottom Line -->
-        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-0.5 bg-linear-to-r from-transparent via-yellow-500 to-transparent"></div>
     </div>
 
     <!-- Premium Navigation -->
     <nav class="flex-1 px-5 py-8 space-y-2 text-sm font-medium relative z-10">
 
         <!-- Dashboard Link - Active when on dashboard -->
-        <a href="/dashboard"
+        <a href="{{ route('admin.dashboard') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500 overflow-hidden text-yellow-400 bg-white/5 [&.active]:text-yellow-400 [&.active]:bg-white/5"
             data-route="dashboard">
             <!-- Icon -->
@@ -49,11 +49,11 @@
             <!-- Active Indicator -->
             <span class="absolute right-3 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-ping"></span>
             <!-- Shine Effect -->
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
         </a>
 
         <!-- Users Link - Active when on users page -->
-        <a href="/users"
+        <a href="{{ route('admin.users') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500 overflow-hidden text-gray-400 hover:text-yellow-400 hover:bg-white/5 [&.active]:text-yellow-400 [&.active]:bg-white/5"
             data-route="users">
             <svg class="w-5 h-5 text-gray-500 group-hover:text-yellow-400 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -62,11 +62,11 @@
             <span class="flex-1 font-medium">Users</span>
             <!-- Badge -->
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">245</span>
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
         </a>
 
         <!-- Instructors Link - Active when on instructors page -->
-        <a href="/admin/instructors"
+        <a href="{{ route('admin.instructors') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500 overflow-hidden text-gray-400 hover:text-yellow-400 hover:bg-white/5 [&.active]:text-yellow-400 [&.active]:bg-white/5"
             data-route="instructors">
             <svg class="w-5 h-5 text-gray-500 group-hover:text-yellow-400 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -74,11 +74,11 @@
             </svg>
             <span class="flex-1 font-medium">Instructors</span>
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">18</span>
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
         </a>
 
         <!-- Courses Link - Active when on courses page -->
-        <a href="/admin/courses"
+        <a href="{{ route('admin.courses') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500 overflow-hidden text-gray-400 hover:text-yellow-400 hover:bg-white/5 [&.active]:text-yellow-400 [&.active]:bg-white/5"
             data-route="courses">
             <svg class="w-5 h-5 text-gray-500 group-hover:text-yellow-400 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,11 +86,11 @@
             </svg>
             <span class="flex-1 font-medium">Courses</span>
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">42</span>
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
         </a>
 
         <!-- Lessons Link - Active when on lessons page -->
-        <a href="/admin/lessons"
+        <a href="{{ route('admin.lessons') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500 overflow-hidden text-gray-400 hover:text-yellow-400 hover:bg-white/5 [&.active]:text-yellow-400 [&.active]:bg-white/5"
             data-route="lessons">
             <svg class="w-5 h-5 text-gray-500 group-hover:text-yellow-400 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,11 +98,11 @@
             </svg>
             <span class="flex-1 font-medium">Lessons</span>
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">156</span>
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
         </a>
 
         <!-- Students Link - Active when on students page -->
-        <a href="/admin/students"
+        <a href="{{ route('admin.students') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500 overflow-hidden text-gray-400 hover:text-yellow-400 hover:bg-white/5 [&.active]:text-yellow-400 [&.active]:bg-white/5"
             data-route="students">
             <svg class="w-5 h-5 text-gray-500 group-hover:text-yellow-400 transition-colors duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@
             </svg>
             <span class="flex-1 font-medium">Students</span>
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">2.1k</span>
-            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
+            <div class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/10 to-transparent skew-x-12"></div>
         </a>
 
         <!-- Divider -->
@@ -123,14 +123,14 @@
     <!-- Premium Logout Section -->
     <div class="relative p-6 border-t border-yellow-600/20 group">
         <!-- Background Effect -->
-        <div class="absolute inset-0 bg-gradient-to-t from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="absolute inset-0 bg-linear-to-t from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
         <!-- Logout Button -->
         <form action="/logout" method="POST">
             <button type="submit" class="group/btn relative w-full py-3.5 rounded-xl overflow-hidden border-2 border-yellow-500/30 hover:border-yellow-500 transition-all duration-500 cursor-pointer">
                 <!-- Background Effects -->
-                <span class="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
+                <span class="absolute inset-0 bg-linear-to-r from-yellow-500/10 to-orange-500/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
                 <!-- Glow Effect -->
-                <span class="absolute -inset-1 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-xl blur-lg opacity-0 group-hover/btn:opacity-30 transition-opacity duration-500"></span>
+                <span class="absolute -inset-1 bg-linear-to-r from-yellow-500 to-orange-500 rounded-xl blur-lg opacity-0 group-hover/btn:opacity-30 transition-opacity duration-500"></span>
                 <!-- Content -->
                 <span class="relative flex items-center justify-center gap-3 text-yellow-400 group-hover/btn:text-yellow-300 font-semibold text-sm tracking-wider">
                     <svg class="w-5 h-5 group-hover/btn:rotate-12 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,76 +139,13 @@
                     <span>Logout</span>
                 </span>
                 <!-- Shine Effect -->
-                <span class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></span>
+                <span class="absolute inset-0 -translate-x-full group-hover/btn:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12"></span>
             </button>
         </form>
 
         <!-- Version Info -->
         <p class="text-center text-gray-600 text-xs mt-4">v2.0.0</p>
     </div>
-
-    <!-- JavaScript for Active Tab -->
-    <script>
-        // Function to set active tab based on current URL
-        function setActiveTab() {
-            // Get current path
-            const currentPath = window.location.pathname;
-
-            // Get all sidebar links
-            const sidebarLinks = document.querySelectorAll('nav a[data-route]');
-
-            // Loop through links and check if href matches current path
-            sidebarLinks.forEach(link => {
-                const linkPath = link.getAttribute('href');
-
-                // Check if current path starts with link path (for nested routes)
-                if (currentPath === linkPath || currentPath.startsWith(linkPath + '/')) {
-                    // Remove active class from all links first
-                    sidebarLinks.forEach(l => {
-                        l.classList.remove('text-yellow-400', 'bg-white/5');
-                        // Reset icon and text color for inactive
-                        const icon = l.querySelector('svg');
-                        const text = l.querySelector('span.font-medium');
-                        if (icon) icon.classList.remove('text-yellow-400');
-                        if (text) text.classList.remove('text-yellow-400');
-
-                        // Add hover classes back
-                        l.classList.add('text-gray-400', 'hover:text-yellow-400', 'hover:bg-white/5');
-                    });
-
-                    // Add active classes to current link
-                    link.classList.add('text-yellow-400', 'bg-white/5');
-                    link.classList.remove('text-gray-400', 'hover:text-yellow-400', 'hover:bg-white/5');
-
-                    // Update icon color
-                    const activeIcon = link.querySelector('svg');
-                    const activeText = link.querySelector('span.font-medium');
-                    if (activeIcon) activeIcon.classList.add('text-yellow-400');
-                    if (activeText) activeText.classList.add('text-yellow-400');
-
-                    // Add active indicator (ping dot)
-                    const existingDot = link.querySelector('.absolute.right-3');
-                    if (!existingDot) {
-                        const dot = document.createElement('span');
-                        dot.className = 'absolute right-3 w-1.5 h-1.5 bg-yellow-400 rounded-full animate-ping';
-                        link.appendChild(dot);
-                    }
-                } else {
-                    // Remove any existing active indicator
-                    const dot = link.querySelector('.absolute.right-3');
-                    if (dot && dot.classList.contains('bg-yellow-400')) {
-                        dot.remove();
-                    }
-                }
-            });
-        }
-
-        // Run on page load
-        document.addEventListener('DOMContentLoaded', setActiveTab);
-
-        // Run on history change (for SPAs or pushState)
-        window.addEventListener('popstate', setActiveTab);
-    </script>
 
     <style>
         @keyframes float {
