@@ -1,7 +1,7 @@
 @extends('layouts.website')
 @section('content')
     <!-- Hero Section (Aapka wala, thoda enhanced) -->
-    <section class="relative bg-black overflow-hidden pt-20 pb-32">
+    <section class="relative bg-black overflow-hidden py-32">
         <div class="absolute inset-0 bg-linear-to-br from-black via-[#1a0f00] to-black"></div>
         <div class="absolute right-0 top-1/3 w-150 h-150 bg-yellow-600/10 blur-[150px] rounded-full animate-pulse-slow">
         </div>
@@ -65,7 +65,7 @@
                     </div>
 
                     <div class="flex flex-wrap gap-6">
-                        <a href="#"
+                        <a href="{{ route('web.register') }}"
                             class="group relative px-8 py-4 rounded-full font-semibold bg-linear-to-r from-yellow-400 to-orange-500 text-black transition-all duration-500 hover:scale-105 hover:shadow-[0_0_40px_rgba(255,170,0,0.5)] flex items-center space-x-2 overflow-hidden">
                             <span class="relative z-10">Get Started</span>
                             <span class="relative z-10 text-xl group-hover:translate-x-1 transition-transform">→</span>
@@ -120,7 +120,7 @@
     </section>
 
     <!-- Why Choose Us Section - Ultra Premium -->
-    <section class="relative py-40 px-4 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
+    <section class="relative py-25 bg-black/90 overflow-hidden">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -166,7 +166,7 @@
         <div class="relative container mx-auto z-10">
 
             <!-- Section Heading with Premium Enhancements -->
-            <div class="text-center mb-24">
+            <div class="text-center mb-8">
                 <!-- Animated Badge -->
                 <div
                     class="inline-flex items-center gap-3 bg-linear-to-r from-yellow-500/20 to-orange-500/20 backdrop-blur-xl border border-yellow-500/30 rounded-full px-6 py-3 mb-8 relative group cursor-pointer hover:border-yellow-400 transition-all duration-500">
@@ -210,7 +210,7 @@
                 </h2>
 
                 <!-- Enhanced Description with Stats -->
-                <p class="text-gray-400 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed relative mb-12">
+                <p class="text-gray-400 max-w-4xl mx-auto text-lg md:text-xl leading-relaxed relative mb-6">
                     <span class="absolute -left-8 top-0 text-6xl text-yellow-500/20 font-serif">"</span>
                     <span class="relative z-10">
                         We don't just teach, we transform careers with
@@ -638,28 +638,6 @@
                 </div>
             </div>
 
-            <!-- Call to Action Banner -->
-            <div class="mt-20 text-center">
-                <a href="#"
-                    class="group relative inline-flex items-center gap-4 px-12 py-5 rounded-full overflow-hidden">
-                    <!-- Background with Gradient -->
-                    <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
-                    <span
-                        class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-
-                    <!-- Content -->
-                    <span class="relative text-black font-bold text-lg">Explore All Features</span>
-                    <span
-                        class="relative w-10 h-10 rounded-full bg-black/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                        <span class="text-white text-xl group-hover:translate-x-1 transition-transform">→</span>
-                    </span>
-
-                    <!-- Shine Effect -->
-                    <span
-                        class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/30 to-transparent skew-x-12"></span>
-                </a>
-            </div>
-
             <!-- Bottom Stats Bar with Premium Design -->
             <div class="mt-20 relative">
                 <!-- Decorative Line -->
@@ -833,12 +811,8 @@
         </style>
     </section>
 
-
-
-
-
     <!-- Popular Courses Section - Ultra Premium -->
-    <section class="relative py-32 px-4 bg-black overflow-hidden">
+    <section class="relative py-25 bg-black overflow-hidden">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -1504,7 +1478,7 @@
 
             <!-- View All Courses Button with Premium Effects -->
             <div class="text-center mt-16">
-                <a href="#"
+                <a href="{{ route('web.courses') }}"
                     class="group relative inline-flex items-center gap-4 px-10 py-5 rounded-full overflow-hidden">
                     <!-- Background with Gradient -->
                     <span
@@ -1526,40 +1500,6 @@
                     <span
                         class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12"></span>
                 </a>
-            </div>
-
-            <!-- Bottom Stats Row -->
-            <div class="mt-20 grid grid-cols-3 md:grid-cols-5 gap-4">
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        500+</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Total Courses</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        50K+</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Enrollments</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        150+</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Mentors</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        4.9</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Avg Rating</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-1">
-                        24/7</div>
-                    <div class="text-gray-500 text-xs uppercase tracking-wider">Support</div>
-                </div>
             </div>
         </div>
 
@@ -1638,9 +1578,8 @@
         </style>
     </section>
 
-
     <!-- About Section - Premium -->
-    <section class="py-24 px-4 bg-linear-to-b from-black to-[#0a0a0a]">
+    <section class="py-25 bg-black/95">
         <div class="container mx-auto">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <!-- Left - Image -->
@@ -1722,7 +1661,7 @@
                         </div>
                     </div>
 
-                    <a href="#"
+                    <a href="{{ route('web.about') }}"
                         class="inline-flex items-center gap-3 px-8 py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-full hover:scale-105 transition-all duration-500 hover:shadow-[0_0_40px_rgba(255,170,0,0.5)]">
                         Learn More About Us <span>→</span>
                     </a>
@@ -1731,13 +1670,8 @@
         </div>
     </section>
 
-
-
-
-
-
     <!-- Testimonials Section - Ultra Premium -->
-    <section class="relative py-32 px-4 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
+    <section class="relative py-25 bg-black">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -1974,20 +1908,6 @@
 
                         <div class="absolute top-6 right-6 text-6xl text-yellow-500/20 font-serif">"</div>
 
-                        <!-- Video Testimonial Thumbnail -->
-                        <div class="relative mb-6 rounded-xl overflow-hidden cursor-pointer group/video">
-                            <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                class="w-full h-32 object-cover group-hover/video:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-black/50 flex items-center justify-center">
-                                <div
-                                    class="w-12 h-12 rounded-full bg-linear-to-r from-yellow-500 to-orange-500 flex items-center justify-center group-hover/video:scale-110 transition-transform duration-300">
-                                    <span class="text-black text-2xl">▶</span>
-                                </div>
-                            </div>
-                            <span
-                                class="absolute bottom-2 right-2 px-2 py-1 bg-black/60 text-white text-xs rounded">2:34</span>
-                        </div>
-
                         <div class="flex items-start gap-4 mb-6">
                             <div class="relative">
                                 <img src="https://randomuser.me/api/portraits/men/32.jpg"
@@ -2113,31 +2033,6 @@
                                 designer at Adobe!"
                             </p>
 
-                            <!-- Portfolio Preview -->
-                            <div class="grid grid-cols-3 gap-2 mt-4 mb-4">
-                                <div class="relative rounded-lg overflow-hidden group/portfolio">
-                                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                        class="w-full h-16 object-cover">
-                                    <div
-                                        class="absolute inset-0 bg-linear-to-r from-yellow-500/50 to-orange-500/50 opacity-0 group-hover/portfolio:opacity-100 transition-opacity">
-                                    </div>
-                                </div>
-                                <div class="relative rounded-lg overflow-hidden group/portfolio">
-                                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                        class="w-full h-16 object-cover">
-                                    <div
-                                        class="absolute inset-0 bg-linear-to-r from-yellow-500/50 to-orange-500/50 opacity-0 group-hover/portfolio:opacity-100 transition-opacity">
-                                    </div>
-                                </div>
-                                <div class="relative rounded-lg overflow-hidden group/portfolio">
-                                    <img src="https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                                        class="w-full h-16 object-cover">
-                                    <div
-                                        class="absolute inset-0 bg-linear-to-r from-yellow-500/50 to-orange-500/50 opacity-0 group-hover/portfolio:opacity-100 transition-opacity">
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="flex flex-wrap gap-2 mt-2">
                                 <span
                                     class="px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-400 text-xs">🎨
@@ -2178,31 +2073,6 @@
                             </span>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Trust Indicators -->
-            <div class="mt-20">
-                <!-- Company Logos / Trusted By -->
-                <div class="text-center mb-10">
-                    <p class="text-gray-500 text-sm uppercase tracking-wider mb-6">Trusted by students from</p>
-                    <div class="flex flex-wrap justify-center items-center gap-8 opacity-50">
-                        <span class="text-white text-2xl font-bold">Google</span>
-                        <span class="text-white text-2xl font-bold">Microsoft</span>
-                        <span class="text-white text-2xl font-bold">Amazon</span>
-                        <span class="text-white text-2xl font-bold">Meta</span>
-                        <span class="text-white text-2xl font-bold">Adobe</span>
-                        <span class="text-white text-2xl font-bold">OpenAI</span>
-                    </div>
-                </div>
-
-                <!-- Navigation Dots -->
-                <div class="flex justify-center items-center gap-3 mt-12">
-                    <button class="w-3 h-3 rounded-full bg-yellow-500 ring-4 ring-yellow-500/30"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
-                    <button class="w-2 h-2 rounded-full bg-white/30 hover:bg-yellow-500/50 transition-colors"></button>
                 </div>
             </div>
         </div>
@@ -2282,13 +2152,8 @@
         </style>
     </section>
 
-
-
-
-
-
     <!-- CTA Section - Ultra Premium Conversion Optimized -->
-    <section class="relative py-32 px-4 bg-linear-to-b from-black via-[#0a0a0a] to-black overflow-hidden">
+    <section class="relative py-32 px-4 bg-black/95">
 
         <!-- Advanced Background Effects -->
         <div class="absolute inset-0">
@@ -2327,7 +2192,7 @@
 
         <div class="container mx-auto">
             <!-- Main CTA Card -->
-            <div class="relative max-w-6xl mx-auto">
+            <div class="relative container mx-auto">
                 <!-- Premium Glow Effect -->
                 <div
                     class="absolute -inset-1 bg-linear-to-r from-yellow-500 to-orange-500 rounded-3xl opacity-20 blur-2xl animate-pulse-slow">
@@ -2444,7 +2309,8 @@
                         <!-- CTA Buttons with Enhanced Design -->
                         <div class="flex flex-wrap gap-6 justify-center mb-12">
                             <!-- Primary CTA -->
-                            <a href="#" class="group relative px-10 py-5 rounded-full overflow-hidden">
+                            <a href="{{ route('web.register') }}"
+                                class="group relative px-10 py-5 rounded-full overflow-hidden">
                                 <!-- Background with Gradient -->
                                 <span class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-500"></span>
                                 <span
@@ -2470,13 +2336,13 @@
                             </a>
 
                             <!-- Secondary CTA -->
-                            <a href="#"
+                            <a href="{{ route('web.contact') }}"
                                 class="group relative px-10 py-5 rounded-full overflow-hidden border-2 border-yellow-500/30 hover:border-yellow-500 transition-all duration-500">
                                 <span
                                     class="absolute inset-0 bg-linear-to-r from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                                 <span
                                     class="relative text-yellow-400 group-hover:text-yellow-300 font-bold text-lg flex items-center gap-3">
-                                    <span>Contact Sales</span>
+                                    <span>Contact Now</span>
                                     <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none"
                                         stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
@@ -2562,34 +2428,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <!-- Bottom Stats Row -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        50K+</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Active Students</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        500+</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Premium Courses</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        98%</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Success Rate</div>
-                </div>
-                <div class="text-center group cursor-pointer">
-                    <div
-                        class="text-3xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-2">
-                        24/7</div>
-                    <div class="text-gray-500 text-sm uppercase tracking-wider">Support</div>
                 </div>
             </div>
         </div>
