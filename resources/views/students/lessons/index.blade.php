@@ -104,7 +104,7 @@
                 </div>
 
                 <!-- Enroll Button -->
-                <form action="#" method="POST">
+                <form action="{{route('student.enroll', $course->id)}}" method="POST">
                     @csrf
                     <button type="submit"
                         class="px-5 py-2.5 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all flex items-center gap-2">

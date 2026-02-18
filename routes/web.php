@@ -83,4 +83,5 @@ Route::middleware('auth')->group(function () {
     Route::delete('/students/destroy/{student}', [StudentController::class, 'destroy'])->name('admin.students.destroy');
 
     Route::get('/studentsLessons', [CourseController::class, 'ShowAllLessons'])->name('admin.students.lessons');
+    Route::post('/courses/{course}/enroll', [CourseController::class, 'enroll'])->name('student.enroll');
 });

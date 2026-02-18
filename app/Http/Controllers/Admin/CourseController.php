@@ -29,6 +29,13 @@ class CourseController extends Controller
         return view('admin.courses.create', compact('instructors'));
     }
 
+
+    public function enroll(Course $course)
+    {
+        $course = Course::with('lessons',)->find($course->id);       
+        return view('students.lessons.enroll',compact('course'));
+    }
+
     public function store(Request $request)
     {
         $request->validate([
