@@ -8,6 +8,8 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>{{ config('app.name') }} | Login</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/logo/logo.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>

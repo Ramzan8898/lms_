@@ -7,7 +7,10 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
+
     <title>{{ config('app.name', 'Laravel') }} - Modern Learning Platform</title>
+    <link rel="icon" type="image/png" href="{{ asset('assets/logo/logo.png') }}">
+    <link rel="shortcut icon" href="{{ asset('assets/logo/logo.png') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
