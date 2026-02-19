@@ -17,7 +17,7 @@
     @csrf
     @method('PUT')
 
-    <div class="space-y-4 bg-white p-6 rounded shadow">
+    <div class="space-y-4 p-6 ">
 
         <div>
             <label class="label">Name</label>

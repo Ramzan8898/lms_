@@ -161,7 +161,7 @@
 
             <!-- Dropdown Menu -->
             <div
-                class="absolute top-full right-0 mt-4 w-64 opacity-0 invisible group-hover/profile:opacity-100 group-hover/profile:visible transition-all duration-500 transform group-hover/profile:translate-y-0 translate-y-2 z-99">
+                class="absolute top-full right-0 mt-4 w-64 opacity-0 invisible group-hover/profile:opacity-100 group-hover/profile:visible transition-all duration-500 transform group-hover/profile:translate-y-0 translate-y-2 z-9999">
                 <div
                     class="relative bg-linear-to-b from-gray-900/95 to-black/95 backdrop-blur-2xl border border-yellow-500/20 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/10">
 
@@ -171,7 +171,7 @@
                     <!-- Menu Items -->
                     <div class="relative p-3">
                         <!-- Profile -->
-                        <a href="#"
+                        <a href="{{ route('admin.profile') }}"
                             class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-xl transition-all duration-300 group/item">
                             <svg class="w-5 h-5 text-gray-500 group-hover/item:text-yellow-400 transition-colors"
                                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -181,38 +181,16 @@
                             <span class="flex-1">My Profile</span>
                         </a>
 
-                        <!-- Settings -->
-                        <a href="#"
-                            class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-xl transition-all duration-300 group/item">
-                            <svg class="w-5 h-5 text-gray-500 group-hover/item:text-yellow-400 transition-colors"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
-                                    d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z">
-                                </path>
-                            </svg>
-                            <span class="flex-1">Account Settings</span>
-                        </a>
-
-                        <!-- Activity Log -->
-                        <a href="#"
-                            class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-yellow-400 hover:bg-white/5 rounded-xl transition-all duration-300 group/item">
-                            <svg class="w-5 h-5 text-gray-500 group-hover/item:text-yellow-400 transition-colors"
-                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
-                                    d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2">
-                                </path>
-                            </svg>
-                            <span class="flex-1">Activity Log</span>
-                        </a>
+                     
 
                         <!-- Divider -->
                         <div class="my-2 border-t border-white/10"></div>
 
                         <!-- Logout -->
-                        <form method="POST" action="#" class="block">
+                        <form method="POST" action="{{ route('auth.logout') }}" class="block">
                             @csrf
                             <button type="submit"
-                                class="w-full flex items-center gap-3 px-4 py-3 text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-all duration-300 group/item">
+                                class="w-full flex items-center gap-3 px-4 py-3 cursor-pointer text-red-400 hover:text-red-300 hover:bg-red-500/10 rounded-xl transition-all duration-300 group/item">
                                 <svg class="w-5 h-5 group-hover/item:rotate-12 transition-transform" fill="none"
                                     stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"

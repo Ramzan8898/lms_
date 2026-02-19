@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\LessonController;
+use App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
@@ -50,6 +51,9 @@ Route::middleware('auth', 'prevent.back')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('admin.dashboard');
+
+        //profile
+    Route::get('/profile', [Profile::class, 'index'])->name('admin.profile');
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');
     Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('admin.users.edit');
