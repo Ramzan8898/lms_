@@ -180,6 +180,11 @@ class DashboardController extends Controller
         ));
     }
 
+    public function studentDashboard()
+    {
+        return view('admin.students.dashboard');
+    }
+
     private function getInitials($name)
     {
         $words = explode(' ', $name);

@@ -45,7 +45,7 @@ Route::middleware('guest')->group(function () {
         return view('auth.login');
     })->name('login');
 
-    Route::post('/login', [AuthController::class, 'store'])->name('auth.login');
+    Route::post('/login', [AuthController::class, 'login'])->name('auth.login');
 });
 
 /* 🔒 Protected Routes */
@@ -54,6 +54,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('admin.dashboard');
+    Route::get('/student/dashboard', [DashboardController::class, 'studentDashboard'])
+        ->name('student.dashboard');
 
     //profile
     Route::get('/profile', [Profile::class, 'index'])->name('admin.profile');
@@ -71,7 +73,6 @@ Route::middleware('auth')->group(function () {
     Route::put('/instructor/update/{instructor}', [InstructorController::class, 'update'])->name('admin.instructor.update');
     Route::delete('/instructor/destroy/{instructor}', [InstructorController::class, 'destroy'])->name('admin.instructor.destroy');
 
-
     //courses
     Route::get('/courses', [CourseController::class, 'index'])->name('admin.courses');
     Route::get('/courses/create', [CourseController::class, 'create'])->name('admin.courses.create');
@@ -81,7 +82,6 @@ Route::middleware('auth')->group(function () {
     Route::delete('/courses/destroy/{course}', [CourseController::class, 'destroy'])->name('admin.courses.destroy');
 
     //lessons
-
     Route::get('/lessons', [LessonController::class, 'index'])->name('admin.lessons');
     Route::get('/lessons/create', [LessonController::class, 'create'])->name('admin.lessons.create');
     Route::post('/lessons/store', [LessonController::class, 'store'])->name('admin.lessons.store');

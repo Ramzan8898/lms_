@@ -28,23 +28,43 @@ class AuthController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function login(Request $request)
     {
+        // 1️⃣ Validate input
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
+        // 2️⃣ Attempt login
+        if (!Auth::attempt($credentials)) {
+            return back()->withErrors([
+                'email' => 'Invalid credentials',
+            ])->onlyInput('email');
+        }
+
+        // 3️⃣ Regenerate session (security best practice)
+        $request->session()->regenerate();
+
+        // 4️⃣ Get authenticated user
+        $user = Auth::user();
+
+        // 5️⃣ Role-based redirect
+        if ($user->hasRole('admin')) {
             return redirect()->route('admin.dashboard');
         }
 
+        if ($user->hasRole('student')) {
+            return redirect()->route('student.dashboard');
+        }
 
-        return back()->withErrors([
-            'email' => 'Invalid credentials',
-        ])->onlyInput('email');
+        // 6️⃣ Fallback (if role missing)
+        Auth::logout();
+
+        return redirect()->route('login')
+            ->withErrors(['email' => 'Role not assigned properly.']);
     }
+
 
     /**
      * Display the specified resource.
@@ -94,7 +114,7 @@ class AuthController extends Controller
 
         $user->assignRole('student');
 
-        return redirect()->route('web.login')->with('success', 'Registration successful. Please log in.');
+        return redirect()->route('login')->with('success', 'Registration successful. Please log in.');
     }
 
     public function logout(Request $request)
@@ -104,6 +124,6 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         // Redirect with cache control headers
-        return redirect()->route('web.login');
+        return redirect()->route('login');
     }
 }
