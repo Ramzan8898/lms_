@@ -48,6 +48,9 @@ Route::middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'store'])->name('auth.login');
 });
 
+
+
+
 /* 🔒 Protected Routes */
 Route::middleware('auth')->group(function () {
 
