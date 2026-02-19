@@ -18,7 +18,6 @@
         <source src="{{ asset('assets/images/background.mp4') }}" type="video/mp4">
     </video>
 
-
     <div class="w-full rounded-2xl container">
         @yield('content')
     </div>
