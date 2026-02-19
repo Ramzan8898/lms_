@@ -22,27 +22,6 @@
     <div class="w-full rounded-2xl container">
         @yield('content')
     </div>
-
-    <script type="text/javascript">
-        // Prevent back button after logout
-        (function() {
-            window.history.forward();
-
-            window.onload = function() {
-                setTimeout(function() {
-                    window.history.forward();
-                }, 0);
-            };
-
-            window.onpageshow = function(evt) {
-                if (evt.persisted) {
-                    setTimeout(function() {
-                        window.history.forward();
-                    }, 0);
-                }
-            };
-        })();
-    </script>
 </body>
 
 

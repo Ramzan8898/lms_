@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Students\StudentLessons;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -33,26 +34,31 @@ Route::prefix('lms')->group(function () {
     Route::get('/register', function () {
         return view('auth.register');
     })->name('web.register');
-
-    Route::get('/login', function () {
-        return view('auth.login');
-    })->name('web.login');
 });
 
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
-Route::post('/login', [AuthController::class, 'store'])->name('auth.login');
+Route::middleware('guest')->group(function () {
+    Route::get('/login', function () {
+        if (Auth::check()) {
+            return redirect()->route('admin.dashboard');
+        }
+        return view('auth.login');
+    })->name('login');
+
+    Route::post('/login', [AuthController::class, 'store'])->name('auth.login');
+});
 
 
 
 
 /* 🔒 Protected Routes */
-Route::middleware('auth', 'prevent.back')->group(function () {
+Route::middleware('auth')->group(function () {
 
     Route::post('/logout', [AuthController::class, 'logout'])->name('auth.logout');
     Route::get('/dashboard', [DashboardController::class, 'index'])
         ->name('admin.dashboard');
 
-        //profile
+    //profile
     Route::get('/profile', [Profile::class, 'index'])->name('admin.profile');
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');

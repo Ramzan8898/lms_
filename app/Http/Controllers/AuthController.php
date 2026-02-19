@@ -104,11 +104,6 @@ class AuthController extends Controller
         $request->session()->regenerateToken();
 
         // Redirect with cache control headers
-        return redirect()->route('web.login')
-            ->withHeaders([
-                'Cache-Control' => 'no-cache, no-store, must-revalidate, max-age=0, private',
-                'Pragma' => 'no-cache',
-                'Expires' => 'Fri, 01 Jan 1990 00:00:00 GMT',
-            ]);
+        return redirect()->route('web.login');
     }
 }

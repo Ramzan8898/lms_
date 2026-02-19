@@ -1,18 +1,18 @@
 <!-- Ultra Premium Admin Sidebar -->
-<aside class="w-80 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-black border-r border-yellow-600/20 text-white hidden md:flex flex-col min-h-screen">
+<aside class="w-80 bg-linear-to-b from-[#0a0a0a] via-[#0f0f0f] to-black border-r border-yellow-600/20 text-white hidden md:flex flex-col min-h-screen">
 
     <!-- Logo Section -->
     <div class="flex flex-col items-center py-6 border-b border-yellow-600/20 group">
 
         <div class="relative mb-4 transition-all duration-500 group-hover:scale-105">
 
-            <div class="absolute -inset-3 bg-gradient-to-r from-yellow-500/40 to-orange-500/40 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition duration-500"></div>
+            <div class="absolute -inset-3 bg-linear-to-r from-yellow-500/40 to-orange-500/40 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition duration-500"></div>
 
             <img src="/assets/logo/logo.png"
                 class="w-32 relative z-10 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(255,215,0,0.6)] transition-all duration-500">
         </div>
 
-        <div class="w-16 h-0.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent"></div>
+        <div class="w-16 h-0.5 bg-linear-to-r from-transparent via-yellow-500 to-transparent"></div>
     </div>
 
 
@@ -202,7 +202,7 @@
                        border-2 border-yellow-500/30 hover:border-yellow-500
                        transition-all duration-500">
 
-                <span class="absolute inset-0 bg-gradient-to-r from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></span>
+                <span class="absolute inset-0 bg-linear-to-r from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition duration-500"></span>
 
                 <span class="relative flex items-center justify-center gap-3 text-yellow-400 font-semibold tracking-wider text-sm
                              group-hover:text-yellow-300 transition">
@@ -217,7 +217,7 @@
                 </span>
 
                 <span class="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000
-                             bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12"></span>
+                             bg-linear-to-r from-transparent via-white/20 to-transparent skew-x-12"></span>
             </button>
         </form>
 
