@@ -2,13 +2,13 @@
 
 @section('content')
 
-<h1 class="text-2xl font-bold mb-6">Edit Student</h1>
+<h1 class="text-2xl font-bold mb-6 text-white">Edit Student</h1>
 
 <form action="{{route('admin.students.update',$student->id)}}" method="POST" enctype="multipart/form-data">
     @csrf
     @method('PUT')
 
-    <div class="grid grid-cols-2 gap-6 bg-white p-6 rounded shadow">
+    <div class="grid grid-cols-2 gap-6  p-6">
         <div>
             <label for="name" class="label">Name</label>
             <input type="text" name="name" value="{{ $student->user->name }}" class="input">

@@ -4,9 +4,9 @@
 
 <div class="flex items-center justify-between mb-6">
     <div>
-        <h1 class="text-2xl font-bold">Edit Instructor</h1>
+        <h1 class="text-2xl font-bold text-white">Edit Instructor</h1>
         <x-dashboard.breadcrumbs :items="[
-            ['label' => 'Instructors', 'url' => route('admin.instructor')],
+            ['label' => 'Instructors', 'url' => route('admin.instructors')],
             ['label' => 'Edit']
         ]" />
     </div>
@@ -30,7 +30,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
         {{-- LEFT SIDE --}}
-        <div class="space-y-5 bg-white p-6 rounded-xl shadow">
+        <div class="space-y-5  p-6 ">
 
             <div>
                 <label class="label">Full Name</label>
@@ -73,7 +73,7 @@
         </div>
 
         {{-- RIGHT SIDE --}}
-        <div class="space-y-5 bg-white p-6 rounded-xl shadow">
+        <div class="space-y-5 p-6 ">
 
             <div>
                 <label class="label">Current Avatar</label><br>

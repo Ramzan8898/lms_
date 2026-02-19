@@ -6,7 +6,7 @@
 {{-- Header + Breadcrumbs --}}
 <div class="flex items-center justify-between ">
     <div>
-        <h1 class="text-2xl font-bold">Create Course</h1>
+        <h1 class="text-2xl font-bold text-white">Create Lesson</h1>
 
         <x-dashboard.breadcrumbs :items="[
             ['label' => 'lesson', 'url' => route('admin.lessons.create')],

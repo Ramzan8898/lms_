@@ -10,10 +10,10 @@
 {{-- Header + Breadcrumbs --}}
 <div class="flex items-center justify-between ">
     <div>
-        <h1 class="text-2xl font-bold">Create Instructor</h1>
+        <h1 class="text-2xl font-bold text-white">Create Instructor</h1>
 
         <x-dashboard.breadcrumbs :items="[
-            ['label' => 'Instructors', 'url' => route('admin.instructor')],
+            ['label' => 'Instructors', 'url' => route('admin.instructors')],
             ['label' => 'Create']
         ]" />
     </div>
@@ -27,7 +27,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             {{-- LEFT SIDE --}}
-            <div class="space-y-5 bg-white p-6 rounded-xl shadow">
+            <div class="space-y-5  p-6 ">
 
                 {{-- Basic Info --}}
                 <div>
@@ -76,7 +76,7 @@
             </div>
 
             {{-- RIGHT SIDE --}}
-            <div class="space-y-5 bg-white p-6 rounded-xl shadow">
+            <div class="space-y-5  p-6 ">
 
                 <div>
                     <label class="label">Avatar</label>

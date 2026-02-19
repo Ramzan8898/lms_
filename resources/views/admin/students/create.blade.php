@@ -4,7 +4,7 @@
 
 <div class="flex items-center justify-between ">
     <div>
-        <h1 class="text-2xl font-bold">Create Students</h1>
+        <h1 class="text-2xl font-bold text-white">Create Students</h1>
 
         <x-dashboard.breadcrumbs :items="[
             ['label' => 'Students', 'url' => route('admin.students')],
@@ -15,7 +15,7 @@
 <form action="{{route('admin.students.store')}}" method="POST" enctype="multipart/form-data">
     @csrf
 
-    <div class="grid grid-cols-2 gap-6 bg-white p-6 rounded shadow">
+    <div class="grid grid-cols-2 gap-6  p-6 ">
 
         <div>
             <label for="name" class="label"> Name </label>

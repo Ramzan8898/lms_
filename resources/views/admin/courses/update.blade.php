@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1 class="text-2xl font-bold mb-6">Edit Course</h1>
+<h1 class="text-2xl font-bold mb-6 text-white">Edit Course</h1>
 
 <form action="{{ route('admin.courses.update', $course->id) }}"
     method="POST"

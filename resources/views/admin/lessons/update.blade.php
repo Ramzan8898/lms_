@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="flex items-center justify-between mb-6">
-    <div>
-        <h1 class="text-2xl font-bold">Edit Lesson</h1>
+    <div> 
+        <h1 class="text-2xl font-bold text-white">Edit Lesson</h1>
         <x-dashboard.breadcrumbs :items="[
             ['label' => 'Lessons', 'url' => route('admin.lessons')],
             ['label' => 'Edit']

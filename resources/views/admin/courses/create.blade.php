@@ -6,7 +6,7 @@
 {{-- Header + Breadcrumbs --}}
 <div class="flex items-center justify-between ">
     <div>
-        <h1 class="text-2xl font-bold">Create Course</h1>
+        <h1 class="text-2xl font-bold text-white">Create Course</h1>
 
         <x-dashboard.breadcrumbs :items="[
             ['label' => 'Course', 'url' => route('admin.courses.create')],
@@ -22,9 +22,9 @@
 
         <div>
 
-            <div class="flex flex-row w-full gap-4">
-                <div class="w-full">
-                    <label class="label">Course Title</label>
+            <div class="flex flex-row w-full gap-4 text-white">
+                <div class="w-full text-white">
+                    <label class="label text-white">Course Title</label>
                     <input type="text"
                         name="title"
                         id="title"
