@@ -5,7 +5,7 @@
 
         {{-- Home --}}
         <li>
-            <a href="{{ route('dashboard') }}"
+            <a href="{{ route('admin.dashboard') }}"
                 class="hover:underline text-(--primary) font-medium">
                 Dashboard
             </a>

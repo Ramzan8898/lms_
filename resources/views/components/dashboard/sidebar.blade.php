@@ -20,12 +20,12 @@
     <nav class="flex-1 px-5 py-8 space-y-2 text-sm font-medium">
 
         <!-- Dashboard -->
-        <a href="{{ route('dashboard') }}"
+        <a href="{{ route('admin.dashboard') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
-           {{ request()->routeIs('dashboard') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
+           {{ request()->routeIs('admin.dashboard') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
 
             <svg class="w-5 h-5 transition-colors duration-500
-                {{ request()->routeIs('dashboard') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                {{ request()->routeIs('admin.dashboard') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
                     d="M3 12l2-2 7-7 7 7 2 2M5 10v10h14V10" />
@@ -33,7 +33,7 @@
 
             <span class="flex-1">Dashboard</span>
 
-            @if(request()->routeIs('dashboard'))
+            @if(request()->routeIs('admin.dashboard'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
@@ -137,12 +137,12 @@
 
 
         <!-- //instructor -->
-        <a href="{{ route('admin.instructor') }}"
+        <a href="{{ route('admin.instructors') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
-           {{ request()->routeIs('admin.instructor') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
+           {{ request()->routeIs('admin.instructors') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
 
             <svg class="w-5 h-5 transition-colors duration-500
-                {{ request()->routeIs('admin.instructor') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                {{ request()->routeIs('admin.instructors') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
                     d="M12 4a4 4 0 100 8 4 4 0 000-8zm-7 16a7 7 0 0114 0" />
