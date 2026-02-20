@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [WebsiteController::class, 'index'])->name('welcome');
-Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
 
 
 Route::prefix('payment')->name('payment.')->group(function () {
@@ -43,6 +42,7 @@ Route::prefix('payments')->name('payments.')->group(function () {
 
 Route::prefix('lms')->group(function () {
     //courses Route Web Page
+    Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
     Route::get('/web-courses', function () {
         return view('website.pages.courses');
     })->name('web.courses');
