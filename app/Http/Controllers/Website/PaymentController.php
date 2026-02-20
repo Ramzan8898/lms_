@@ -55,7 +55,7 @@ class PaymentController extends Controller
         $sessionId = $request->get('session_id');
 
         if (!$sessionId) {
-            return redirect()->route('web.courses.show', $course->slug)->with('error', 'Invalid payment session');
+            return redirect()->route('website.pages.show', $course->slug)->with('error', 'Invalid payment session');
         }
 
         try {
@@ -78,21 +78,21 @@ class PaymentController extends Controller
                     ],
                 ]);
 
-                return redirect()->route('web.courses.show', $course->slug)
+                return redirect()->route('website.pages.show', $course->slug)
                     ->with('success', 'Congratulations! You have successfully enrolled in the course!');
             }
         } catch (\Exception $e) {
-            return redirect()->route('web.courses.show', $course->slug)
+            return redirect()->route('website.pages.show', $course->slug)
                 ->with('error', 'Payment verification failed: ' . $e->getMessage());
         }
 
-        return redirect()->route('web.courses.show', $course->slug)
+        return redirect()->route('website.pages.show', $course->slug)
             ->with('error', 'Payment was not successful. Please try again.');
     }
 
     public function cancel(Course $course)
     {
-        return redirect()->route('web.courses.show', $course->slug)
+        return redirect()->route('website.pages.show', $course->slug)
             ->with('info', 'Payment was cancelled. You can try again anytime.');
     }
 }

@@ -36,4 +36,6 @@ class WebsiteController extends Controller
 
         return view('website.pages.show', compact('course', 'relatedCourses'));
     }
+
+    
 }
