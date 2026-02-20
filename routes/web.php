@@ -40,7 +40,12 @@ Route::prefix('payments')->name('payments.')->group(function () {
 });
 
 Route::prefix('lms')->group(function () {
-    Route::get('/web-courses',  [WebsiteController::class, 'webCourses'])->name('web.courses');
+    //courses Route Web Page
+    Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
+    Route::get('/web-courses', function () {
+        
+        return view('website.pages.courses');
+    })->name('web.courses');
 
     Route::get('/web-about', function () {
         return view('website.pages.about');
