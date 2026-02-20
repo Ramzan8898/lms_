@@ -896,7 +896,7 @@
             </p>
 
             <!-- Category Filter Pills with Premium Design -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <!-- <div class="flex flex-wrap justify-center gap-4 mb-12">
                 <button class="group relative px-8 py-3 rounded-full overflow-hidden category-filter active" data-category="all">
                     <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
                     <span
@@ -913,7 +913,7 @@
                         class="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-500"></span>
                 </button>
                 @endforeach
-            </div>
+            </div> -->
         </div>
 
         <!-- Courses Grid - Premium Cards -->

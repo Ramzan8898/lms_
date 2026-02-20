@@ -37,5 +37,11 @@ class WebsiteController extends Controller
         return view('website.pages.show', compact('course', 'relatedCourses'));
     }
 
-    
+
+    public function webCourses()
+    {
+        $courses = Course::with(['instructor', 'category'])->get();
+        $categories = Category::whereHas('courses')->get();
+        return view('website.pages.courses', compact('courses', 'categories'));
+    }
 }
