@@ -88,8 +88,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [Profile::class, 'index'])->name('admin.profile');
 
     Route::get('/users', [UserController::class, 'index'])->name('admin.users');
+    Route::get('/users/add', [UserController::class, 'create'])->name('admin.users.create');
+    Route::post('/users/add-user', [UserController::class, 'store'])->name('admin.users.store');
     Route::get('/users/edit/{user}', [UserController::class, 'edit'])->name('admin.users.edit');
-    Route::put('/users/update/{user}', [UserController::class, 'update'])->name('admin.users.update');
+    Route::post('/users/update/{user}', [UserController::class, 'update'])->name('admin.users.update');
     Route::delete('/users/destroy/{user}', [UserController::class, 'destroy'])->name('admin.users.destroy');
 
     //instructor
