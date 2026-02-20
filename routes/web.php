@@ -30,7 +30,6 @@ Route::prefix('payment')->name('payment.')->group(function () {
 });
 
 
-// In routes/web.php - Add to your admin routes
 // Payments Management
 Route::prefix('payments')->name('payments.')->group(function () {
     Route::get('/', [AdminPaymentController::class, 'index'])->name('index');
@@ -44,6 +43,7 @@ Route::prefix('lms')->group(function () {
     //courses Route Web Page
     Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
     Route::get('/web-courses', function () {
+        
         return view('website.pages.courses');
     })->name('web.courses');
 
@@ -58,6 +58,7 @@ Route::prefix('lms')->group(function () {
     Route::get('/register', function () {
         return view('auth.register');
     })->name('web.register');
+    Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
 });
 
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');

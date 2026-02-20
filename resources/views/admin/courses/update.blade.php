@@ -46,7 +46,7 @@
         </div>
 
         <div>
-            <div class="flex flex-row w-full gap-4 text-white">
+            <div class="flex flex-row w-full gap-4 text-white mt-4">
                 <div class="w-full text-white">
                     <label class="label text-white">Price</label>
                     <input type="number"
@@ -59,9 +59,8 @@
 
                 <div class="w-full">
                     <label class="label">Duration</label>
-                    <input type="number"
+                    <input type="text"
                         name="duration"
-                        id="duration"
                         value="{{ old('duration', $course->duration) }}"
                         class="input"
                         placeholder="Enter Course Duration">

@@ -69,7 +69,7 @@ class InstructorController extends Controller
             DB::commit();
 
             return redirect()
-                ->route('admin.instructor')
+                ->route('admin.instructors')
                 ->with('success', 'Instructor created successfully!');
         } catch (\Exception $e) {
             DB::rollBack();
@@ -131,7 +131,7 @@ class InstructorController extends Controller
 
             DB::commit();
 
-            return redirect()->route('admin.instructor')
+            return redirect()->route('admin.instructors')
                 ->with('success', 'Instructor updated!');
         } catch (\Exception $e) {
             DB::rollBack();
