@@ -180,7 +180,7 @@
                     <!-- Login Link -->
                     <div class="text-center text-sm text-gray-500">
                         Already have an account?
-                        <a href="{{ route('web.login') }}" class="text-yellow-500 hover:text-yellow-400 font-medium">
+                        <a href="{{ route('login') }}" class="text-yellow-500 hover:text-yellow-400 font-medium">
                             Sign in
                         </a>
                     </div>
