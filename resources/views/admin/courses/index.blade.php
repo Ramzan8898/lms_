@@ -18,16 +18,17 @@
     </a>
 </div>
 
-<div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl overflow-hidden">
+<div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl overflow-hidden">
     <!-- Table -->
     <div class="overflow-x-auto">
         <table class="w-full text-sm text-left">
             <thead class="bg-black/30 text-white uppercase text-xs tracking-wider">
                 <th class="p-4">#</th>
                 <th class="p-4">Course</th>
-                <th class="p-4">Slug</th>
+                <th class="p-4">Duration</th>
                 <th class="p-4">Instructor</th>
-                <th class="p-4">Thumbnail</th>
+                <th class="p-4">Category</th>
+                <th class="p-4">Banner</th>
                 <th class="p-4 text-right">Actions</th>
                 </tr>
             </thead>
@@ -45,7 +46,7 @@
 
                     {{-- Slug --}}
                     <td class="p-4">
-                        {{ $course->slug }}
+                        {{ $course->duration }}
                     </td>
 
                     {{-- Instructor --}}
@@ -53,10 +54,15 @@
                         {{ $course->instructor->user->name }}
                     </td>
 
+                    
+                    <td class="p-4">
+                        {{ $course->category?->title ?? 'No Category' }}
+                    </td>
+
                     {{-- Thumbnail --}}
                     <td class="p-4">
-                        @if($course->thumbnail)
-                        <img src="{{ asset('storage/'.$course->thumbnail) }}"
+                        @if($course->banner)
+                        <img src="{{ asset('storage/'.$course->banner) }}"
                             class="w-14 h-14 object-cover rounded border">
                         @else
                         <span class="text-gray-400">No Image</span>

@@ -28,7 +28,7 @@
 
     <div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl overflow-hidden">
         <div class="relative h-64 md:h-80 overflow-hidden">
-            @if($course->thumbnail)
+            @if($course->banner)
             <img src="{{ asset('storage/'.$course->banner) }}"
                 alt="{{ $course->title }}"
                 class="w-full h-full object-cover">

@@ -1,21 +1,45 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\LessonController;
+use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
 use App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Students\StudentLessons;
+use App\Http\Controllers\website\PaymentController;
+use App\Http\Controllers\Website\WebsiteController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
+Route::get('/', [WebsiteController::class, 'index'])->name('welcome');
+Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
 
+
+Route::prefix('payment')->name('payment.')->group(function () {
+    Route::get('/checkout/{course}', [PaymentController::class, 'checkout'])->name('checkout');
+    Route::get('/success/{course}', [PaymentController::class, 'success'])->name('success');
+    Route::get('/cancel/{course}', [PaymentController::class, 'cancel'])->name('cancel');
+
+    // For custom form
+    Route::post('/create-payment-intent/{course}', [PaymentController::class, 'createPaymentIntent'])->name('create-intent');
+    Route::post('/confirm/{course}', [PaymentController::class, 'confirmPayment'])->name('confirm');
+});
+
+
+// In routes/web.php - Add to your admin routes
+// Payments Management
+Route::prefix('payments')->name('payments.')->group(function () {
+    Route::get('/', [AdminPaymentController::class, 'index'])->name('index');
+    Route::get('/export', [AdminPaymentController::class, 'export'])->name('export');
+    Route::get('/{enrollment}', [AdminPaymentController::class, 'show'])->name('show');
+    Route::get('/user/{user}', [AdminPaymentController::class, 'userPayments'])->name('user');
+    Route::get('/course/{course}', [AdminPaymentController::class, 'coursePayments'])->name('course');
+});
 
 Route::prefix('lms')->group(function () {
     //courses Route Web Page
@@ -102,4 +126,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/studentsLessons', [CourseController::class, 'ShowAllLessons'])->name('admin.students.lessons');
     Route::post('/courses/{course}/enroll', [CourseController::class, 'enroll'])->name('student.enroll');
+
+    //categories
+    Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
+    Route::get('/categories/create', [CategoryController::class, 'create'])->name('admin.categories.create');
+    Route::post('/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
+    Route::get('/categories/edit/{category}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
+    Route::put('/categories/update/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
+    Route::delete('/categories/destroy/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
 });

@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 {{-- Header + Breadcrumbs --}}
 <div class="flex items-center justify-between ">
     <div>
@@ -55,20 +54,63 @@
             </div>
 
 
-            <div class="flex flex-row w-full gap-4 mt-4">
+            <div class="mt-4">
+                <label class="label">Select Category</label>
+                <select name="category_id" class="input" required>
+                    <option value="">Choose Category</option>
+                    @foreach($categories as $cat)
+                    <option value="{{ $cat->id }}">
+                        {{ $cat->title }}
+                    </option>
+                    @endforeach
+                </select>
+            </div>
 
+            <div class="mt-4">
+                <label class="label">Course Description</label>
+                <textarea name="description" rows="4" class="input"></textarea>
+            </div>
+
+            <div class="flex flex-row w-full gap-4 mt-4">
                 <div class="w-full">
-                    <label class="label">Course Banner</label>
-                    <input type="file" name="banner" class="input">
+                    <label class="label">Price</label>
+                    <input type="number" name="price" id="price" class="input" placeholder="Enter Course Price" step="0.01">
                 </div>
 
                 <div class="w-full">
-                    <label class="label">Course Thumbnail</label>
-                    <input type="file" name="thumbnail" class="input">
+                    <label class="label">Duration</label>
+                    <input type="text" name="duration" id="duration" class="input" placeholder="Enter Course Duration">
+                </div>
+            </div>
+
+
+
+            <div class="flex flex-col w-full gap-4 mt-4">
+                <div class="w-full">
+                    <label class="label">Banner Preview</label>
+
+                    <div id="bannerPreview"
+                        class="w-full h-40 bg-gray-800 rounded-xl border border-gray-700 
+                   flex items-center justify-center text-gray-400 
+                   overflow-hidden transition-all duration-300">
+
+                        <img id="previewImage"
+                            class="w-full h-full object-cover hidden">
+
+                        <span id="previewText">No image selected</span>
+                    </div>
+                </div>
+                <div class="w-full">
+                    <label class="label">Course Banner</label>
+
+                    <input type="file"
+                        name="banner"
+                        id="bannerInput"
+                        accept="image/*"
+                        class="input cursor-pointer">
                 </div>
 
             </div>
-
         </div>
 
 
@@ -91,6 +133,30 @@
             .replace(/(^-|-$)/g, '');
 
         document.getElementById('slug').value = slug;
+    });
+
+
+    document.getElementById('bannerInput').addEventListener('change', function(e) {
+
+        const file = e.target.files[0];
+        const previewImage = document.getElementById('previewImage');
+        const previewText = document.getElementById('previewText');
+
+        if (file) {
+            const reader = new FileReader();
+
+            reader.onload = function(event) {
+                previewImage.src = event.target.result;
+                previewImage.classList.remove('hidden');
+                previewText.classList.add('hidden');
+            }
+
+            reader.readAsDataURL(file);
+        } else {
+            previewImage.classList.add('hidden');
+            previewText.classList.remove('hidden');
+        }
+
     });
 </script>
 

@@ -86,7 +86,52 @@
             @endif
         </a>
 
+        <!-- Categories -->
+        <a href="{{ route('admin.categories') }}"
+            class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
+           {{ request()->routeIs('admin.categories') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
 
+            <svg class="w-5 h-5 transition-colors duration-500
+                {{ request()->routeIs('admin.categories') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-width="2"
+                    d="M12 6v14M3 6v14M21 6v14" />
+            </svg>
+
+            <span class="flex-1">Categories</span>
+
+            <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
+                42
+            </span>
+
+            @if(request()->routeIs('courses.*'))
+            <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
+            @endif
+        </a>
+
+        <!-- Payments / Enrollments -->
+        <a href="{{ route('payments.index') }}"
+            class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
+            {{ request()->routeIs('payments.*') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
+
+            <svg class="w-5 h-5 transition-colors duration-500
+                {{ request()->routeIs('payments.*') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+
+            <span class="flex-1">Payments</span>
+
+            @php
+            $pendingPayments = App\Models\Enrollment::where('status', 'pending')->count();
+            @endphp
+            @if($pendingPayments > 0)
+            <span class="px-2 py-0.5 bg-red-500/20 rounded-full text-xs text-red-400">
+                {{ $pendingPayments }}
+            </span>
+            @endif
+        </a>
 
         <!-- Lessons -->
         <a href="{{ route('admin.lessons') }}"

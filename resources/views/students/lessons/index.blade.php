@@ -20,15 +20,15 @@
 
     @forelse($courses ?? [] as $course)
     <!-- Course Card -->
-    <div class="group bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl overflow-hidden hover:border-yellow-500/40 transition-all duration-300">
+    <div class="group bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl overflow-hidden hover:border-yellow-500/40 transition-all duration-300">
 
         <!-- Course Image -->
         <div class="relative h-48 overflow-hidden">
-            @if($course->thumbnail)
-            <img src="{{ asset('storage/'.$course->thumbnail) }}"
+            @if($course->banner)
+            <img src="{{ asset('storage/'.$course->banner) }}"
                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
             @else
-            <div class="w-full h-full bg-gradient-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center">
+            <div class="w-full h-full bg-linear-to-br from-yellow-500/20 to-orange-500/20 flex items-center justify-center">
                 <svg class="w-16 h-16 text-yellow-500/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
                 </svg>
@@ -38,7 +38,7 @@
             <!-- Category Badge -->
             <div class="absolute top-4 left-4">
                 <span class="px-3 py-1 bg-black/60 backdrop-blur-sm border border-yellow-500/30 rounded-full text-yellow-400 text-xs font-medium">
-                    {{ $course->category ?? 'Development' }}
+                    {{ $course->category->title ?? 'Development' }}
                 </span>
             </div>
 
@@ -56,10 +56,19 @@
         <!-- Course Content -->
         <div class="p-6">
             <!-- Instructor -->
-            <div class="flex items-center gap-3 mb-4">
-                <img src="https://ui-avatars.com/api/?name={{ urlencode($course->instructor->user->name ?? 'Instructor') }}&background=FFB347&color=fff&size=32"
-                    class="w-8 h-8 rounded-full border border-yellow-500/50">
-                <span class="text-sm text-gray-400">{{ $course->instructor->user->name ?? 'John Doe' }}</span>
+
+            <div class="flex flex-col mb-4">
+
+                <div class="flex items-center gap-3 ">
+                    <img src="https://ui-avatars.com/api/?name={{ urlencode($course->instructor->user->name ?? 'Instructor') }}&background=FFB347&color=fff&size=32"
+                        class="w-8 h-8 rounded-full border border-yellow-500/50">
+                    <span class="text-sm text-gray-400">{{ $course->instructor->user->name ?? 'John Doe' }}</span>
+                </div>
+                <div class="items-center text-center w-1/3">
+                    <span class="text-sm text-gray-400 border border-yellow-500 px-4 py-0.5  rounded-full">
+                        {{ $course->instructor?->qualification ?? 'No Qualification' }}
+                    </span>
+                </div>
             </div>
 
             <!-- Title -->
@@ -88,14 +97,14 @@
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                     </svg>
-                    <span>{{ $course->students_count ?? 234 }} students</span>
+                    <span>{{ $course->user ?? 234 }} students</span>
                 </div>
             </div>
 
             <!-- Price & Enrollment -->
             <div class="flex items-center justify-between pt-4 border-t border-yellow-500/10">
                 <div>
-                    <span class="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                    <span class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
                         ${{ $course->price ?? 49 }}
                     </span>
                     @if($course->original_price ?? false)
@@ -107,7 +116,7 @@
                 <form action="{{route('student.enroll', $course->id)}}" method="POST">
                     @csrf
                     <button type="submit"
-                        class="px-5 py-2.5 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all flex items-center gap-2">
+                        class="px-5 py-2.5 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all flex items-center gap-2">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                         </svg>

@@ -73,7 +73,6 @@ class InstructorController extends Controller
                 ->with('success', 'Instructor created successfully!');
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
         }
     }
 
@@ -136,7 +135,6 @@ class InstructorController extends Controller
                 ->with('success', 'Instructor updated!');
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
         }
     }
 
@@ -153,7 +151,6 @@ class InstructorController extends Controller
             return back()->with('success', 'Instructor deleted!');
         } catch (\Exception $e) {
             DB::rollBack();
-            dd($e->getMessage());
         }
     }
 }
