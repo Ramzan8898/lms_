@@ -257,10 +257,10 @@
                                                        outline-none transition-all duration-300
                                                        hover:border-gray-600 appearance-none cursor-pointer">
                                         <option value="" disabled selected>Select a subject</option>
-                                        <option value="general" class="bg-gray-900">General Inquiry</option>
-                                        <option value="support" class="bg-gray-900">Technical Support</option>
-                                        <option value="billing" class="bg-gray-900">Billing Question</option>
-                                        <option value="partnership" class="bg-gray-900">Partnership</option>
+                                        <option value="general" class="bg-[#0a0a0a]">General Inquiry</option>
+                                        <option value="support" class="bg-[#0a0a0a]">Technical Support</option>
+                                        <option value="billing" class="bg-[#0a0a0a]">Billing Question</option>
+                                        <option value="partnership" class="bg-[#0a0a0a]">Partnership</option>
                                     </select>
                                     <span class="absolute right-4 top-1/2 -translate-y-1/2 text-yellow-500">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor"
