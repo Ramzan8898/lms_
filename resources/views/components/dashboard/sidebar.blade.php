@@ -207,12 +207,12 @@
 
 
         <!-- //Student Lessons  -->
-        <a href="{{ route('admin.students.lessons') }}"
+        <a href="{{ route('student.courses.show') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
-           {{ request()->routeIs('admin.students.lessons') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
+           {{ request()->routeIs('student.courses.show') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
 
             <svg class="w-5 h-5 transition-colors duration-500
-                {{ request()->routeIs('admin.students.lessons') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                {{ request()->routeIs('student.courses.show') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
                     d="M12 4a4 4 0 100 8 4 4 0 000-8zm-7 16a7 7 0 0114 0" />

@@ -9,13 +9,11 @@ use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+  
 
     public function index()
     {
-        $courses = Course::with(['instructor', 'category'])->get();
+        $courses = Course::with(['instructor', 'category'])->take(8)->get();
         $categories = Category::whereHas('courses')->get();
         return view('welcome', compact('courses', 'categories'));
     }
