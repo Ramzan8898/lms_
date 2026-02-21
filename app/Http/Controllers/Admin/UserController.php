@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Instructor;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -29,7 +30,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8|confirmed',
-            'roles' => 'required'
+            'role' => 'required'
         ]);
 
         $user = User::create([
@@ -37,7 +38,15 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password)
         ]);
-        $user->assignRole($request->roles);
+        $user->assignRole($request->role);
+
+        if ($request->role === 'instructor') {
+            $user->instructor()->create([]);
+        }
+
+        if ($request->role === 'student') {
+            $user->student()->create([]);
+        }
         return redirect()->route('admin.users')->with('success', 'User created!');
     }
 
@@ -52,7 +61,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users,email,' . $user->id,
-            'roles' => 'required'
+            'role' => 'required'
         ]);
 
         $user->update([
