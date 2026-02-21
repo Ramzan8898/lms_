@@ -59,6 +59,10 @@ class AuthController extends Controller
             return redirect()->route('student.courses.show');
         }
 
+         if ($user->hasRole('instructor')) {
+            return redirect()->route('admin.dashboard');
+        }
+
         // 6️⃣ Fallback (if role missing)
         Auth::logout();
 
