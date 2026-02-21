@@ -12,4 +12,17 @@ class Lesson extends Model
     {
         return $this->belongsTo(Course::class);
     }
+
+    public function progress()
+    {
+        return $this->hasMany(LessonProgress::class);
+    }
+
+    public function isCompletedByUser($userId)
+    {
+        return $this->progress()
+            ->where('user_id', $userId)
+            ->where('completed', true)
+            ->exists();
+    }
 }

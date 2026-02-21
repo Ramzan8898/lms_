@@ -56,4 +56,34 @@ class User extends Authenticatable
     {
         return $this->hasOne(Student::class);
     }
+
+
+
+    public function enrollments()
+    {
+        return $this->hasMany(Enrollment::class);
+    }
+
+    public function completedEnrollments()
+    {
+        return $this->hasMany(Enrollment::class)->where('status', 'completed');
+    }
+
+    public function enrolledCourses()
+    {
+        return $this->belongsToMany(Course::class, 'enrollments')
+            ->withPivot('status', 'amount', 'payment_intent_id', 'created_at')
+            ->wherePivot('status', 'completed')
+            ->withTimestamps();
+    }
+
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
+
+    public function isStudent()
+    {
+        return $this->role === 'student';
+    }
 }

@@ -56,7 +56,11 @@ class AuthController extends Controller
         }
 
         if ($user->hasRole('student')) {
-            return redirect()->route('student.dashboard');
+            return redirect()->route('student.courses.show');
+        }
+
+         if ($user->hasRole('instructor')) {
+            return redirect()->route('admin.dashboard');
         }
 
         // 6️⃣ Fallback (if role missing)

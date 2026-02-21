@@ -10,6 +10,8 @@ use App\Http\Controllers\Admin\Profile;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Students\StudentDashboardController;
+use App\Http\Controllers\Students\StudentEnrollmentController;
 use App\Http\Controllers\Students\StudentLessons;
 use App\Http\Controllers\website\PaymentController;
 use App\Http\Controllers\Website\WebsiteController;
@@ -40,7 +42,6 @@ Route::prefix('payments')->name('payments.')->group(function () {
 });
 
 Route::prefix('lms')->group(function () {
-    //courses Route Web Page
     Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
     Route::get('/web-courses', [WebsiteController::class, 'webCourses'])->name('web.courses');
 
@@ -55,7 +56,6 @@ Route::prefix('lms')->group(function () {
     Route::get('/register', function () {
         return view('auth.register');
     })->name('web.register');
-    Route::get('/courses/{slug}', [WebsiteController::class, 'show'])->name('website.pages.show');
 });
 
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
@@ -124,8 +124,18 @@ Route::middleware('auth')->group(function () {
     Route::put('/students/update/{student}', [StudentController::class, 'update'])->name('admin.students.update');
     Route::delete('/students/destroy/{student}', [StudentController::class, 'destroy'])->name('admin.students.destroy');
 
+
+    //student enrollment pages 
     Route::get('/studentsLessons', [CourseController::class, 'ShowAllLessons'])->name('admin.students.lessons');
     Route::post('/courses/{course}/enroll', [CourseController::class, 'enroll'])->name('student.enroll');
+
+    // Route::get('/students/dashboard', [StudentDashboardController::class, 'index'])->name('student.courses.index');
+    // Route::get('/students/courses', [StudentDashboardController::class, 'myCourses'])->name('student.courses.show');
+    // Route::get('/students/courses/{course}', [StudentDashboardController::class, 'showCourse'])->name('courses.show');
+    // Route::get('/students/courses/{course}/lessons/{lesson}', [StudentDashboardController::class, 'showLesson'])->name('lessons.show');
+    // Route::post('/students/lessons/{lesson}/complete', [StudentDashboardController::class, 'markLessonComplete'])->name('lessons.complete');
+    // Route::post('/students/courses/{course}/enroll', [StudentEnrollmentController::class, 'enroll'])->name('enroll');
+    // Route::get('/students/learning', [StudentEnrollmentController::class, 'myLearning'])->name('learning');
 
     //categories
     Route::get('/categories', [CategoryController::class, 'index'])->name('admin.categories');
@@ -134,4 +144,21 @@ Route::middleware('auth')->group(function () {
     Route::get('/categories/edit/{category}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
     Route::put('/categories/update/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
     Route::delete('/categories/destroy/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+});
+
+Route::middleware(['auth'])->prefix('students')->name('student.')->group(function () {
+    Route::get('/dashboard', [StudentDashboardController::class, 'index'])->name('courses.show');
+    Route::get('/courses', [StudentDashboardController::class, 'myCourses'])->name('courses.index');
+    Route::get('/courses/{course}', [StudentDashboardController::class, 'showCourse'])->name('Allcourses.show');
+    // Single Lesson View
+    Route::get('/courses/{course}/lessons/{lesson}', [StudentDashboardController::class, 'showLesson'])->name('lessons.show');
+
+    // Mark Lesson Complete
+    Route::post('/lessons/{lesson}/complete', [StudentDashboardController::class, 'markLessonComplete'])->name('lessons.complete');
+
+    // Enroll in Course
+    Route::post('/courses/{course}/enroll', [StudentEnrollmentController::class, 'enroll'])->name('enroll');
+
+    // Learning Page
+    Route::get('/learning', [StudentEnrollmentController::class, 'myLearning'])->name('learning');
 });

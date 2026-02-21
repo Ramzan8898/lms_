@@ -30,6 +30,20 @@ class Course extends Model
     }
 
 
+    public function students()
+    {
+        return $this->belongsToMany(User::class, 'enrollments')
+            ->withPivot('status', 'amount', 'payment_intent_id', 'created_at')
+            ->withTimestamps();
+    }
+
+    public function enrolledStudents()
+    {
+        return $this->students()->wherePivot('status', 'completed');
+    }
+
+
+
     public function isUserEnrolled($userId)
     {
         return $this->enrollments()
@@ -43,6 +57,32 @@ class Course extends Model
     {
         return $this->enrollments()
             ->where('status', 'completed')
+            ->count();
+    }
+
+    public function progress()
+    {
+        return $this->hasMany(LessonProgress::class);
+    }
+
+    public function getUserProgress($userId)
+    {
+        $totalLessons = $this->lessons()->count();
+        if ($totalLessons === 0) return 0;
+
+        $completedLessons = LessonProgress::where('user_id', $userId)
+            ->where('course_id', $this->id)
+            ->where('completed', true)
+            ->count();
+
+        return round(($completedLessons / $totalLessons) * 100);
+    }
+
+    public function getCompletedLessonsCount($userId)
+    {
+        return LessonProgress::where('user_id', $userId)
+            ->where('course_id', $this->id)
+            ->where('completed', true)
             ->count();
     }
 }

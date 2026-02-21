@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Course;
@@ -61,43 +62,27 @@ class DashboardController extends Controller
 
         // Course Categories Data
         // Check if courses table has category column
-        if (Schema::hasColumn('courses', 'category')) {
-            $categories = Course::select('category', DB::raw('count(*) as total'))
-                ->whereNotNull('category')
-                ->groupBy('category')
-                ->orderBy('total', 'desc')
-                ->take(6)
-                ->get();
+        // Get real category data from the categories table
+        $categories = Category::withCount('courses')
+            ->having('courses_count', '>', 0)
+            ->orderBy('courses_count', 'desc')
+            ->take(6)
+            ->get();
 
-            $totalCategoryCourses = $categories->sum('total');
+        $totalCategoryCourses = $categories->sum('courses_count');
 
-            if ($categories->isNotEmpty()) {
-                $categoryData = $categories->map(function ($category) use ($totalCategoryCourses) {
-                    return [
-                        'name' => $category->category,
-                        'count' => $category->total,
-                        'percentage' => $totalCategoryCourses > 0 ? round(($category->total / $totalCategoryCourses) * 100) : 0
-                    ];
-                });
-            } else {
-                // Sample categories if no data
-                $categoryData = collect([
-                    ['name' => 'Web Development', 'count' => 45, 'percentage' => 35],
-                    ['name' => 'Data Science', 'count' => 32, 'percentage' => 25],
-                    ['name' => 'Mobile Development', 'count' => 28, 'percentage' => 22],
-                    ['name' => 'UI/UX Design', 'count' => 21, 'percentage' => 18],
-                ]);
-                $totalCategoryCourses = $categoryData->sum('count');
-            }
+        if ($categories->isNotEmpty()) {
+            $categoryData = $categories->map(function ($category) use ($totalCategoryCourses) {
+                return [
+                    'name' => $category->title, // Using title from your categories table
+                    'count' => $category->courses_count,
+                    'percentage' => $totalCategoryCourses > 0 ? round(($category->courses_count / $totalCategoryCourses) * 100) : 0
+                ];
+            });
         } else {
-            // Sample categories if no category column
-            $categoryData = collect([
-                ['name' => 'Web Development', 'count' => 45, 'percentage' => 35],
-                ['name' => 'Data Science', 'count' => 32, 'percentage' => 25],
-                ['name' => 'Mobile Development', 'count' => 28, 'percentage' => 22],
-                ['name' => 'UI/UX Design', 'count' => 21, 'percentage' => 18],
-            ]);
-            $totalCategoryCourses = $categoryData->sum('count');
+            // If no categories with courses, show message or empty state
+            $categoryData = collect([]);
+            $totalCategoryCourses = 0;
         }
 
         // Recent Users Data
