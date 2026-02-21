@@ -15,7 +15,6 @@
         <div class="w-16 h-0.5 bg-linear-to-r from-transparent via-yellow-500 to-transparent"></div>
     </div>
 
-
     <!-- Navigation -->
     <nav class="flex-1 px-5 py-8 space-y-2 text-sm font-medium">
 
@@ -38,7 +37,6 @@
             @endif
         </a>
 
-
         <!-- Users -->
         <a href="{{ route('admin.users') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
@@ -53,15 +51,17 @@
 
             <span class="flex-1">Users</span>
 
+            @php
+            $totalUsers = App\Models\User::count();
+            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                245
+                {{ $totalUsers > 999 ? number_format($totalUsers / 1000, 1) . 'k' : $totalUsers }}
             </span>
 
-            @if(request()->routeIs('users.*'))
+            @if(request()->routeIs('admin.users'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
-
 
         <!-- Courses -->
         <a href="{{ route('admin.courses') }}"
@@ -77,11 +77,14 @@
 
             <span class="flex-1">Courses</span>
 
+            @php
+            $totalCourses = App\Models\Course::count();
+            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                42
+                {{ $totalCourses }}
             </span>
 
-            @if(request()->routeIs('courses.*'))
+            @if(request()->routeIs('admin.courses'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
@@ -95,16 +98,19 @@
                 {{ request()->routeIs('admin.categories') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
-                    d="M12 6v14M3 6v14M21 6v14" />
+                    d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l5 5a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-5-5A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
             </svg>
 
             <span class="flex-1">Categories</span>
 
+            @php
+            $totalCategories = App\Models\Category::count();
+            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                42
+                {{ $totalCategories }}
             </span>
 
-            @if(request()->routeIs('courses.*'))
+            @if(request()->routeIs('admin.categories'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
@@ -125,10 +131,15 @@
 
             @php
             $pendingPayments = App\Models\Enrollment::where('status', 'pending')->count();
+            $totalPayments = App\Models\Enrollment::where('status', 'completed')->count();
             @endphp
             @if($pendingPayments > 0)
             <span class="px-2 py-0.5 bg-red-500/20 rounded-full text-xs text-red-400">
                 {{ $pendingPayments }}
+            </span>
+            @else
+            <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
+                {{ $totalPayments > 999 ? number_format($totalPayments / 1000, 1) . 'k' : $totalPayments }}
             </span>
             @endif
         </a>
@@ -142,20 +153,22 @@
                 {{ request()->routeIs('admin.lessons') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
-                    d="M12 6v14M3 6v14M21 6v14" />
+                    d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
             </svg>
 
             <span class="flex-1">Lessons</span>
 
+            @php
+            $totalLessons = App\Models\Lesson::count();
+            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                42
+                {{ $totalLessons }}
             </span>
 
-            @if(request()->routeIs('courses.*'))
+            @if(request()->routeIs('admin.lessons'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
-
 
         <!-- Students -->
         <a href="{{ route('admin.students') }}"
@@ -171,17 +184,19 @@
 
             <span class="flex-1">Students</span>
 
+            @php
+            $totalStudents = App\Models\User::role('student')->count();
+            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                2.1k
+                {{ $totalStudents > 999 ? number_format($totalStudents / 1000, 1) . 'k' : $totalStudents }}
             </span>
 
-            @if(request()->routeIs('students.*'))
+            @if(request()->routeIs('admin.students'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
 
-
-        <!-- //instructor -->
+        <!-- Instructors -->
         <a href="{{ route('admin.instructors') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
            {{ request()->routeIs('admin.instructors') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
@@ -190,23 +205,24 @@
                 {{ request()->routeIs('admin.instructors') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
-                    d="M12 4a4 4 0 100 8 4 4 0 000-8zm-7 16a7 7 0 0114 0" />
+                    d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
             </svg>
 
             <span class="flex-1">Instructors</span>
 
+            @php
+            $totalInstructors = App\Models\User::role('instructor')->count();
+            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                2.1k
+                {{ $totalInstructors }}
             </span>
 
-            @if(request()->routeIs('students.*'))
+            @if(request()->routeIs('admin.instructors'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
 
-
-
-        <!-- //Student Lessons  -->
+        <!-- Student Lessons -->
         <a href="{{ route('student.courses.show') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
            {{ request()->routeIs('student.courses.show') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
@@ -215,16 +231,19 @@
                 {{ request()->routeIs('student.courses.show') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
-                    d="M12 4a4 4 0 100 8 4 4 0 000-8zm-7 16a7 7 0 0114 0" />
+                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
             </svg>
 
             <span class="flex-1">Student Lessons</span>
 
+            @php
+            $totalLessons = App\Models\Lesson::count();
+            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                2.1k
+                {{ $totalLessons }}
             </span>
 
-            @if(request()->routeIs('admin.students.lessons'))
+            @if(request()->routeIs('student.courses.show'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
@@ -234,7 +253,6 @@
         </div>
 
     </nav>
-
 
     <!-- Logout -->
     <div class="p-6 border-t border-yellow-600/20">
