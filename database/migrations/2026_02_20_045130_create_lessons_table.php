@@ -18,7 +18,6 @@ return new class extends Migration
             $table->enum('type', ['pdf', 'video']);
             $table->string('file');
             $table->text('description')->nullable();
-
             $table->timestamps();
         });
     }
