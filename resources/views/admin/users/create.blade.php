@@ -73,7 +73,7 @@
 
             <div>
                 <label class="block text-sm text-gray-400 mb-2">Assign Role</label>
-                <select name="roles[]"
+                <select name="role" required
                     class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
                                   focus:outline-none focus:border-yellow-500/40 transition-all">
                     @foreach ($roles as $role)
