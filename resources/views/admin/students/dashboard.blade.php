@@ -7,7 +7,7 @@
 <div class="space-y-8">
 
     <!-- Welcome Section -->
-    <div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-8">
+    <div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-8">
         <div class="flex items-center justify-between">
             <div>
                 <h1 class="text-3xl font-bold text-white mb-2">
@@ -15,7 +15,7 @@
                 </h1>
                 <p class="text-gray-400">Continue your learning journey from where you left off.</p>
             </div>
-            <div class="w-20 h-20 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 p-0.5">
+            <div class="w-20 h-20 rounded-full bg-linear-to-r from-yellow-500 to-orange-500 p-0.5">
                 <img src="{{ Auth::user()->avatar ?? 'https://ui-avatars.com/api/?name='.urlencode(Auth::user()->name).'&background=FFB347&color=fff&size=80' }}"
                     class="w-full h-full rounded-full object-cover border-2 border-black"
                     alt="{{ Auth::user()->name }}">
@@ -25,7 +25,7 @@
 
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
+        <div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center">
                     <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -39,7 +39,7 @@
             </div>
         </div>
 
-        <div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
+        <div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center">
                     <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,7 +53,7 @@
             </div>
         </div>
 
-        <div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
+        <div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
                     <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -76,7 +76,7 @@
                     </span>
                 </div>
                 <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden">
-                    <div class="h-full bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"
+                    <div class="h-full bg-linear-to-r from-green-500 to-emerald-500 rounded-full"
                         style="width: {{ $totalLessons > 0 ? round(($totalCompletedLessons / $totalLessons) * 100) : 0 }}%"></div>
                 </div>
             </div>
@@ -85,11 +85,11 @@
     </div>
 
     <!-- My Courses -->
-    <div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl overflow-hidden">
+    <div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl overflow-hidden">
         <div class="px-8 py-6 border-b border-yellow-500/10">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-1 h-6 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></div>
+                    <div class="w-1 h-6 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></div>
                     <h2 class="text-lg font-semibold text-white">My Courses</h2>
                 </div>
                 <a href="{{ route('student.courses.index') }}" class="text-sm text-yellow-400 hover:text-yellow-300 transition-colors">
@@ -111,7 +111,7 @@
 
                         <!-- Progress Bar (example) -->
                         <div class="absolute bottom-0 left-0 right-0 h-1 bg-white/10">
-                            <div class="h-full w-0 bg-gradient-to-r from-yellow-500 to-orange-500"></div>
+                            <div class="h-full w-0 bg-linear-to-r from-yellow-500 to-orange-500"></div>
                         </div>
                     </div>
 
@@ -132,7 +132,7 @@
                             </div>
                         </div>
                         <div class="mt-2 w-full h-1 bg-white/10 rounded-full overflow-hidden">
-                            <div class="h-full bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full"
+                            <div class="h-full bg-linear-to-r from-yellow-500 to-orange-500 rounded-full"
                                 style="width: {{ $course->progress_percentage ?? 0 }}%"></div>
                         </div>
                         <div class="mt-4 w-full flex justify-end">
@@ -154,7 +154,7 @@
                 <h3 class="text-lg font-semibold text-white mb-2">No courses yet</h3>
                 <p class="text-gray-500 mb-4">You haven't enrolled in any courses.</p>
                 <a href="{{ route('web.courses') }}"
-                    class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all">
+                    class="inline-flex items-center gap-2 px-6 py-3 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all">
                     Browse Courses
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
@@ -167,9 +167,9 @@
 
     <!-- Recent Activity -->
     @if($recentEnrollments->isNotEmpty())
-    <div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
+    <div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl p-6">
         <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
-            <span class="w-1 h-5 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+            <span class="w-1 h-5 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
             Recent Enrollments
         </h3>
 

@@ -114,7 +114,7 @@ class CourseController extends Controller
             'banner'        => $banner,
         ]);
 
-        return redirect()->route('admin.courses.index')
+        return redirect()->route('admin.courses')
             ->with('success', 'Course updated successfully!');
     }
 
