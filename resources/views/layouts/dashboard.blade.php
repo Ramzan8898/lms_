@@ -18,7 +18,7 @@
 
 <body class="bg-(--secondary) text-(--text)]">
 
-    <div class="flex h-screen overflow-hidden">
+    <div class="flex h-screen overflow-hidden italic">
 
         <x-dashboard.sidebar />
 
@@ -26,7 +26,7 @@
 
             <x-dashboard.topbar />
 
-            <main class="flex-1 overflow-y-auto p-8 bg-(--secondary-2)">
+            <main class="flex-1 overflow-y-auto p-8 bg-(--secondary-2) ">
                 @yield('content')
             </main>
 
