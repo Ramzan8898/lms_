@@ -16,30 +16,27 @@
             <div class="flex flex-row gap-3">
                 <!-- Name -->
                 <div class="w-full">
-                    <label class="block text-sm text-gray-400 mb-2">Full Name</label>
+                    <label class="label">Full Name</label>
                     <input type="text" name="name" value="{{ old('name') }}" required placeholder="John Doe"
-                        class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
-                                      focus:outline-none focus:border-yellow-500/40 transition-all">
+                        class="input">
                 </div>
 
                 <!-- Email -->
                 <div class="w-full">
-                    <label class="block text-sm text-gray-400 mb-2">Email Address</label>
+                    <label class="label">Email Address</label>
                     <input type="email" name="email" value="{{ old('email') }}" required
                         placeholder="johndoe@gmail.com"
-                        class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
-                                      focus:outline-none focus:border-yellow-500/40 transition-all">
+                        class="input">
                 </div>
             </div>
 
             <div class="flex flex-row gap-3">
                 <!-- Password -->
                 <div class="w-full">
-                    <label class="block text-sm text-gray-400 mb-2">Password</label>
+                    <label class="label">Password</label>
                     <div class="relative">
                         <input type="password" name="password" id="password2" required
-                            class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
-                                      focus:outline-none focus:border-yellow-500/40 transition-all">
+                            class="input">
                         <button type="button" onclick="togglePasswordFA('password2', this)"
                             class="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity">
                             <i
@@ -50,11 +47,10 @@
 
                 <!-- Confirm Password Field with Font Awesome -->
                 <div class="w-full">
-                    <label class="block text-sm text-gray-400 mb-2">Confirm Password</label>
+                    <label class="label">Confirm Password</label>
                     <div class="relative">
                         <input type="password" name="password_confirmation" required
-                            class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
-                                      focus:outline-none focus:border-yellow-500/40 transition-all">
+                            class="input">
                     </div>
                 </div>
             </div>
@@ -77,10 +73,9 @@
             </script>
 
             <div>
-                <label class="block text-sm text-gray-400 mb-2">Assign Role</label>
+                <label class="label">Assign Role</label>
                 <select name="role" required
-                    class="w-full px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white
-                                  focus:outline-none focus:border-yellow-500/40 transition-all">
+                    class="input">
                     <option value="" disabled selected>Select Role</option>
                     @foreach ($roles as $role)
                         <option class="bg-gray-900" value="{{ $role->name }}">

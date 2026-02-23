@@ -30,9 +30,9 @@
 
 
 .label {
-    @apply block text-sm font-medium  text-white;
+    @apply block text-base text-gray-400;
 }
 
 .input {
-    @apply w-full mt-2 px-4 py-3 border border-gray-300  text-white rounded-md focus:ring-1 focus:ring-(--primary) focus:border-(--primary) outline-none transition;
+    @apply w-full mt-2 px-4 py-3 bg-white/5 border border-yellow-500/20 rounded-md text-white focus:outline-none focus:border-yellow-500/40 transition-all;
 }
