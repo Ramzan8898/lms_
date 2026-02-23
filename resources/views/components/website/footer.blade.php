@@ -62,15 +62,17 @@
                 <div>
                     <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">About
+                        <li><a href="{{ route('web.about') }}"
+                                class="text-gray-400 hover:text-yellow-400 transition-colors">About
                                 Us</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Courses</a>
+                        <li><a href="{{ route('web.courses') }}"
+                                class="text-gray-400 hover:text-yellow-400 transition-colors">Courses</a>
                         </li>
                         <li><a href="#"
                                 class="text-gray-400 hover:text-yellow-400 transition-colors">Instructors</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Blog</a>
                         </li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Contact</a>
+                        <li><a href="{{ route('web.contact') }}"
+                                class="text-gray-400 hover:text-yellow-400 transition-colors">Contact</a>
                         </li>
                     </ul>
                 </div>
