@@ -86,4 +86,20 @@ class User extends Authenticatable
     {
         return $this->role === 'student';
     }
+
+
+    public function wishlists()
+    {
+        return $this->hasMany(wishlists::class);
+    }
+
+    public function wishlistCourses()
+    {
+        return $this->belongsToMany(Course::class, 'wishlists');
+    }
+
+    public function isCourseInWishlist($courseId)
+    {
+        return $this->wishlists()->where('course_id', $courseId)->exists();
+    }
 }
