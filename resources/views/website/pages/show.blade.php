@@ -3,40 +3,41 @@
 @section('title', $course->title . ' - Course Details')
 
 @section('content')
-<section class="relative py-25 bg-black overflow-hidden min-h-screen">
+    <section class="relative py-25 bg-black overflow-hidden min-h-screen">
 
-    <div class="absolute inset-0">
-        <div
-            class="absolute top-40 right-0 w-150 h-150 bg-linear-to-r from-yellow-500/5 via-orange-500/5 to-transparent rounded-full blur-[120px] animate-pulse-slow">
-        </div>
-        <div
-            class="absolute bottom-40 left-0 w-150 h-150 bg-linear-to-l from-yellow-500/5 via-orange-500/5 to-transparent rounded-full blur-[120px] animate-pulse-slow animation-delay-2000">
-        </div>
+        <div class="absolute inset-0">
+            <div
+                class="absolute top-40 right-0 w-150 h-150 bg-linear-to-r from-yellow-500/5 via-orange-500/5 to-transparent rounded-full blur-[120px] animate-pulse-slow">
+            </div>
+            <div
+                class="absolute bottom-40 left-0 w-150 h-150 bg-linear-to-l from-yellow-500/5 via-orange-500/5 to-transparent rounded-full blur-[120px] animate-pulse-slow animation-delay-2000">
+            </div>
 
-        <div class="absolute inset-0 opacity-30"
-            style="background-image: 
+            <div class="absolute inset-0 opacity-30"
+                style="background-image: 
                  radial-gradient(circle at 2px 2px, rgba(255,215,0,0.1) 1px, transparent 0),
                  linear-gradient(45deg, rgba(255,215,0,0.02) 0%, transparent 50%);
                  background-size: 40px 40px, 100% 100%;">
+            </div>
         </div>
-    </div>
 
-    <div class="relative container mx-auto px-4 py-25">
+        <div class="relative container mx-auto px-4 py-25">
 
-        <!-- Main Content Grid - New Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Main Content Grid - New Layout -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            <!-- Left Column - Banner + Course Details (2/3 width) -->
-            <div class="lg:col-span-2 space-y-8">
+                <!-- Left Column - Banner + Course Details (2/3 width) -->
+                <div class="lg:col-span-2 space-y-8">
 
-                <!-- BANNER MOVED TO TOP OF LEFT SECTION - with overlay button -->
-                <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden">
+                    <!-- BANNER MOVED TO TOP OF LEFT SECTION - with overlay button -->
+                    <div
+                        class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden">
 
-                    <!-- Course Preview Image - Banner with overlay button -->
-                    <div class="relative h-64 md:h-80 overflow-hidden group">
-                        <img src="{{ $course->banner ? asset('storage/'.$course->banner) : 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80' }}"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                            alt="{{ $course->title }}">
+                        <!-- Course Preview Image - Banner with overlay button -->
+                        <div class="relative h-64 md:h-80 overflow-hidden group">
+                            <img src="{{ $course->banner ? asset($course->banner) : 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80' }}"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                alt="{{ $course->title }}">
 
                         <!-- Gradient Overlay -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
@@ -50,97 +51,115 @@
                             </div>
                         </div>
 
-                        <!-- Category Badge moved onto banner -->
-                        <div class="absolute bottom-4 left-4 flex flex-wrap items-center gap-4">
-                            <span class="px-4 py-2 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-full text-sm shadow-lg">
-                                {{ $course->category->title ?? 'Uncategorized' }}
-                            </span>
+                            <!-- Category Badge moved onto banner -->
+                            <div class="absolute bottom-4 left-4 flex flex-wrap items-center gap-4">
+                                <span
+                                    class="px-4 py-2 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-full text-sm shadow-lg">
+                                    {{ $course->category->title ?? 'Uncategorized' }}
+                                </span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Course Title & Info (now under banner) -->
-                <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+                    <!-- Course Title & Info (now under banner) -->
+                    <div
+                        class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
 
-                    <!-- Title -->
-                    <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
-                        {{ $course->title }}
-                    </h1>
+                        <!-- Title -->
+                        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                            {{ $course->title }}
+                        </h1>
 
-                    <!-- Description -->
-                    <p class="text-gray-300 text-lg leading-relaxed mb-8">
-                        {{ $course->description }}
-                    </p>
+                        <!-- Description -->
+                        <p class="text-gray-300 text-lg leading-relaxed mb-8">
+                            {{ $course->description }}
+                        </p>
 
-                    <!-- Instructor Info -->
-                    <div class="flex items-center gap-6 p-6 bg-black/40 rounded-xl border border-white/5">
-                        @if($course->instructor && $course->instructor->user)
-                        <img src="{{ $course->instructor->avatar ? asset('storage/'.$course->instructor->avatar) : 'https://ui-avatars.com/api/?name='.urlencode($course->instructor->user->name) }}"
-                            class="w-20 h-20 rounded-full border-3 border-yellow-500/50"
-                            alt="{{ $course->instructor->user->name }}">
-                        <div>
-                            <span class="text-gray-400 text-sm">Created by</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">{{ $course->instructor->user->name }}</h3>
-                            <p class="text-yellow-400">{{ $course->instructor->qualification ?? 'Expert Instructor' }}</p>
-                        </div>
-                        @else
-                        <div>
-                            <span class="text-gray-400 text-sm">Created by</span>
-                            <h3 class="text-2xl font-bold text-white mb-1">Expert Instructor</h3>
-                        </div>
-                        @endif
-                    </div>
-                </div>
-
-                <!-- What You'll Learn Section -->
-                <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
-                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-1 h-8 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
-                        What You'll Learn
-                    </h2>
-
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <span class="text-gray-300">Build real-world projects</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <span class="text-gray-300">Master industry best practices</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <span class="text-gray-300">Get certified upon completion</span>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                            </div>
-                            <span class="text-gray-300">Lifetime access to materials</span>
+                        <!-- Instructor Info -->
+                        <div class="flex items-center gap-6 p-6 bg-black/40 rounded-xl border border-white/5">
+                            @if ($course->instructor && $course->instructor->user)
+                                <img src="{{ $course->instructor->avatar ? asset($course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . urlencode($course->instructor->user->name) }}"
+                                    class="w-20 h-20 rounded-full border-3 border-yellow-500/50"
+                                    alt="{{ $course->instructor->user->name }}">
+                                <div>
+                                    <span class="text-gray-400 text-sm">Created by</span>
+                                    <h3 class="text-2xl font-bold text-white mb-1">{{ $course->instructor->user->name }}
+                                    </h3>
+                                    <p class="text-yellow-400">
+                                        {{ $course->instructor->qualification ?? 'Expert Instructor' }}</p>
+                                </div>
+                            @else
+                                <div>
+                                    <span class="text-gray-400 text-sm">Created by</span>
+                                    <h3 class="text-2xl font-bold text-white mb-1">Expert Instructor</h3>
+                                </div>
+                            @endif
                         </div>
                     </div>
-                </div>
 
-                <!-- Course Includes -->
-                <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
-                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-1 h-8 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
-                        This Course Includes
-                    </h2>
+                    <!-- What You'll Learn Section -->
+                    <div
+                        class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                            What You'll Learn
+                        </h2>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Build real-world projects</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Master industry best practices</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Get certified upon completion</span>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <div
+                                    class="w-6 h-6 rounded-full bg-yellow-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                                    <svg class="w-4 h-4 text-yellow-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Lifetime access to materials</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Course Includes -->
+                    <div
+                        class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
+                        <h2 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
+                            <span class="w-1 h-8 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                            This Course Includes
+                        </h2>
 
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div class="flex items-center gap-3 p-4 bg-black/40 rounded-xl">
@@ -190,14 +209,17 @@
             <div class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
 
-                    <!-- Enroll Buttons - Moved to top of right column -->
-                    <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-                        <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                            </svg>
-                            Enrollment Options
-                        </h3>
+                        <!-- Enroll Buttons - Moved to top of right column -->
+                        <div
+                            class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                            <h3 class="text-white font-bold text-lg mb-4 flex items-center gap-2">
+                                <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                        clip-rule="evenodd"></path>
+                                </svg>
+                                Enrollment Options
+                            </h3>
 
                         @auth
                         @php
@@ -205,13 +227,16 @@
                         $inWishlist = Auth::user()->isCourseInWishlist($course->id);
                         @endphp
 
-                        @if($isEnrolled)
-                        <div class="block w-full py-4 bg-green-500/20 border border-green-500/30 text-green-400 font-bold text-center rounded-xl mb-3 flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                            </svg>
-                            ✓ You're Enrolled
-                        </div>
+                                @if ($isEnrolled)
+                                    <div
+                                        class="block w-full py-4 bg-green-500/20 border border-green-500/30 text-green-400 font-bold text-center rounded-xl mb-3 flex items-center justify-center gap-2">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd"
+                                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                        ✓ You're Enrolled
+                                    </div>
 
                         <a href="{{ route('student.courses.show', $course->id) }}"
                             class="block w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
@@ -410,52 +435,52 @@
         </div>
     </div>
 
-    <style>
-        @keyframes pulse-slow {
+        <style>
+            @keyframes pulse-slow {
 
-            0%,
-            100% {
-                opacity: 0.1;
+                0%,
+                100% {
+                    opacity: 0.1;
+                }
+
+                50% {
+                    opacity: 0.3;
+                }
             }
 
-            50% {
-                opacity: 0.3;
+            .animate-pulse-slow {
+                animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
             }
-        }
 
-        .animate-pulse-slow {
-            animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
+            .animation-delay-2000 {
+                animation-delay: 2s;
+            }
 
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
+            /* Custom Scrollbar */
+            .custom-scrollbar::-webkit-scrollbar {
+                width: 5px;
+            }
 
-        /* Custom Scrollbar */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 5px;
-        }
+            .custom-scrollbar::-webkit-scrollbar-track {
+                background: rgba(255, 255, 255, 0.05);
+            }
 
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.05);
-        }
+            .custom-scrollbar::-webkit-scrollbar-thumb {
+                background: rgba(255, 215, 0, 0.2);
+                border-radius: 10px;
+            }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: rgba(255, 215, 0, 0.2);
-            border-radius: 10px;
-        }
+            .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+                background: rgba(255, 215, 0, 0.4);
+            }
 
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 215, 0, 0.4);
-        }
-
-        /* Line clamp utilities */
-        .line-clamp-1 {
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 1;
-        }
+            /* Line clamp utilities */
+            .line-clamp-1 {
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 1;
+            }
 
         .line-clamp-2 {
             overflow: hidden;
