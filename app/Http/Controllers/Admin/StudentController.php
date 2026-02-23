@@ -8,6 +8,8 @@ use App\Models\Student;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
+use Spatie\Permission\Models\Role;
 
 class StudentController extends Controller
 {
@@ -42,23 +44,25 @@ class StudentController extends Controller
                 'password' => Hash::make($request->password),
             ]);
 
-            if (!\Spatie\Permission\Models\Role::where('name', 'student')->exists()) {
-                \Spatie\Permission\Models\Role::create(['name' => 'student']);
+            if (!Role::where('name', 'student')->exists()) {
+                Role::create(['name' => 'student']);
             }
 
             $user->assignRole('student');
 
-            $avatar = null;
+            $avatarPath = null;
 
             if ($request->hasFile('avatar')) {
-                $avatar = $request->file('avatar')->store('students', 'public');
+                $path = $request->file('avatar')->store('students', 'public');
+
+                $avatarPath = 'storage/' . $path;
             }
 
             Student::create([
                 'user_id' => $user->id,
                 'phone' => $request->phone,
                 'address' => $request->address,
-                'avatar' => $avatar,
+                'avatar' => $avatarPath,
                 'status' => $request->status,
             ]);
 
@@ -81,8 +85,9 @@ class StudentController extends Controller
 
     public function update(Request $request, Student $student)
     {
+        // Update user info
         $student->user->update([
-            'name' => $request->name,
+            'name'  => $request->name,
             'email' => $request->email,
         ]);
 
@@ -92,17 +97,39 @@ class StudentController extends Controller
             ]);
         }
 
+        $avatar = $student->avatar;
+
         if ($request->hasFile('avatar')) {
-            $student->avatar = $request->file('avatar')->store('students', 'public');
+
+            // Delete old avatar if exists
+            if ($student->avatar) {
+
+                // remove storage/ prefix
+                $oldPath = str_replace('storage/', '', $student->avatar);
+
+                if (Storage::disk('public')->exists($oldPath)) {
+                    Storage::disk('public')->delete($oldPath);
+                }
+            }
+
+            // Store new avatar
+            $path = $request->file('avatar')->store('students', 'public');
+
+            // Save with storage prefix
+            $avatar = 'storage/' . $path;
         }
 
+        // Update student record
         $student->update([
-            'phone' => $request->phone,
+            'phone'   => $request->phone,
             'address' => $request->address,
-            'status' => $request->status,
+            'status'  => $request->status,
+            'avatar'  => $avatar,
         ]);
 
-        return redirect()->route('admin.students')->with('success', 'Updated!');
+        return redirect()
+            ->route('admin.students')
+            ->with('success', 'Updated!');
     }
 
     public function destroy(Student $student)

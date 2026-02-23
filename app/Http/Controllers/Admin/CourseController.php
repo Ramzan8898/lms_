@@ -52,6 +52,15 @@ class CourseController extends Controller
             'banner'        => 'nullable|image',
         ]);
 
+        $bannerPath = null;
+
+        if ($request->hasFile('banner')) {
+            $path = $request->file('banner')->store('courses', 'public');
+
+            // ADD storage prefix manually
+            $bannerPath = 'storage/' . $path;
+        }
+
         Course::create([
             'instructor_id' => $request->instructor_id,
             'category_id'   => $request->category_id,
@@ -60,7 +69,7 @@ class CourseController extends Controller
             'description'   => $request->description,
             'price'         => $request->price,
             'duration'      => $request->duration,
-            'banner'        => $request->file('banner')?->store('courses', 'public'),
+            'banner'        => $bannerPath,
         ]);
 
         return redirect()->route('admin.courses')
@@ -90,18 +99,27 @@ class CourseController extends Controller
 
         $slug = Str::slug($request->title);
 
+        $banner = $course->banner;
+
         if ($request->hasFile('banner')) {
 
-            if ($course->banner && Storage::disk('public')->exists($course->banner)) {
-                Storage::disk('public')->delete($course->banner);
+            // DELETE OLD IMAGE
+            if ($course->banner) {
+
+                // remove storage/ prefix
+                $oldPath = str_replace('storage/', '', $course->banner);
+
+                if (Storage::disk('public')->exists($oldPath)) {
+                    Storage::disk('public')->delete($oldPath);
+                }
             }
 
-            $banner = $request->file('banner')->store('courses', 'public');
-        } else {
-            $banner = $course->banner;
+            // STORE NEW IMAGE
+            $path = $request->file('banner')->store('courses', 'public');
+
+            // SAVE WITH storage/ PREFIX
+            $banner = 'storage/' . $path;
         }
-
-
 
         $course->update([
             'instructor_id' => $request->instructor_id,
@@ -117,7 +135,6 @@ class CourseController extends Controller
         return redirect()->route('admin.courses')
             ->with('success', 'Course updated successfully!');
     }
-
     public function destroy(Course $course)
     {
         $course->delete();

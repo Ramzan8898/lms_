@@ -39,7 +39,7 @@
         <div>
             <label class="label">Current Avatar</label><br>
             @if($student->avatar)
-            <img src="{{ asset('storage/'.$student->avatar) }}" class="w-20 h-20 rounded-full mb-2 object-cover border">
+            <img src="{{ asset($student->avatar) }}" class="w-20 h-20 rounded-full mb-2 object-cover border">
             @else
             <img src="https://ui-avatars.com/api/?name={{ $student->user->name }}" class="w-20 h-20 rounded-full mb-2 object-cover border">
             @endif

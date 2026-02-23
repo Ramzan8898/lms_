@@ -44,7 +44,7 @@
                     <td class="p-4">
                         <div class="flex items-center gap-3">
                             <img
-                                src="{{ $instructor->avatar ? asset('storage/'.$instructor->avatar) : 'https://ui-avatars.com/api/?name='.$instructor->user->name }}"
+                                src="{{ $instructor->avatar ? asset($instructor->avatar) : 'https://ui-avatars.com/api/?name='.$instructor->user->name }}"
                                 class="w-10 h-10 rounded-full object-cover">
                             <span class="font-medium">
                                 {{ $instructor->user->name }}
