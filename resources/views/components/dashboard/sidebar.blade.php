@@ -1,5 +1,5 @@
 <!-- Ultra Premium Admin Sidebar -->
-<aside class="w-80 bg-linear-to-b from-[#0a0a0a] via-[#0f0f0f] to-black border-r border-yellow-600/20 text-white hidden md:flex flex-col min-h-screen">
+<aside class="w-80 bg-linear-to-b from-[#0a0a0a] via-[#0f0f0f] to-black border-r border-yellow-600/20 text-white hidden md:flex flex-col min-h-screen overflow-y-auto no-scrollbar">
 
     <!-- Logo Section -->
     <div class="flex flex-col items-center py-6 border-b border-yellow-600/20 group">
