@@ -187,7 +187,7 @@
                     <div
                         class="relative bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-10 hover:border-yellow-500/30 transition-all duration-500">
 
-                        <form method="POST" action="#" class="space-y-6">
+                        <form method="POST" action="{{ route('query.store') }}" class="space-y-6">
                             @csrf
 
                             <!-- Name Field with Icon -->
@@ -260,7 +260,8 @@
                                         <option value="general" class="bg-[#0a0a0a]">General Inquiry</option>
                                         <option value="support" class="bg-[#0a0a0a]">Technical Support</option>
                                         <option value="billing" class="bg-[#0a0a0a]">Billing Question</option>
-                                        <option value="partnership" class="bg-[#0a0a0a]">Partnership</option>
+                                        <option value="instructor" class="bg-[#0a0a0a]">Instructor</option>
+                                        <option value="course" class="bg-[#0a0a0a]">Course Related</option>
                                     </select>
                                     <span class="absolute right-4 top-1/2 -translate-y-1/2 text-yellow-500">
                                         <svg class="w-5 h-5" fill="none" stroke="currentColor"

@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\InstructorController;
 use App\Http\Controllers\Admin\LessonController;
 use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
 use App\Http\Controllers\Admin\Profile;
+use App\Http\Controllers\admin\QueryController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
@@ -56,6 +57,8 @@ Route::prefix('lms')->group(function () {
         return view('auth.register');
     })->name('web.register');
 });
+Route::post('/contact/store', [QueryController::class, 'store'])
+    ->name('query.store');
 
 Route::post('/register', [AuthController::class, 'register'])->name('auth.register');
 Route::middleware('guest')->group(function () {
@@ -139,6 +142,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/categories/edit/{category}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
     Route::put('/categories/update/{category}', [CategoryController::class, 'update'])->name('admin.categories.update');
     Route::delete('/categories/destroy/{category}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+
+    //queries
+    Route::get('/queries', [QueryController::class, 'index'])->name('admin.queries');
 });
 
 Route::middleware(['auth'])->prefix('students')->name('student.')->group(function () {

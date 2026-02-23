@@ -2,7 +2,7 @@
 @section('title', 'My Wishlist')
 
 @section('content')
-<section class="relative py-25 bg-black overflow-hidden min-h-screen">
+<section class="relative py-25  overflow-hidden min-h-screen">
 
     <div class="absolute inset-0">
         <div class="absolute top-40 right-0 w-150 h-150 bg-linear-to-r from-yellow-500/5 via-orange-500/5 to-transparent rounded-full blur-[120px] animate-pulse-slow"></div>

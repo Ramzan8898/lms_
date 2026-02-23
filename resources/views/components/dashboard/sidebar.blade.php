@@ -229,6 +229,33 @@
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
+
+
+        @php
+        $totalQueries = \App\Models\Queries::count();
+        @endphp
+
+        <a href="{{ route('admin.queries') }}"
+            class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
+    {{ request()->routeIs('admin.queries') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
+
+            <svg class="w-5 h-5 transition-colors duration-500
+        {{ request()->routeIs('admin.queries') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-width="2"
+                    d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8s-9-3.582-9-8 4.03-8 9-8s9 3.582 9 8z" />
+            </svg>
+
+            <span class="flex-1">Queries</span>
+
+            <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
+                {{ $totalQueries }}
+            </span>
+
+            @if(request()->routeIs('admin.queries'))
+            <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
+            @endif
+        </a>
         @endif
 
         <!-- INSTRUCTOR ROUTES - Dashboard, Courses, Lessons, Categories -->
