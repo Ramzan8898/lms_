@@ -8,8 +8,9 @@
 
             <div class="absolute -inset-3 bg-linear-to-r from-yellow-500/40 to-orange-500/40 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition duration-500"></div>
 
-            <img src="/assets/logo/logo.png"
-                class="w-32 relative z-10 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(255,215,0,0.6)] transition-all duration-500">
+            <a href="{{ route('welcome') }}">
+                <img src="/assets/logo/logo.png"
+                    class="w-32 relative z-10 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(255,215,0,0.6)] transition-all duration-500"></a>
         </div>
 
         <div class="w-16 h-0.5 bg-linear-to-r from-transparent via-yellow-500 to-transparent"></div>
@@ -336,13 +337,18 @@
 
         <!-- STUDENT ROUTES - Only Student Lessons -->
         @if($userRole === 'student')
-        <!-- Student Lessons -->
+
+        @php
+        $user = Auth::user();
+        @endphp
+
+        <!-- My Courses -->
         <a href="{{ route('student.courses.show') }}"
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
-           {{ request()->routeIs('student.courses.show') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
+        {{ request()->routeIs('student.courses.show') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
 
             <svg class="w-5 h-5 transition-colors duration-500
-                {{ request()->routeIs('student.courses.show') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+            {{ request()->routeIs('student.courses.show') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
                 fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-width="2"
                     d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -350,18 +356,37 @@
 
             <span class="flex-1">My Courses</span>
 
-            @php
-            $user = Auth::user();
-            $enrolledCoursesCount = $user->enrolledCourses()->count();
-            @endphp
             <span class="px-2 py-0.5 bg-white/10 rounded-full text-xs text-gray-400">
-                {{ $enrolledCoursesCount }}
+                {{ $user->enrolledCourses()->count() }}
             </span>
 
             @if(request()->routeIs('student.courses.show'))
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
+
+
+        <!-- Wishlist -->
+        <a href="{{ route('wishlist.student.wishlist') }}"
+            class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
+        {{ request()->routeIs('wishlist.student.wishlist') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
+
+            <svg class="w-5 h-5 transition-colors duration-500
+            {{ request()->routeIs('wishlist.student.wishlist') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-width="2"
+                    d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 20.364 4.318 12.682a4.5 4.5 0 010-6.364z" />
+            </svg>
+
+            <span class="flex-1">Wishlist</span>
+
+
+
+            @if(request()->routeIs('wishlist.student.wishlist'))
+            <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
+            @endif
+        </a>
+
         @endif
 
         <div class="py-6">

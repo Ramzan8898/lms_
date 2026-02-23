@@ -13,6 +13,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Students\StudentDashboardController;
 use App\Http\Controllers\Students\StudentEnrollmentController;
 use App\Http\Controllers\Students\StudentLessons;
+use App\Http\Controllers\students\WishlistController;
 use App\Http\Controllers\website\PaymentController;
 use App\Http\Controllers\Website\WebsiteController;
 use Illuminate\Support\Facades\Auth;
@@ -161,4 +162,12 @@ Route::middleware(['auth'])->prefix('students')->name('student.')->group(functio
 
     // Learning Page
     Route::get('/learning', [StudentEnrollmentController::class, 'myLearning'])->name('learning');
+});
+
+
+// Add this with your other routes
+Route::middleware(['auth'])->prefix('wishlist')->name('wishlist.')->group(function () {
+    Route::get('/', [WishlistController::class, 'index'])->name('student.wishlist');
+    Route::post('/toggle/{course}', [WishlistController::class, 'toggle'])->name('toggle');
+    Route::get('/check/{course}', [WishlistController::class, 'check'])->name('check');
 });

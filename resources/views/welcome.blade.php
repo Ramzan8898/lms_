@@ -929,7 +929,7 @@
                 <div
                     class="relative bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden 
                         hover:border-yellow-500/30 hover:shadow-2xl hover:shadow-yellow-500/20
-                        transition-all duration-500 ease-out
+                        transition-all duratzion-500 ease-out
                         group-hover:scale-105 group-hover:-translate-y-2">
 
                     <!-- Image Container with Overlay -->
@@ -1052,7 +1052,7 @@
                             </div>
 
 
-                            <a href="#" class="relative px-6 py-3 rounded-xl overflow-hidden group/btn">
+                            <a href="{{route('website.pages.show', $course->slug)}}" class="relative px-6 py-3 rounded-xl overflow-hidden group/btn">
                                 <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
                                 <span
                                     class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>

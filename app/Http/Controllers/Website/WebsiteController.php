@@ -13,7 +13,7 @@ class WebsiteController extends Controller
 
     public function index()
     {
-        $courses = Course::with(['instructor', 'category'])->take(8)->get();
+        $courses = Course::with(['instructor', 'category'])->take(4)->get();
         $categories = Category::whereHas('courses')->get();
         return view('welcome', compact('courses', 'categories'));
     }

@@ -85,4 +85,16 @@ class Course extends Model
             ->where('completed', true)
             ->count();
     }
+
+
+    // In app/Models/Course.php - add this relationship
+    public function wishlists()
+    {
+        return $this->hasMany(wishlists::class);
+    }
+
+    public function wishlistedByUsers()
+    {
+        return $this->belongsToMany(User::class, 'wishlists');
+    }
 }

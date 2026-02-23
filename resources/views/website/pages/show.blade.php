@@ -41,16 +41,14 @@
                         <!-- Gradient Overlay -->
                         <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
 
-
-
-                            <!-- Price Badge on Banner -->
-                            <div class="absolute top-4 right-4">
-                                <div class="px-4 py-2 bg-black/60 backdrop-blur-xl border border-yellow-500/30 rounded-full">
-                                    <span class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                                        ${{ number_format($course->price, 2) }}
-                                    </span>
-                                </div>
+                        <!-- Price Badge on Banner -->
+                        <div class="absolute top-4 right-4">
+                            <div class="px-4 py-2 bg-black/60 backdrop-blur-xl border border-yellow-500/30 rounded-full">
+                                <span class="text-2xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                                    ${{ number_format($course->price, 2) }}
+                                </span>
                             </div>
+                        </div>
 
                         <!-- Category Badge moved onto banner -->
                         <div class="absolute bottom-4 left-4 flex flex-wrap items-center gap-4">
@@ -150,7 +148,7 @@
                                 <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                             <div>
-                                <p class="text-white font-semibold" >Duration</p>
+                                <p class="text-white font-semibold">Duration</p>
                                 <p class="text-gray-400 text-xs">{{ $course->duration ?? 'Self-paced' }}</p>
                             </div>
                         </div>
@@ -160,7 +158,7 @@
                                 <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                             </svg>
                             <div>
-                                <p class="text-white font-semibold" >Lessons</p>
+                                <p class="text-white font-semibold">Lessons</p>
                                 <p class="text-gray-400 text-xs">{{ $course->lessons->count() }}</p>
                             </div>
                         </div>
@@ -171,7 +169,7 @@
                             </svg>
                             <div>
                                 <p class="text-white font-semibold">Completion</p>
-                                <p class="text-gray-400 text-xs" >Certificate</p>
+                                <p class="text-gray-400 text-xs">Certificate</p>
                             </div>
                         </div>
 
@@ -180,7 +178,7 @@
                                 <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                             <div>
-                                <p class="text-white font-semibold" >Support</p>
+                                <p class="text-white font-semibold">Support</p>
                                 <p class="text-gray-400 text-xs">24/7</p>
                             </div>
                         </div>
@@ -188,7 +186,7 @@
                 </div>
             </div>
 
-            <!-- Right Column - Buttons & Lessons Only (Banner removed from here) -->
+            <!-- Right Column - Buttons & Lessons Only -->
             <div class="lg:col-span-1">
                 <div class="sticky top-24 space-y-6">
 
@@ -204,6 +202,7 @@
                         @auth
                         @php
                         $isEnrolled = $course->isUserEnrolled(Auth::id());
+                        $inWishlist = Auth::user()->isCourseInWishlist($course->id);
                         @endphp
 
                         @if($isEnrolled)
@@ -214,7 +213,7 @@
                             ✓ You're Enrolled
                         </div>
 
-                        <a href="#"
+                        <a href="{{ route('student.courses.show', $course->id) }}"
                             class="block w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
@@ -231,12 +230,108 @@
                             Enroll Now - ${{ number_format($course->price, 2) }}
                         </a>
 
-                        <a href="#" class="block w-full py-4 bg-white/5 border border-white/10 text-white font-bold text-center rounded-xl hover:bg-white/10 transition-all duration-500 flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                        <button onclick="toggleWishlist({{ $course->id }})"
+                            class="wishlist-btn w-full py-4 bg-white/5 border border-white/10 text-white font-bold text-center rounded-xl hover:bg-white/10 transition-all duration-500 flex items-center justify-center gap-2 {{ $inWishlist ? 'in-wishlist' : '' }}"
+                            data-course-id="{{ $course->id }}">
+                            <svg class="w-5 h-5 wishlist-icon" fill="{{ $inWishlist ? 'currentColor' : 'none' }}" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                             </svg>
-                            Add to Wishlist
-                        </a>
+                            <span class="wishlist-text">{{ $inWishlist ? 'In Wishlist' : 'Add to Wishlist' }}</span>
+                        </button>
+
+                        <script>
+                            const csrfToken = '{{ csrf_token() }}';
+
+                            function toggleWishlist(courseId) {
+                                const button = document.querySelector('.wishlist-btn');
+                                if (!button) return;
+
+                                const icon = button.querySelector('.wishlist-icon');
+                                const text = button.querySelector('.wishlist-text');
+
+                                // Show loading state
+                                const originalHtml = button.innerHTML;
+                                button.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg> Processing...';
+                                button.disabled = true;
+
+                                fetch(`/wishlist/toggle/${courseId}`, {
+                                        method: 'POST',
+                                        headers: {
+                                            'X-CSRF-TOKEN': csrfToken,
+                                            'Content-Type': 'application/json',
+                                            'Accept': 'application/json',
+                                            'X-Requested-With': 'XMLHttpRequest'
+                                        },
+                                        credentials: 'same-origin'
+                                    })
+                                    .then(response => {
+                                        if (!response.ok) {
+                                            throw new Error('Network response was not ok');
+                                        }
+                                        return response.json();
+                                    })
+                                    .then(data => {
+                                        if (data.success) {
+                                            if (data.action === 'added') {
+                                                // Update to "In Wishlist" state
+                                                button.innerHTML = `
+                        <svg class="w-5 h-5 wishlist-icon" fill="currentColor" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        <span class="wishlist-text">In Wishlist</span>
+                    `;
+                                                button.classList.add('in-wishlist');
+                                                showNotification('Course added to wishlist!', 'success');
+                                            } else {
+                                                // Update to "Add to Wishlist" state
+                                                button.innerHTML = `
+                        <svg class="w-5 h-5 wishlist-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                        <span class="wishlist-text">Add to Wishlist</span>
+                    `;
+                                                button.classList.remove('in-wishlist');
+                                                showNotification('Course removed from wishlist', 'info');
+                                            }
+                                        } else {
+                                            button.innerHTML = originalHtml;
+                                            showNotification(data.message || 'An error occurred', 'error');
+                                        }
+                                    })
+                                    .catch(error => {
+                                        console.error('Error:', error);
+                                        button.innerHTML = originalHtml;
+                                        showNotification('Failed to update wishlist', 'error');
+                                    })
+                                    .finally(() => {
+                                        button.disabled = false;
+                                    });
+                            }
+
+                            function showNotification(message, type) {
+                                // Remove any existing notifications
+                                const existingNotifications = document.querySelectorAll('.notification-toast');
+                                existingNotifications.forEach(n => n.remove());
+
+                                // Create notification element
+                                const notification = document.createElement('div');
+                                notification.className = `notification-toast fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 animate-slideIn ${type === 'success' ? 'bg-green-500/20 border border-green-500/30 text-green-400' :
+            type === 'error' ? 'bg-red-500/20 border border-red-500/30 text-red-400' :
+                'bg-blue-500/20 border border-blue-500/30 text-blue-400'
+        }`;
+                                notification.style.zIndex = '9999';
+                                notification.innerHTML = message;
+
+                                document.body.appendChild(notification);
+
+                                // Remove after 3 seconds
+                                setTimeout(() => {
+                                    if (notification && notification.parentNode) {
+                                        notification.remove();
+                                    }
+                                }, 3000);
+                            }
+                        </script>
                         @endif
                         @else
                         <a href="{{ route('login') }}"
@@ -249,111 +344,50 @@
                         @endauth
                     </div>
 
-                    <!-- All Lessons List - Under buttons -->
+                    <!-- Lessons List Section - Add this back if you removed it -->
+                    @if($course->lessons->isNotEmpty())
                     <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden">
                         <div class="p-4 border-b border-white/10 flex justify-between items-center">
-                            <h3 class="text-white font-bold text-lg flex items-center gap-2">
-                                <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
-                                </svg>
-                                Course Lessons
-                            </h3>
+                            <h3 class="text-white font-bold text-lg">Course Lessons</h3>
                             <span class="px-3 py-1 bg-yellow-500/20 text-yellow-400 rounded-full text-xs font-semibold">
                                 {{ $course->lessons->count() }} Total
                             </span>
                         </div>
-
                         <div class="divide-y divide-white/5 max-h-[450px] overflow-y-auto custom-scrollbar">
-                            @forelse($course->lessons as $index => $lesson)
+                            @foreach($course->lessons->take(5) as $index => $lesson)
                             <div class="p-4 hover:bg-white/5 transition-colors group">
                                 <div class="flex items-start gap-3">
-                                    <!-- Lesson Number with Icon -->
-                                    <div class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-yellow-500/30 transition-colors">
+                                    <div class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
                                         <span class="text-yellow-400 text-sm font-semibold">{{ $index + 1 }}</span>
                                     </div>
-
                                     <div class="flex-1">
-                                        <!-- Lesson Title -->
                                         <h4 class="text-white font-medium group-hover:text-yellow-400 transition-colors line-clamp-1">
                                             {{ $lesson->title }}
                                         </h4>
-
-                                        <!-- Lesson Meta Info -->
-                                        <div class="flex items-center gap-3 mt-1">
-                                            @if($lesson->duration)
-                                            <div class="flex items-center gap-1 text-gray-500 text-xs">
-                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                                </svg>
-                                                <span>{{ $lesson->duration }}</span>
-                                            </div>
-                                            @endif
-
-                                            @if($lesson->video_url)
-                                            <div class="flex items-center gap-1 text-green-500 text-xs">
-                                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12z"></path>
-                                                </svg>
-                                                <span>Video</span>
-                                            </div>
-                                            @endif
-
-                                            @if($lesson->is_free)
-                                            <div class="flex items-center gap-1 text-green-400 text-xs">
-                                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M5 2a1 1 0 011 1v1h1a1 1 0 010 2H6v1a1 1 0 01-2 0V6H3a1 1 0 010-2h1V3a1 1 0 011-1zm0 10a1 1 0 011 1v1h1a1 1 0 110 2H6v1a1 1 0 11-2 0v-1H3a1 1 0 110-2h1v-1a1 1 0 011-1zM12 2a1 1 0 01.967.744L14.146 7.2 17.5 9.134a1 1 0 010 1.732l-3.354 1.935-1.18 4.455a1 1 0 01-1.933 0L9.854 12.8 6.5 10.866a1 1 0 010-1.732l3.354-1.935 1.18-4.455A1 1 0 0112 2z" clip-rule="evenodd"></path>
-                                                </svg>
-                                                <span>Free</span>
-                                            </div>
-                                            @endif
-                                        </div>
-
-                                        <!-- Lesson Description (short) -->
                                         @if($lesson->description)
-                                        <p class="text-gray-400 text-xs mt-2 line-clamp-2">
+                                        <p class="text-gray-400 text-xs mt-1 line-clamp-2">
                                             {{ Str::limit($lesson->description, 70) }}
                                         </p>
                                         @endif
                                     </div>
-
-                                    <!-- Play Icon -->
-                                    @if($lesson->video_url)
-                                    <a href="#" class="text-yellow-400 hover:text-yellow-300 transition-colors">
-                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
-                                        </svg>
-                                    </a>
-                                    @endif
                                 </div>
                             </div>
-                            @empty
-                            <div class="p-8 text-center">
-                                <p class="text-gray-400">No lessons available yet.</p>
-                            </div>
-                            @endforelse
+                            @endforeach
                         </div>
-
-                        <!-- View All Button -->
                         @if($course->lessons->count() > 5)
                         <div class="p-4 border-t border-white/10">
-                            <button class="w-full py-2 text-center text-yellow-400 hover:text-yellow-300 text-sm font-semibold transition-colors">
-                                View All Lessons →
-                            </button>
+                            <a href="#" class="block w-full py-2 text-center text-yellow-400 hover:text-yellow-300 text-sm font-semibold transition-colors">
+                                View All {{ $course->lessons->count() }} Lessons →
+                            </a>
                         </div>
                         @endif
                     </div>
+                    @endif
 
                     <!-- Related Courses -->
                     @if(isset($relatedCourses) && $relatedCourses->isNotEmpty())
                     <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
-                        <h3 class="text-white font-bold mb-4 flex items-center gap-2">
-                            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
-                            </svg>
-                            Related Courses
-                        </h3>
-
+                        <h3 class="text-white font-bold mb-4">Related Courses</h3>
                         @foreach($relatedCourses as $related)
                         <a href="{{ route('website.pages.show', $related->slug) }}" class="flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition-colors group mb-2 last:mb-0">
                             <img src="{{ $related->banner ? asset('storage/'.$related->banner) : 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80' }}"
@@ -365,8 +399,6 @@
                                 </h4>
                                 <div class="flex items-center gap-2 mt-1">
                                     <span class="text-yellow-400 text-xs font-bold">${{ number_format($related->price, 2) }}</span>
-                                    <span class="text-gray-600 text-xs">|</span>
-                                    <span class="text-gray-400 text-xs">{{ $related->lessons->count() }} lessons</span>
                                 </div>
                             </div>
                         </a>
@@ -430,6 +462,43 @@
             display: -webkit-box;
             -webkit-box-orient: vertical;
             -webkit-line-clamp: 2;
+        }
+
+        /* Wishlist button styles */
+        .wishlist-btn.in-wishlist {
+            background: rgba(239, 68, 68, 0.1);
+            border-color: rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+        }
+
+        .wishlist-btn.in-wishlist:hover {
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .animate-spin {
+            animation: spin 1s linear infinite;
         }
     </style>
 </section>

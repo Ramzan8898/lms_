@@ -34,6 +34,7 @@
 
     </div>
 
+    <script src="{{ asset('js/student.js') }}"></script>
 </body>
 
 </html>
