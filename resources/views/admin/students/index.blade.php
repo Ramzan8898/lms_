@@ -17,7 +17,7 @@
     </a>
 </div>
 
-<div class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl overflow-hidden">
+<div class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl overflow-hidden">
     <!-- Table -->
     <div class="overflow-x-auto">
         <table class="w-full text-sm text-left">
@@ -38,8 +38,8 @@
                     <td class="p-4">{{ $index + 1 }}</td>
 
                     <td class="p-4 flex items-center gap-3">
-                        <img src="{{ $student->avatar ? asset('storage/'.$student->avatar) : 'https://ui-avatars.com/api/?name='.$student->user->name }}"
-                            class="w-10 h-10 rounded-full">
+                        <img src="{{ $student->avatar ? asset($student->avatar) : 'https://ui-avatars.com/api/?name='.$student->user->name }}"
+                            class="w-10 h-10 rounded-full object-cover">
                         {{ $student->user->name }}
                     </td>
 

@@ -40,7 +40,7 @@
                                 alt="{{ $course->title }}">
 
                         <!-- Gradient Overlay -->
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                        <div class="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
 
                         <!-- Price Badge on Banner -->
                         <div class="absolute top-4 right-4">
@@ -229,7 +229,7 @@
 
                                 @if ($isEnrolled)
                                     <div
-                                        class="block w-full py-4 bg-green-500/20 border border-green-500/30 text-green-400 font-bold text-center rounded-xl mb-3 flex items-center justify-center gap-2">
+                                        class="w-full py-4 bg-green-500/20 border border-green-500/30 text-green-400 font-bold text-center rounded-xl mb-3 flex items-center justify-center gap-2">
                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd"
                                                 d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
@@ -239,7 +239,7 @@
                                     </div>
 
                         <a href="{{ route('student.courses.show', $course->id) }}"
-                            class="block w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
+                            class="w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12z" clip-rule="evenodd"></path>
@@ -248,7 +248,7 @@
                         </a>
                         @else
                         <a href="{{ route('payment.checkout', $course->id) }}"
-                            class="block w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl mb-3 hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
+                            class="w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl mb-3 hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clip-rule="evenodd"></path>
                             </svg>
@@ -360,7 +360,7 @@
                         @endif
                         @else
                         <a href="{{ route('login') }}"
-                            class="block w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
+                            class=" w-full py-4 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-bold text-center rounded-xl hover:shadow-lg hover:shadow-yellow-500/30 transition-all duration-500 transform hover:scale-105 flex items-center justify-center gap-2">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
@@ -378,11 +378,11 @@
                                 {{ $course->lessons->count() }} Total
                             </span>
                         </div>
-                        <div class="divide-y divide-white/5 max-h-[450px] overflow-y-auto custom-scrollbar">
+                        <div class="divide-y divide-white/5 max-h-112.5 overflow-y-auto custom-scrollbar">
                             @foreach($course->lessons->take(5) as $index => $lesson)
                             <div class="p-4 hover:bg-white/5 transition-colors group">
                                 <div class="flex items-start gap-3">
-                                    <div class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center flex-shrink-0">
+                                    <div class="w-8 h-8 rounded-full bg-yellow-500/20 flex items-center justify-center shrink-0">
                                         <span class="text-yellow-400 text-sm font-semibold">{{ $index + 1 }}</span>
                                     </div>
                                     <div class="flex-1">

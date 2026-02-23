@@ -62,8 +62,8 @@
                     {{-- Thumbnail --}}
                     <td class="p-4">
                         @if($course->banner)
-                        <img src="{{ asset('storage/'.$course->banner) }}"
-                            class="w-14 h-14 object-cover rounded border">
+                        <img src="{{ asset($course->banner) }}"
+                            class="object-cover rounded w-24 h-auto">
                         @else
                         <span class="text-gray-400">No Image</span>
                         @endif

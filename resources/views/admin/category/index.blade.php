@@ -21,6 +21,7 @@
         <tr class="border-b border-gray-700">
             <th class="py-2 text-left">Title</th>
             <th class="py-2 text-left">Slug</th>
+            <th class="py-2 text-left">Description</th>
             <th class="py-2 text-left">Actions</th>
         </tr>
     </thead>
@@ -33,6 +34,9 @@
 
             <td class="w-1/3">
                 {{ $category->slug }}
+            </td>
+            <td class="w-1/3">
+                {{ $category->description ?? 'No description' }}
             </td>
 
             <td class="w-1/3">

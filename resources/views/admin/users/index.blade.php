@@ -17,9 +17,7 @@
     </div>
 
     <div
-        class="bg-gradient-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl overflow-hidden">
-
-
+        class="bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl overflow-hidden">
 
         <!-- Table -->
         <div class="overflow-x-auto">
