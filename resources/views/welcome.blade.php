@@ -898,23 +898,23 @@
 
                 <!-- Category Filter Pills with Premium Design -->
                 <!-- <div class="flex flex-wrap justify-center gap-4 mb-12">
-                    <button class="group relative px-8 py-3 rounded-full overflow-hidden category-filter active" data-category="all">
-                        <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
-                        <span
-                            class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                        <span class="relative text-black font-semibold">All Courses</span>
-                    </button>
+                        <button class="group relative px-8 py-3 rounded-full overflow-hidden category-filter active" data-category="all">
+                            <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
+                            <span
+                                class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                            <span class="relative text-black font-semibold">All Courses</span>
+                        </button>
 
-                    @foreach ($categories as $category)
+                        @foreach ($categories as $category)
     <button class="group relative px-8 py-3 rounded-full overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 hover:border-yellow-500/50 transition-all duration-500 category-filter"
-                        data-category="{{ $category->title ?? strtolower($category->title) }}">
-                        <span
-                            class="relative text-white group-hover:text-yellow-400 transition-colors duration-500">{{ $category->title }}</span>
-                        <span
-                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-500"></span>
-                    </button>
+                            data-category="{{ $category->title ?? strtolower($category->title) }}">
+                            <span
+                                class="relative text-white group-hover:text-yellow-400 transition-colors duration-500">{{ $category->title }}</span>
+                            <span
+                                class="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-500"></span>
+                        </button>
     @endforeach
-                </div> -->
+                    </div> -->
             </div>
 
             <!-- Courses Grid - Premium Cards -->
@@ -1001,7 +1001,7 @@
 
                             <div class="p-6">
                                 <div class="flex items-center gap-3 mb-4">
-                                    <img src="{{ $course->instructor->avatar ? asset($course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . $course->instructor->user->name }}"
+                                    <img src="{{ $course->instructor->avatar ? asset('storage/' . $course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . $course->instructor->user->name }}"
                                         class="w-10 h-10 rounded-full border-2 border-yellow-500/50"
                                         alt="{{ $course->instructor->name }}">
                                     <div>
@@ -1056,16 +1056,18 @@
                                     </div>
 
 
-                            <a href="{{route('website.pages.show', $course->slug)}}" class="relative px-6 py-3 rounded-xl overflow-hidden group/btn">
-                                <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
-                                <span
-                                    class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
-                                <span class="relative text-black font-semibold text-sm flex items-center gap-2">
-                                    Enroll Now
-                                    <span class="text-lg group-hover/btn:translate-x-1 transition-transform">→</span>
-                                </span>
-                            </a>
-                        </div>
+                                    <a href="{{ route('website.pages.show', $course->slug) }}"
+                                        class="relative px-6 py-3 rounded-xl overflow-hidden group/btn">
+                                        <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
+                                        <span
+                                            class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
+                                        <span class="relative text-black font-semibold text-sm flex items-center gap-2">
+                                            Enroll Now
+                                            <span
+                                                class="text-lg group-hover/btn:translate-x-1 transition-transform">→</span>
+                                        </span>
+                                    </a>
+                                </div>
 
                                 <!-- Limited Time Offer Badge -->
                                 @if ($course->has_limited_offer)
@@ -1215,7 +1217,7 @@
                             btn.classList.remove('active');
                             // Reset button styles
                             const bgSpan = btn.querySelector(
-                            '.absolute.inset-0.bg-linear-to-r');
+                                '.absolute.inset-0.bg-linear-to-r');
                             if (bgSpan) {
                                 bgSpan.style.opacity = '0';
                             }

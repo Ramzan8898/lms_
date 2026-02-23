@@ -78,7 +78,7 @@
                         <!-- Instructor Info -->
                         <div class="flex items-center gap-6 p-6 bg-black/40 rounded-xl border border-white/5">
                             @if ($course->instructor && $course->instructor->user)
-                                <img src="{{ $course->instructor->avatar ? asset($course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . urlencode($course->instructor->user->name) }}"
+                                <img src="{{ $course->instructor->avatar ? asset('storage/'.$course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . urlencode($course->instructor->user->name) }}"
                                     class="w-20 h-20 rounded-full border-3 border-yellow-500/50"
                                     alt="{{ $course->instructor->user->name }}">
                                 <div>

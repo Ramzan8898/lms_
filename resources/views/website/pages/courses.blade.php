@@ -189,7 +189,7 @@
 
                                     <div class="p-6">
                                         <div class="flex items-center gap-3 mb-4">
-                                            <img src="{{ $course->instructor->avatar ? asset($course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . $course->instructor->user->name }}"
+                                            <img src="{{ $course->instructor->avatar ? asset('storage/'.$course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . $course->instructor->user->name }}"
                                                 class="w-10 h-10 rounded-full border-2 border-yellow-500/50"
                                                 alt="{{ $course->instructor->name }}">
                                             <div>
