@@ -22,7 +22,8 @@
                 <label class="label">Select Course <span class="text-red-500">*</span></label>
                 <select name="course_id" class="input" required>
                     @foreach ($courses as $course)
-                        <option value="{{ $course->id }}" {{ $lesson->course_id == $course->id ? 'selected' : '' }}>
+                        <option value="{{ $course->id }}" {{ $lesson->course_id == $course->id ? 'selected' : '' }}
+                            class="bg-gray-900">
                             {{ $course->title }}
                         </option>
                     @endforeach
@@ -30,9 +31,11 @@
             </div>
             <div class="mt-4">
                 <label class="label">Lesson Type <span class="text-red-500">*</span></label>
-                <select name="type" class="input">
-                    <option value="pdf" {{ $lesson->type == 'pdf' ? 'selected' : '' }}>PDF</option>
-                    <option value="video" {{ $lesson->type == 'video' ? 'selected' : '' }}>Video</option>
+                <select name="type" class="input" required>
+                    <option value="pdf" class="bg-gray-900" disabled selected>Select Lesson Type</option>
+                    <option value="pdf" {{ $lesson->type == 'pdf' ? 'selected' : '' }} class="bg-gray-900">PDF</option>
+                    <option value="video" {{ $lesson->type == 'video' ? 'selected' : '' }} class="bg-gray-900">Video
+                    </option>
                 </select>
             </div>
             <div class="mt-6 flex justify-end gap-5">
@@ -53,7 +56,7 @@
             <div>
                 <div class="flex justify-between">
                     <label class="label mb-2 block text-white">
-                        Upload File (PDF or Video)
+                        Upload File (PDF or Video) <span class="text-red-500">*</span>
                     </label>
 
                     <a href="{{ asset('storage/' . $lesson->file) }}" target="_blank"
@@ -63,8 +66,8 @@
                 </div>
 
                 <!-- Hidden File Input -->
-                <input type="file" name="file" id="fileInput" accept=".pdf,.txt,.mp4,.mov,.avi,video/*"
-                    class="hidden">
+                <input type="file" name="file" id="fileInput" accept=".pdf,.txt,.mp4,.mov,.avi,video/*" class="hidden"
+                    required>
 
                 <!-- Upload / Preview Box -->
                 <div id="uploadBox"
