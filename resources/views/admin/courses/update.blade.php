@@ -31,7 +31,7 @@
                             class="input bg-gray-800">
                     </div>
                 </div>
-                <div class="flex flex-row w-full gap-4 ">
+                <div class="flex flex-row w-full gap-4 mt-4 ">
                     <div class="w-full ">
                         <label class="label">Price</label>
                         <input type="number" name="price" id="price" value="{{ old('price', $course->price) }}"
@@ -44,7 +44,7 @@
                             class="input" placeholder="Enter Course Duration">
                     </div>
                 </div>
-                <div>
+                <div class="w-full mt-4">
                     <label class="label">Instructor</label>
                     <select name="instructor_id" class="input">
                         @foreach ($instructors as $ins)
@@ -54,7 +54,7 @@
                         @endforeach
                     </select>
                 </div>
-                <div>
+                <div class="w-full mt-4">
                     <label class="label">Category</label>
                     <select name="category_id" class="input">
                         @foreach ($categories as $cat)
@@ -78,7 +78,7 @@
             </div>
             <div
                 class="w-1/3 bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl p-6">
-                <div class="flex flex-col w-full gap-6 mt-6">
+                <div class="flex flex-col w-full">
 
                     <div class="w-full">
                         <label class="block mb-2 text-sm font-semibold text-gray-300">
@@ -90,14 +90,7 @@
 
                         <!-- Upload / Preview Box -->
                         <div id="bannerPreview"
-                            class="relative w-full h-48 rounded-2xl
-                   border-2 border-dashed border-gray-600
-                   bg-linear-to-br from-gray-900 to-gray-800
-                   flex items-center justify-center
-                   text-gray-400 text-center
-                   overflow-hidden cursor-pointer
-                   transition-all duration-300
-                   hover:border-yellow-500 hover:shadow-lg hover:shadow-yellow-500/10">
+                            class="relative w-full h-48 rounded-2xl border-2 border-dashed border-gray-600 bg-linear-to-br from-gray-900 to-gray-800 flex items-center justify-center text-gray-400 text-center overflow-hidden cursor-pointer transition-all duration-300hover:border-yellow-500 hover:shadow-lg hover:shadow-yellow-500/10">
 
                             <!-- Image Preview -->
                             <img id="previewImage" src="{{ $course->banner ? asset($course->banner) : '' }}"
@@ -126,7 +119,7 @@
                     </div>
                     <div>
                         <label class="label mt-6">Description</label>
-                        <textarea name="description" class="input h-32">{{ old('description', $course->description) }}</textarea>
+                        <textarea name="description" class="input h-40">{{ old('description', $course->description) }}</textarea>
                     </div>
 
                 </div>

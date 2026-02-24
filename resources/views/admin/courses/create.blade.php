@@ -95,14 +95,7 @@
 
                         <!-- Upload / Preview Box -->
                         <div id="bannerPreview"
-                            class="relative w-full h-48 rounded-2xl
-                   border-2 border-dashed border-gray-600
-                   bg-linear-to-br from-gray-900 to-gray-800
-                   flex items-center justify-center
-                   text-gray-400 text-center
-                   overflow-hidden cursor-pointer
-                   transition-all duration-300
-                   hover:border-yellow-500 hover:shadow-lg hover:shadow-yellow-500/10">
+                            class="relative w-full h-48 rounded-2xl border-2 border-dashed border-gray-600 bg-linear-to-br from-gray-900 to-gray-800 flex items-center justify-center text-gray-400 text-center overflow-hidden cursor-pointer transition-all duration-300hover:border-yellow-500 hover:shadow-lg hover:shadow-yellow-500/10">
 
                             <!-- Image Preview -->
                             <img id="previewImage"
