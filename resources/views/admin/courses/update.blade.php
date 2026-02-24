@@ -100,7 +100,7 @@
                    hover:border-yellow-500 hover:shadow-lg hover:shadow-yellow-500/10">
 
                             <!-- Image Preview -->
-                            <img id="previewImage" src="{{ $course->banner ? asset('storage/' . $course->banner) : '' }}"
+                            <img id="previewImage" src="{{ $course->banner ? asset($course->banner) : '' }}"
                                 class="absolute inset-0 w-full h-full object-cover  transition-opacity duration-300 rounded-2xl">
 
                             <!-- Overlay -->

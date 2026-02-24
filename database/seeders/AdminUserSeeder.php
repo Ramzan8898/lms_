@@ -6,7 +6,9 @@ use App\Models\Category;
 use App\Models\Course;
 use Illuminate\Database\Seeder;
 use App\Models\User;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
 
@@ -14,6 +16,26 @@ class AdminUserSeeder extends Seeder
 {
     public function run(): void
     {
+
+        function moveToStorage($fileName, $folder)
+        {
+            $sourcePath = public_path("assets/seeder/$fileName");
+
+            if (!File::exists($sourcePath)) {
+                return null;
+            }
+
+            $newName = Str::random(10) . '_' . $fileName;
+            $destination = "$folder/$newName";
+
+            Storage::disk('public')->put(
+                $destination,
+                File::get($sourcePath)
+            );
+
+            // IMPORTANT: store with storage prefix
+            return "storage/" . $destination;
+        }
         // Create Roles
         $adminRole = Role::firstOrCreate(['name' => 'admin']);
         $instRole = Role::firstOrCreate(['name' => 'instructor']);
@@ -49,7 +71,7 @@ class AdminUserSeeder extends Seeder
                 'experience' => '5 years',
                 'qualification' => 'BS Computer Science',
                 'status' => 'active',
-                'avatar' => 'assets/seeder/instructor.jpg',
+                'avatar' => moveToStorage('instructor.jpg', 'avatars'),
                 'bio' => 'I am a passionate web developer with 5 years of experience in building dynamic and responsive websites.',
             ]
         );
@@ -70,7 +92,7 @@ class AdminUserSeeder extends Seeder
             [
                 'phone' => '0987654321',
                 'address' => '123 Main St, City, Country',
-                'avatar' => 'assets/seeder/Ayesha khan.jfif',
+                'avatar' => moveToStorage('Ayesha khan.jfif', 'avatars'),
                 'status' => 'active',
                 'qualification' => 'BS Computer Science',
             ]
@@ -94,7 +116,7 @@ class AdminUserSeeder extends Seeder
             [
                 'title' => 'Laravel for Beginners',
                 'slug' => Str::slug('Laravel for Beginners'),
-                'banner' => 'assets/seeder/Laravel Guide.jpg',
+                'banner' => moveToStorage('Laravel Guide.jpg', 'course-banners'),
                 'price' => 49.99,
                 'duration' => '10 hours',
                 'description' => 'Learn the basics of Laravel.',
@@ -103,7 +125,7 @@ class AdminUserSeeder extends Seeder
             [
                 'title' => 'Data Science with Python',
                 'slug' => Str::slug('Data Science with Python'),
-                'banner' => 'assets/seeder/Data Analysis.jpg',
+                'banner' => moveToStorage('Data Analysis.jpg', 'course-banners'),
                 'price' => 59.99,
                 'duration' => '12 hours',
                 'description' => 'Explore data science concepts using Python.',
@@ -112,7 +134,7 @@ class AdminUserSeeder extends Seeder
             [
                 'title' => 'UI/UX Design Fundamentals',
                 'slug' => Str::slug('UI/UX Design Fundamentals'),
-                'banner' => 'assets/seeder/UI UX.jpg',
+                'banner' => moveToStorage('UI Ux.jpg', 'course-banners'),
                 'price' => 29.99,
                 'duration' => '8 hours',
                 'description' => 'Learn UI/UX design principles.',

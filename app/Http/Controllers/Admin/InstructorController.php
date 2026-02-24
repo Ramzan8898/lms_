@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class InstructorController extends Controller
 {
@@ -47,9 +48,13 @@ class InstructorController extends Controller
 
             $user->assignRole('instructor');
 
-            $avatarPath = $request->hasFile('avatar')
-                ? $request->file('avatar')->store('instructors', 'public')
-                : null;
+            $avatarPath = null;
+
+            if ($request->hasFile('avatar')) {
+                $path = $request->file('avatar')->store('instructors', 'public');
+
+                $avatarPath = 'storage/' . $path;
+            }
 
             Instructor::create([
                 'user_id' => $user->id,
@@ -82,7 +87,6 @@ class InstructorController extends Controller
         $instructor->load('user');
         return view('admin.instructor.update', compact('instructor'));
     }
-
     public function update(Request $request, Instructor $instructor)
     {
         $request->validate([
@@ -96,10 +100,12 @@ class InstructorController extends Controller
         DB::beginTransaction();
 
         try {
+
             $user = $instructor->user;
 
+            // Update user basic info
             $user->update([
-                'name' => $request->name,
+                'name'  => $request->name,
                 'email' => $request->email,
             ]);
 
@@ -109,36 +115,53 @@ class InstructorController extends Controller
                 ]);
             }
 
+            $avatar = $instructor->avatar;
+
             if ($request->hasFile('avatar')) {
-                $avatarPath = $request->file('avatar')->store('instructors', 'public');
-                $instructor->avatar = $avatarPath;
-                $instructor->save();
+
+                // Delete old avatar if exists
+                if ($instructor->avatar) {
+
+                    // remove storage/ prefix
+                    $oldPath = str_replace('storage/', '', $instructor->avatar);
+
+                    if (Storage::disk('public')->exists($oldPath)) {
+                        Storage::disk('public')->delete($oldPath);
+                    }
+                }
+
+                // Store new avatar
+                $path = $request->file('avatar')->store('instructors', 'public');
+
+                // Save with storage prefix
+                $avatar = 'storage/' . $path;
             }
 
-
+            // Update instructor data
             $instructor->update([
-                'phone' => $request->phone,
-                'expertise' => $request->expertise,
-                'experience' => $request->experience,
+                'phone'         => $request->phone,
+                'expertise'     => $request->expertise,
+                'experience'    => $request->experience,
                 'qualification' => $request->qualification,
-                'status' => $request->status,
-                'bio' => $request->bio,
-                'description' => $request->description,
-                'facebook' => $request->facebook,
-                'linkedin' => $request->linkedin,
-                'payout_email' => $request->payout_email,
+                'status'        => $request->status,
+                'bio'           => $request->bio,
+                'avatar'        => $avatar,
             ]);
 
             DB::commit();
 
-            return redirect()->route('admin.instructors')
+            return redirect()
+                ->route('admin.instructors')
                 ->with('success', 'Instructor updated!');
         } catch (\Exception $e) {
+
             DB::rollBack();
+
+            return redirect()
+                ->back()
+                ->with('error', 'Something went wrong!');
         }
     }
-
-
 
     public function destroy(Instructor $instructor)
     {
