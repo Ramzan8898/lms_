@@ -1,18 +1,16 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="flex items-center justify-between mb-6">
-        <div>
-            <h1 class="text-2xl font-bold text-white">Add User</h1>
+    <div class="flex flex-col">
+        <h1 class="text-2xl font-semibold text-white uppercase ">Create User</h1>
 
-            <x-dashboard.breadcrumbs :items="[['label' => 'Users', 'url' => route('admin.users')], ['label' => 'Add User']]" />
-        </div>
+        <x-dashboard.breadcrumbs :items="[['label' => 'Users', 'url' => route('admin.users')], ['label' => 'Add User']]" />
     </div>
 
     <form action="{{ route('admin.users.store') }}" method="POST">
         @csrf
 
-        <div class="space-y-4 p-6 ">
+        <div class="space-y-4 bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl p-6">
             <div class="flex flex-row gap-3">
                 <!-- Name -->
                 <div class="w-full">
@@ -25,8 +23,7 @@
                 <div class="w-full">
                     <label class="label">Email Address</label>
                     <input type="email" name="email" value="{{ old('email') }}" required
-                        placeholder="johndoe@gmail.com"
-                        class="input">
+                        placeholder="johndoe@gmail.com" class="input">
                 </div>
             </div>
 
@@ -35,8 +32,7 @@
                 <div class="w-full">
                     <label class="label">Password</label>
                     <div class="relative">
-                        <input type="password" name="password" id="password2" required
-                            class="input">
+                        <input type="password" name="password" id="password2" required class="input">
                         <button type="button" onclick="togglePasswordFA('password2', this)"
                             class="absolute right-4 top-1/2 -translate-y-1/2 hover:opacity-80 transition-opacity">
                             <i
@@ -49,8 +45,7 @@
                 <div class="w-full">
                     <label class="label">Confirm Password</label>
                     <div class="relative">
-                        <input type="password" name="password_confirmation" required
-                            class="input">
+                        <input type="password" name="password_confirmation" required class="input">
                     </div>
                 </div>
             </div>
@@ -74,8 +69,7 @@
 
             <div>
                 <label class="label">Assign Role</label>
-                <select name="role" required
-                    class="input">
+                <select name="role" required class="input">
                     <option value="" disabled selected>Select Role</option>
                     @foreach ($roles as $role)
                         <option class="bg-gray-900" value="{{ $role->name }}">

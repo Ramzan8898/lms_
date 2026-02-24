@@ -17,9 +17,9 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->string('slug')->unique();
-            $table->string('banner')->nullable();
-            $table->integer('price')->nullable();
-            $table->string('duration')->nullable();
+            $table->string('banner');
+            $table->integer('price');
+            $table->string('duration');
             $table->string('description')->nullable();
             $table->timestamps();
         });

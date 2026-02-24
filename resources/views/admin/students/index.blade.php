@@ -38,7 +38,7 @@
                     <td class="p-4">{{ $index + 1 }}</td>
 
                     <td class="p-4 flex items-center gap-3">
-                        <img src="{{ $student->avatar ? asset($student->avatar) : 'https://ui-avatars.com/api/?name='.$student->user->name }}"
+                        <img src="{{ $student->avatar ? asset('storage/'.$student->avatar) : 'https://ui-avatars.com/api/?name='.$student->user->name }}"
                             class="w-10 h-10 rounded-full object-cover">
                         {{ $student->user->name }}
                     </td>

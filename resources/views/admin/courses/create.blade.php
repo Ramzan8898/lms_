@@ -1,164 +1,201 @@
 @extends('layouts.dashboard')
 
 @section('content')
-
-{{-- Header + Breadcrumbs --}}
-<div class="flex items-center justify-between ">
-    <div>
-        <h1 class="text-2xl font-bold text-white">Create Course</h1>
-
-        <x-dashboard.breadcrumbs :items="[
-            ['label' => 'Course', 'url' => route('admin.courses.create')],
-            ['label' => 'Create']
-        ]" />
-    </div>
-</div>
-
-<div class="">
-
-    <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-
+    {{-- Header + Breadcrumbs --}}
+    <div class="flex items-center justify-between ">
         <div>
+            <h1 class="text-2xl font-bold text-white">Create Course</h1>
 
-            <div class="flex flex-row w-full gap-4 text-white">
-                <div class="w-full text-white">
-                    <label class="label text-white">Course Title</label>
-                    <input type="text"
-                        name="title"
-                        id="title"
-                        class="input"
-                        placeholder="Enter Course Title">
-                </div>
+            <x-dashboard.breadcrumbs :items="[['label' => 'Course', 'url' => route('admin.courses.create')], ['label' => 'Create']]" />
+        </div>
+    </div>
 
-                <div class="w-full">
-                    <label class="label">Slug</label>
-                    <input type="text"
-                        name="slug"
-                        id="slug"
-                        class="input"
-                        placeholder="Auto generated slug">
-                </div>
-            </div>
+    <div class="w-full">
+        <form action="{{ route('admin.courses.store') }}" method="POST" enctype="multipart/form-data"
+            class="flex flex-row gap-5">
+            @csrf
+            <div
+                class="w-2/3 bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl p-6">
 
-            <div class="mt-4">
-                <label class="label">Select Instructor</label>
-                <select name="instructor_id" class="input" required>
-                    <option value="">Choose Instructor</option>
-                    @foreach($instructors as $ins)
-                    <option value="{{ $ins->id }}">
-                        {{ $ins->user->name }}
-                    </option>
-                    @endforeach
-                </select>
-            </div>
+                <div class="flex flex-row w-full gap-4 text-white">
+                    <div class="w-full text-white">
+                        <label class="label text-white">Course Title <span class="text-red-500">*</span></label>
+                        <input type="text" name="title" id="title" class="input" placeholder="Enter Course Title"
+                            required>
+                    </div>
 
-
-            <div class="mt-4">
-                <label class="label">Select Category</label>
-                <select name="category_id" class="input" required>
-                    <option value="">Choose Category</option>
-                    @foreach($categories as $cat)
-                    <option value="{{ $cat->id }}">
-                        {{ $cat->title }}
-                    </option>
-                    @endforeach
-                </select>
-            </div>
-
-            <div class="mt-4">
-                <label class="label">Course Description</label>
-                <textarea name="description" rows="4" class="input"></textarea>
-            </div>
-
-            <div class="flex flex-row w-full gap-4 mt-4">
-                <div class="w-full">
-                    <label class="label">Price</label>
-                    <input type="number" name="price" id="price" class="input" placeholder="Enter Course Price" step="0.01">
-                </div>
-
-                <div class="w-full">
-                    <label class="label">Duration</label>
-                    <input type="text" name="duration" id="duration" class="input" placeholder="Enter Course Duration">
-                </div>
-            </div>
-
-
-
-            <div class="flex flex-col w-full gap-4 mt-4">
-                <div class="w-full">
-                    <label class="label">Banner Preview</label>
-
-                    <div id="bannerPreview"
-                        class="w-full h-40 bg-gray-800 rounded-xl border border-gray-700 
-                   flex items-center justify-center text-gray-400 
-                   overflow-hidden transition-all duration-300">
-
-                        <img id="previewImage"
-                            class="w-full h-full object-cover hidden">
-
-                        <span id="previewText">No image selected</span>
+                    <div class="w-full">
+                        <label class="label">Slug</label>
+                        <input type="text" name="slug" id="slug" class="input"
+                            placeholder="Enter Title for slug" readonly>
                     </div>
                 </div>
-                <div class="w-full">
-                    <label class="label">Course Banner</label>
 
-                    <input type="file"
-                        name="banner"
-                        id="bannerInput"
-                        accept="image/*"
-                        class="input cursor-pointer">
+                <div class="flex flex-row w-full gap-4 mt-4">
+                    <div class="w-full">
+                        <label class="label">Price <span class="text-red-500">*</span></label>
+                        <input type="number" name="price" id="price" class="input" placeholder="Enter Course Price"
+                            step="0.01" required>
+                    </div>
+
+                    <div class="w-full">
+                        <label class="label">Duration <span class="text-red-500">*</span></label>
+                        <input type="text" name="duration" id="duration" class="input"
+                            placeholder="Enter Course Duration" required>
+                    </div>
+                </div>
+
+                <div class="mt-4 w-full">
+                    <label class="label">Select Instructor <span class="text-red-500">*</span></label>
+                    <select name="instructor_id" class="input" required>
+                        <option value="">Choose Instructor</option>
+                        @foreach ($instructors as $ins)
+                            <option value="{{ $ins->id }}" class="bg-gray-900 cursor-pointer">
+                                {{ $ins->user->name }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="mt-4 w-full">
+                    <label class="label">Select Category <span class="text-red-500">*</span></label>
+                    <select name="category_id" class="input" required>
+                        <option value="">Choose Category</option>
+                        @foreach ($categories as $cat)
+                            <option value="{{ $cat->id }}" class="bg-gray-900 cursor-pointer">
+                                {{ $cat->title }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="mt-6 flex justify-end gap-5">
+                    <button type="submit"
+                        class="py-4 px-8 cursor-pointer bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold
+                               rounded-xl transition-all hover:scale-[1.02] hover:shadow-lg hover:shadow-yellow-500/30">
+                        Create Course
+                    </button>
+                    <button type="reset"
+                        class="px-8 py-3 border border-yellow-500 text-yellow-600 rounded-lg hover:bg-yellow-600 hover:text-white transition cursor-pointer">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+            <div
+                class="w-1/3 bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl p-6">
+                <div class="flex flex-col w-full gap-6 mt-6">
+
+                    <!-- Banner Preview & Upload Box -->
+                    <div class="w-full">
+                        <label class="block mb-2 text-sm font-semibold text-gray-300">
+                            Course Banner <span class="text-red-500">*</span>
+                        </label>
+
+                        <!-- Hidden File Input -->
+                        <input type="file" name="banner" id="bannerInput" accept="image/*" class="hidden" required>
+
+                        <!-- Upload / Preview Box -->
+                        <div id="bannerPreview"
+                            class="relative w-full h-48 rounded-2xl
+                   border-2 border-dashed border-gray-600
+                   bg-linear-to-br from-gray-900 to-gray-800
+                   flex items-center justify-center
+                   text-gray-400 text-center
+                   overflow-hidden cursor-pointer
+                   transition-all duration-300
+                   hover:border-yellow-500 hover:shadow-lg hover:shadow-yellow-500/10">
+
+                            <!-- Image Preview -->
+                            <img id="previewImage"
+                                class="absolute inset-0 w-full h-full object-cover hidden transition-opacity duration-300 rounded-2xl">
+
+                            <!-- Overlay -->
+                            <div id="overlay"
+                                class="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition duration-300 hidden flex items-center justify-center text-white text-sm font-medium">
+                                Change Image
+                            </div>
+
+                            <!-- Default Text -->
+                            <div id="previewText" class="flex flex-col items-center gap-2">
+                                <svg class="w-10 h-10 text-gray-500" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M3 16.5V8.25A2.25 2.25 0 015.25 6h13.5A2.25 2.25 0 0121 8.25v8.25M3 16.5l3.75-3.75a2.25 2.25 0 013.182 0L12 15m0 0l2.068-2.068a2.25 2.25 0 013.182 0L21 16.5M12 15v6" />
+                                </svg>
+                                <p>
+                                    <span class="text-yellow-400 font-semibold">Click to upload</span>
+                                    or drag & drop
+                                </p>
+                                <p class="text-xs text-gray-500">PNG, JPG, GIF up to 10MB</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="mt-4">
+                    <label class="label">Course Description</label>
+                    <textarea name="description" rows="4" class="input"></textarea>
                 </div>
 
             </div>
-        </div>
 
+        </form>
 
-        <div class="mt-6">
-            <button type="submit"
-                class="px-6 py-3 border border-blue-600 cursor-pointer text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition">
-                Create Course
-            </button>
-        </div>
+    </div>
 
-    </form>
+    <script>
+        document.getElementById('title').addEventListener('input', function() {
+            let slug = this.value
+                .toLowerCase()
+                .replace(/[^a-z0-9]+/g, '-')
+                .replace(/(^-|-$)/g, '');
 
-</div>
+            document.getElementById('slug').value = slug;
+        });
 
-<script>
-    document.getElementById('title').addEventListener('input', function() {
-        let slug = this.value
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, '-')
-            .replace(/(^-|-$)/g, '');
-
-        document.getElementById('slug').value = slug;
-    });
-
-
-    document.getElementById('bannerInput').addEventListener('change', function(e) {
-
-        const file = e.target.files[0];
+        const bannerInput = document.getElementById('bannerInput');
+        const bannerPreview = document.getElementById('bannerPreview');
         const previewImage = document.getElementById('previewImage');
         const previewText = document.getElementById('previewText');
+        const overlay = document.getElementById('overlay');
 
-        if (file) {
-            const reader = new FileReader();
+        // Click anywhere inside box
+        bannerPreview.addEventListener('click', () => {
+            bannerInput.click();
+        });
 
-            reader.onload = function(event) {
-                previewImage.src = event.target.result;
-                previewImage.classList.remove('hidden');
-                previewText.classList.add('hidden');
+        // Image Preview
+        bannerInput.addEventListener('change', function(e) {
+            const file = e.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(event) {
+                    previewImage.src = event.target.result;
+                    previewImage.classList.remove('hidden');
+                    previewText.classList.add('hidden');
+                    overlay.classList.remove('hidden');
+                };
+
+                reader.readAsDataURL(file);
             }
+        });
 
-            reader.readAsDataURL(file);
-        } else {
-            previewImage.classList.add('hidden');
-            previewText.classList.remove('hidden');
-        }
+        // Drag Over Effect
+        bannerPreview.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            bannerPreview.classList.add('border-yellow-500');
+        });
 
-    });
-</script>
+        bannerPreview.addEventListener('dragleave', () => {
+            bannerPreview.classList.remove('border-yellow-500');
+        });
 
-
+        bannerPreview.addEventListener('drop', (e) => {
+            e.preventDefault();
+            bannerInput.files = e.dataTransfer.files;
+            bannerInput.dispatchEvent(new Event('change'));
+            bannerPreview.classList.remove('border-yellow-500');
+        });
+    </script>
 @endsection

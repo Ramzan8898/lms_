@@ -1,18 +1,16 @@
 @extends('layouts.dashboard')
 
 @section('content')
-    <div class="flex items-center justify-between mb-6">
-        <div>
-            <h1 class="text-2xl font-bold text-white">Edit User</h1>
+    <div class="flex flex-col">
+        <h1 class="text-2xl font-semibold text-white uppercase">Edit User</h1>
 
-            <x-dashboard.breadcrumbs :items="[['label' => 'Users', 'url' => route('admin.users')], ['label' => 'Edit']]" />
-        </div>
+        <x-dashboard.breadcrumbs :items="[['label' => 'Users', 'url' => route('admin.users')], ['label' => 'Edit']]" />
     </div>
 
     <form action="{{ route('admin.users.update', $user->id) }}" method="POST">
         @csrf
 
-        <div class="space-y-4 p-6 ">
+        <div class="space-y-4 bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl p-6">
             <!-- Name -->
             <div>
                 <label class="block text-sm text-gray-400 mb-2">Full Name</label>
