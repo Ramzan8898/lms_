@@ -9,8 +9,8 @@ $currentRoute = request()->route()->getName();
 <header class="w-full bg-(--black)/95 shadow-2xl py-4 border-b border-(--primary)/30 fixed z-999 top-0 backdrop-blur-md bg-opacity-95"
     style="backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);">
 
-    {{-- Animated gradient line at top --}}
-    <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-(--primary) to-transparent animate-shimmer"></div>
+    {{-- Animated linear line at top --}}
+    <div class="absolute top-0 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-(--primary) to-transparent animate-shimmer"></div>
 
     <div class="flex items-center justify-between container mx-auto px-4 md:px-6 relative">
 
@@ -75,34 +75,39 @@ $currentRoute = request()->route()->getName();
 
             {{-- CONDITIONAL AUTH / GUEST with ultra-premium design --}}
             @auth
-            {{-- Authenticated: Dashboard button with premium gradient and 3D effects --}}
-            <a href="{{ route('admin.dashboard') }}"
-                class="relative px-6 py-3 rounded-xl bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-400 
-                      text-(--dark) font-bold uppercase tracking-wider text-sm 
-                      hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-500 
-                      premium-glow flex items-center gap-3 group border border-amber-300/50
-                      hover:scale-105 active:scale-95
-                      {{ $currentRoute === 'admin.dashboard' ? 'ring-2 ring-(--primary) ring-offset-2 ring-offset-(--black)' : '' }}"
+            @php
+            $user = Auth::user();
+            $routeName = $user->hasRole('admin')
+            ? 'admin.dashboard'
+            : 'student.courses.show';
+
+            $currentRoute = request()->route()->getName();
+            @endphp
+
+            <a href="{{ route($routeName) }}"
+                class="relative px-6 py-3 rounded-xl bg-linear-to-r from-amber-400 via-yellow-500 to-amber-400 
+          text-(--dark) font-bold uppercase tracking-wider text-sm 
+          hover:shadow-2xl hover:shadow-amber-500/50 transition-all duration-500 
+          premium-glow flex items-center gap-3 group border border-amber-300/50
+          hover:scale-105 active:scale-95
+          {{ $currentRoute === $routeName ? 'ring-2 ring-(--primary) ring-offset-2 ring-offset-(--black)' : '' }}"
                 style="background-size: 200% auto;"
                 onmouseover="this.style.backgroundPosition='right center'"
                 onmouseout="this.style.backgroundPosition='left center'">
 
-                {{-- Animated ring --}}
                 <span class="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-amber-300/30 
-                             animate-pulse-slow"></span>
+                 animate-pulse-slow"></span>
 
                 <span class="relative">
                     Dashboard
                     <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-white/30 scale-x-0 group-hover:scale-x-100 
-                                 transition-transform duration-300 origin-left
-                                 {{ $currentRoute === 'admin.dashboard' ? 'scale-x-100' : '' }}"></span>
+                     transition-transform duration-300 origin-left
+                     {{ $currentRoute === $routeName ? 'scale-x-100' : '' }}"></span>
                 </span>
 
                 <i class="fas fa-chevron-right text-xs opacity-70 group-hover:translate-x-1.5 group-hover:opacity-100 
-                         transition-all duration-300"></i>
+             transition-all duration-300"></i>
 
-                {{-- Shine effect --}}
-             
             </a>
             @else
             {{-- Guest: Sign In button with premium glassmorphism --}}
@@ -151,7 +156,7 @@ $currentRoute = request()->route()->getName();
     </div>
 
     {{-- Bottom shimmer line --}}
-    <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-(--primary)/50 to-transparent"></div>
+    <div class="absolute bottom-0 left-0 w-full h-px bg-linear-to-r from-transparent via-(--primary)/50 to-transparent"></div>
 </header>
 
 {{-- Include Font Awesome if not already present in layout --}}
@@ -336,15 +341,15 @@ $currentRoute = request()->route()->getName();
     }
 
     .from-\(\--primary\) {
-        --tw-gradient-from: var(--primary);
+        --tw-linear-from: var(--primary);
     }
 
     .via-\(\--primary-light\) {
-        --tw-gradient-via: var(--primary-light);
+        --tw-linear-via: var(--primary-light);
     }
 
     .to-\(\--primary-dark\) {
-        --tw-gradient-to: var(--primary-dark);
+        --tw-linear-to: var(--primary-dark);
     }
 </style>
 @endpush

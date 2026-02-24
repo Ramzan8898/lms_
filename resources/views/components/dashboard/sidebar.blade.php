@@ -8,7 +8,7 @@
 
             <div class="absolute -inset-3 bg-linear-to-r from-yellow-500/40 to-orange-500/40 rounded-full blur-xl opacity-0 group-hover:opacity-60 transition duration-500"></div>
 
-            <a href="{{ route('welcome') }}">
+            <a href="#">
                 <img src="/assets/logo/logo.png"
                     class="w-32 relative z-10 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)] group-hover:drop-shadow-[0_0_25px_rgba(255,215,0,0.6)] transition-all duration-500"></a>
         </div>
@@ -420,7 +420,30 @@
             <div class="border-t border-yellow-600/20"></div>
         </div>
 
+        <div class="flex justify-center" >
+            <a href="{{ route('welcome') }}"
+                class="group relative inline-flex items-center gap-3 px-8 py-3 rounded-xl backdrop-blur-xl bg-white/5 border-2 border-yellow-500/30 text-white font-semibold text-lg overflow-hidden hover:bg-white/10 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/20">
+
+                <!-- Background glow -->
+                <span class="absolute inset-0 bg-linear-to-r from-yellow-500/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+
+                <!-- Icons -->
+                <svg class="w-6 h-6 text-yellow-400 group-hover:rotate-12 transition-transform duration-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M3 12l2-2 7-7 7 7 2 2M5 10v10h14V10"></path>
+                </svg>
+
+                <span class="relative">Visit Website</span>
+
+                <svg class="w-5 h-5 text-yellow-400 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linecap="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+
+                <!-- Animated border -->
+                <span class="absolute bottom-0 left-0 w-full h-0.5 bg-linear-to-r from-yellow-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+            </a>
+        </div>
     </nav>
+
 
     <!-- Logout -->
     <div class="p-6 border-t border-yellow-600/20">

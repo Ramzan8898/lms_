@@ -340,7 +340,7 @@
 
                                 // Create notification element
                                 const notification = document.createElement('div');
-                                notification.className = `notification-toast fixed top-4 right-4 px-6 py-3 rounded-lg shadow-lg z-50 animate-slideIn ${type === 'success' ? 'bg-green-500/20 border border-green-500/30 text-green-400' :
+                                notification.className = `notification-toast fixed top-30 right-4 px-6 py-3 rounded-lg shadow-lg z-50 animate-slideIn ${type === 'success' ? 'bg-green-500/20 border border-green-500/30 text-green-400' :
             type === 'error' ? 'bg-red-500/20 border border-red-500/30 text-red-400' :
                 'bg-blue-500/20 border border-blue-500/30 text-blue-400'
         }`;

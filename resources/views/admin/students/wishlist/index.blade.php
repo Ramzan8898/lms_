@@ -2,7 +2,7 @@
 @section('title', 'My Wishlist')
 
 @section('content')
-<section class="relative py-25  overflow-hidden min-h-screen">
+<section class="relative ">
 
     <div class="absolute inset-0">
         <div class="absolute top-40 right-0 w-150 h-150 bg-linear-to-r from-yellow-500/5 via-orange-500/5 to-transparent rounded-full blur-[120px] animate-pulse-slow"></div>
@@ -12,7 +12,7 @@
     <div class="relative container mx-auto px-4">
 
         <!-- Header -->
-        <div class="text-center mb-12">
+        <div class=" mb-12">
             <h1 class="text-4xl md:text-5xl font-bold mb-4">
                 <span class="bg-linear-to-r from-yellow-400 via-orange-500 to-yellow-600 bg-clip-text text-transparent">
                     My Wishlist
@@ -25,8 +25,8 @@
         @if($wishlistCourses->isNotEmpty())
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($wishlistCourses as $course)
-            <a href="{{ route('website.pages.show', $course->slug) }}">
-                <div class="group relative bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-500/30 transition-all duration-500">
+            <div class="group relative bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-yellow-500/30 transition-all duration-500">
+                <a href="{{ route('website.pages.show', $course->slug) }}">
 
                     <!-- Image -->
                     <div class="relative h-48 overflow-hidden">
@@ -89,8 +89,8 @@
                             </a>
                         </div>
                     </div>
-                </div>
-            </a>
+                </a>
+            </div>
             @endforeach
         </div>
 

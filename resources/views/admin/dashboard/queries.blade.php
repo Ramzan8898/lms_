@@ -4,11 +4,11 @@
 <div class="space-y-8">
 
     <!-- Header Section -->
-    <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-8">
+    <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-8">
         <div class="flex items-center justify-between">
             <div>
                 <h1 class="text-3xl font-bold text-white mb-2 flex items-center gap-3">
-                    <span class="w-2 h-8 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                    <span class="w-2 h-8 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
                     Support Queries
                 </h1>
                 <p class="text-gray-400">Manage and respond to user inquiries</p>
@@ -26,7 +26,7 @@
 
     <!-- Quick Stats Footer -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
+        <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center">
                     <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -40,7 +40,7 @@
             </div>
         </div>
 
-        <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
+        <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
                     <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -54,7 +54,7 @@
             </div>
         </div>
 
-        <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
+        <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
             <div class="flex items-center gap-4">
                 <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                     <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,12 +70,12 @@
     </div>
 
     <!-- Premium Queries List -->
-    <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl overflow-hidden">
+    <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl overflow-hidden">
         <!-- Header with filters -->
         <div class="px-8 py-6 border-b border-yellow-600/20">
             <div class="flex items-center justify-between">
                 <div class="flex items-center gap-3">
-                    <div class="w-2 h-8 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></div>
+                    <div class="w-2 h-8 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></div>
                     <h3 class="text-white font-semibold text-xl">Recent Queries</h3>
                 </div>
                 <div class="flex items-center gap-4">
@@ -109,12 +109,12 @@
                 data-subject="{{ strtolower($query->subject) }}">
 
                 <!-- Status Indicator based on read/unread -->
-                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-12 bg-linear-to-b from-yellow-500 to-orange-500 rounded-r-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                 <div class="flex items-start gap-5">
                     <!-- Avatar with Initials and Status -->
                     <div class="relative">
-                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-500 to-orange-500 p-0.5">
+                        <div class="w-14 h-14 rounded-2xl bg-linear-to-br from-yellow-500 to-orange-500 p-0.5">
                             <div class="w-full h-full rounded-2xl bg-gray-900 flex items-center justify-center">
                                 <span class="text-white font-bold text-lg">
                                     {{ strtoupper(substr($query->name, 0, 2)) }}
@@ -182,7 +182,7 @@
             <!-- Empty State with Premium Design -->
             <div class="text-center py-20 px-6">
                 <div class="relative inline-block">
-                    <div class="absolute -inset-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-xl"></div>
+                    <div class="absolute -inset-3 bg-linear-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-xl"></div>
                     <svg class="w-24 h-24 text-gray-600 relative" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linecap="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                     </svg>
@@ -192,7 +192,7 @@
                     When users submit support queries, they'll appear here. Stay tuned for incoming messages!
                 </p>
                 <button onclick="window.location.reload()"
-                    class="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all">
+                    class="px-6 py-3 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all">
                     Refresh
                 </button>
             </div>
