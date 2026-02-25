@@ -14,10 +14,9 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('phone')->nullable();
+            $table->string('phone');
             $table->string('address')->nullable();
             $table->string('avatar')->nullable();
-            $table->string('qualification')->nullable();
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });

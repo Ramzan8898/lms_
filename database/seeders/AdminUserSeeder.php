@@ -94,7 +94,6 @@ class AdminUserSeeder extends Seeder
                 'address' => '123 Main St, City, Country',
                 'avatar' => moveToStorage('Ayesha khan.jfif', 'avatars'),
                 'status' => 'active',
-                'qualification' => 'BS Computer Science',
             ]
         );
 
