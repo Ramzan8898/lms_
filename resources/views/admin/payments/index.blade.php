@@ -3,7 +3,7 @@
 @section('title', 'Payments Management')
 
 @section('content')
-<div class="min-h-screen bg-black py-8">
+<div class="min-h-screen ">
     <div class="container mx-auto px-4">
 
         <!-- Header -->
