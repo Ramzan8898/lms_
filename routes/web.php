@@ -101,6 +101,8 @@ Route::middleware('auth')->group(function () {
 
     //courses
     Route::get('/courses', [CourseController::class, 'index'])->name('admin.courses');
+    Route::get('/courses/show/{course}', [CourseController::class, 'show'])->name('admin.courses.show');
+
     Route::get('/courses/add-course', [CourseController::class, 'create'])->name('admin.courses.create');
     Route::post('/courses/store', [CourseController::class, 'store'])->name('admin.courses.store');
     Route::get('/courses/edit-course/{course}', [CourseController::class, 'edit'])->name('admin.courses.edit');
