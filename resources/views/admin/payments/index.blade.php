@@ -15,7 +15,7 @@
         <!-- Statistics Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <!-- Total Revenue -->
-            <div class="bg-gradient-to-br from-green-500/10 to-green-600/5 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6">
+            <div class="bg-linear-to-br from-green-500/10 to-green-600/5 backdrop-blur-xl border border-green-500/20 rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center">
                         <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -29,7 +29,7 @@
             </div>
 
             <!-- Today's Revenue -->
-            <div class="bg-gradient-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6">
+            <div class="bg-linear-to-br from-blue-500/10 to-blue-600/5 backdrop-blur-xl border border-blue-500/20 rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@
             </div>
 
             <!-- Total Payments -->
-            <div class="bg-gradient-to-br from-yellow-500/10 to-yellow-600/5 backdrop-blur-xl border border-yellow-500/20 rounded-2xl p-6">
+            <div class="bg-linear-to-br from-yellow-500/10 to-yellow-600/5 backdrop-blur-xl border border-yellow-500/20 rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 rounded-full bg-yellow-500/20 flex items-center justify-center">
                         <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +61,7 @@
             </div>
 
             <!-- Monthly Revenue -->
-            <div class="bg-gradient-to-br from-purple-500/10 to-purple-600/5 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6">
+            <div class="bg-linear-to-br from-purple-500/10 to-purple-600/5 backdrop-blur-xl border border-purple-500/20 rounded-2xl p-6">
                 <div class="flex items-center justify-between mb-4">
                     <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center">
                         <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,7 +78,7 @@
         <!-- Revenue by Course -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             <div class="lg:col-span-1">
-                <div class="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                     <h3 class="text-white font-bold mb-4">Top Performing Courses</h3>
                     <div class="space-y-4">
                         @foreach($revenueByCourse as $item)
@@ -99,7 +99,7 @@
             </div>
 
             <div class="lg:col-span-2">
-                <div class="bg-gradient-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
+                <div class="bg-linear-to-b from-white/10 to-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6">
                     <h3 class="text-white font-bold mb-4">Recent Payments</h3>
 
                     <!-- Filters -->
