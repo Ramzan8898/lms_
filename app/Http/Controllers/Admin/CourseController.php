@@ -140,4 +140,22 @@ class CourseController extends Controller
         $course->delete();
         return back()->with('success', 'Course deleted!');
     }
+
+
+    public function show($slug)
+    {
+        $course = Course::with(['instructor.user', 'category', 'lessons'])
+            ->where('slug', $slug)
+            ->firstOrFail();
+
+        // Get related courses from same category
+        $relatedCourses = Course::with(['category', 'instructor'])
+            ->where('category_id', $course->category_id)
+            ->where('id', '!=', $course->id)
+            ->latest()
+            ->take(3)
+            ->get();
+
+        return view('admin.courses.show', compact('course', 'relatedCourses'));
+    }
 }
