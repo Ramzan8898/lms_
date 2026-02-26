@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Spatie\Permission\Models\Role;
+use App\Models\Setting;
 
 class AdminUserSeeder extends Seeder
 {
@@ -163,6 +164,17 @@ class AdminUserSeeder extends Seeder
                 'file' => 'lessons/laravel-installation.pdf',
                 'description' => 'Step by step installation guide.',
             ],
+        ]);
+        Setting::updateOrCreate([
+            'logo' => 'settings/logo-default.png', // You'll need to add this file
+            'number' => '+1 (555) 123-4567',
+            'email' => 'info@fullstackinternship.com',
+            'address' => '123 Tech Street, Silicon Valley, CA 94025, United States',
+            'facebook' => 'https://facebook.com/fullstackinternship',
+            'instagram' => 'https://instagram.com/fullstackinternship',
+            'youtube' => 'https://youtube.com/@fullstackinternship',
+            'linkedin' => 'https://linkedin.com/company/fullstackinternship',
+            'website_about' => "Welcome to Full Stack Internship! We're dedicated to providing high-quality education in web development. Our courses are designed by industry experts to help you master modern technologies and advance your career.",
         ]);
     }
 }

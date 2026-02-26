@@ -258,6 +258,9 @@
         </a>
         @endif
 
+
+        <a href="{{route('settings.index')}}">Settings</a>
+
         <!-- INSTRUCTOR ROUTES - Dashboard, Courses, Lessons, Categories -->
         @if($userRole === 'instructor')
         <!-- Dashboard -->

@@ -27,7 +27,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
             {{-- LEFT SIDE --}}
-            <div class="space-y-5  p-6 ">
+            <div class="space-y-5  ">
 
                 {{-- Basic Info --}}
                 <div>
@@ -76,7 +76,7 @@
             </div>
 
             {{-- RIGHT SIDE --}}
-            <div class="space-y-5  p-6 ">
+            <div class="space-y-5">
 
                 <div>
                     <label class="label">Avatar</label>

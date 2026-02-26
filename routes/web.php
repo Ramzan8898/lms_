@@ -11,6 +11,7 @@ use App\Http\Controllers\admin\QueryController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\SettingController;
 use App\Http\Controllers\Students\StudentDashboardController;
 use App\Http\Controllers\Students\StudentEnrollmentController;
 use App\Http\Controllers\Students\StudentLessons;
@@ -147,6 +148,11 @@ Route::middleware('auth')->group(function () {
 
     //queries
     Route::get('/queries', [QueryController::class, 'index'])->name('admin.queries');
+
+    //settings
+    Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
+    Route::get('/settings/edit', [SettingController::class, 'edit'])->name('settings.edit');
+    Route::post('/settings/update', [SettingController::class, 'update'])->name('settings.update');
 });
 
 Route::middleware(['auth'])->prefix('students')->name('student.')->group(function () {
