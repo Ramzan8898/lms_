@@ -40,15 +40,26 @@ class SettingController extends Controller
             $settings = new Setting();
         }
 
-        // Handle logo upload
+        $logo = $settings->logo;
+
         if ($request->hasFile('logo')) {
-            // Delete old logo if exists
+
+            // DELETE OLD IMAGE
             if ($settings->logo) {
-                Storage::disk('public')->delete($settings->logo);
+
+                // remove storage/ prefix
+                $oldPath = str_replace('storage/', '', $settings->logo);
+
+                if (Storage::disk('public')->exists($oldPath)) {
+                    Storage::disk('public')->delete($oldPath);
+                }
             }
 
-            $logoPath = $request->file('logo')->store('settings', 'public');
-            $settings->logo = $logoPath;
+            // STORE NEW IMAGE
+            $path = $request->file('logo')->store('logo', 'public');
+
+            // SAVE WITH storage/ PREFIX
+            $logo = 'storage/' . $path;
         }
 
         $settings->number = $request->number;
@@ -59,7 +70,7 @@ class SettingController extends Controller
         $settings->youtube = $request->youtube;
         $settings->linkedin = $request->linkedin;
         $settings->website_about = $request->website_about;
-
+        $settings->logo = $logo;
         $settings->save();
 
         return redirect()->route('settings.index')

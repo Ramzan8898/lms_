@@ -166,7 +166,7 @@ class AdminUserSeeder extends Seeder
             ],
         ]);
         Setting::updateOrCreate([
-            'logo' => 'settings/logo-default.png', // You'll need to add this file
+            'logo' => moveToStorage('logo2.png', 'logo'),
             'number' => '+1 (555) 123-4567',
             'email' => 'info@fullstackinternship.com',
             'address' => '123 Tech Street, Silicon Valley, CA 94025, United States',
