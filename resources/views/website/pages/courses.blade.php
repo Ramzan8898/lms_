@@ -181,10 +181,6 @@
                                                     Students</span>
                                             </div>
                                         </div>
-
-
-
-
                                     </div>
 
                                     <div class="p-6">

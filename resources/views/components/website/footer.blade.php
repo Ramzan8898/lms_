@@ -62,15 +62,12 @@
                 <div>
                     <h4 class="text-white font-bold text-lg mb-6">Quick Links</h4>
                     <ul class="space-y-3">
-                        <li><a href="{{ route('web.about') }}"
-                                class="text-gray-400 hover:text-yellow-400 transition-colors">About
-                                Us</a></li>
                         <li><a href="{{ route('web.courses') }}"
                                 class="text-gray-400 hover:text-yellow-400 transition-colors">Courses</a>
                         </li>
-                        <li><a href="#"
-                                class="text-gray-400 hover:text-yellow-400 transition-colors">Instructors</a></li>
-                        </li>
+                        <li><a href="{{ route('web.about') }}"
+                                class="text-gray-400 hover:text-yellow-400 transition-colors">About
+                                Us</a></li>
                         <li><a href="{{ route('web.contact') }}"
                                 class="text-gray-400 hover:text-yellow-400 transition-colors">Contact</a>
                         </li>
@@ -79,18 +76,13 @@
 
                 <!-- Support -->
                 <div>
-                    <h4 class="text-white font-bold text-lg mb-6">Support</h4>
+                    <h4 class="text-white font-bold text-lg mb-6">What you'll Get</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Help
-                                Center</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">FAQs</a>
-                        </li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Privacy
-                                Policy</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Terms of
-                                Service</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Cookie
-                                Policy</a></li>
+                        <li class="text-gray-400 hover:text-yellow-400 transition-colors">Certification</li>
+                        <li class="text-gray-400 hover:text-yellow-400 transition-colors">Live Sessions</li>
+                        <li class="text-gray-400 hover:text-yellow-400 transition-colors">Expert Mentors</li>
+                        <li class="text-gray-400 hover:text-yellow-400 transition-colors">Community</li>
+
                     </ul>
                 </div>
 

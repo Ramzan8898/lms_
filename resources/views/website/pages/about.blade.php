@@ -54,7 +54,7 @@
             </div>
 
             <!-- Premium Content Grid with Glass Morphism -->
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
 
                 <!-- Image with Premium Effects -->
                 <div class="relative group">

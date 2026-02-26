@@ -898,23 +898,23 @@
 
                 <!-- Category Filter Pills with Premium Design -->
                 <!-- <div class="flex flex-wrap justify-center gap-4 mb-12">
-                                <button class="group relative px-8 py-3 rounded-full overflow-hidden category-filter active" data-category="all">
-                                    <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
-                                    <span
-                                        class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
-                                    <span class="relative text-black font-semibold">All Courses</span>
-                                </button>
+                                    <button class="group relative px-8 py-3 rounded-full overflow-hidden category-filter active" data-category="all">
+                                        <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
+                                        <span
+                                            class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                                        <span class="relative text-black font-semibold">All Courses</span>
+                                    </button>
 
-                                @foreach ($categories as $category)
+                                    @foreach ($categories as $category)
     <button class="group relative px-8 py-3 rounded-full overflow-hidden bg-white/5 backdrop-blur-sm border border-white/10 hover:border-yellow-500/50 transition-all duration-500 category-filter"
-                                    data-category="{{ $category->title ?? strtolower($category->title) }}">
-                                    <span
-                                        class="relative text-white group-hover:text-yellow-400 transition-colors duration-500">{{ $category->title }}</span>
-                                    <span
-                                        class="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-500"></span>
-                                </button>
+                                        data-category="{{ $category->title ?? strtolower($category->title) }}">
+                                        <span
+                                            class="relative text-white group-hover:text-yellow-400 transition-colors duration-500">{{ $category->title }}</span>
+                                        <span
+                                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-linear-to-r from-yellow-500 to-orange-500 group-hover:w-full transition-all duration-500"></span>
+                                    </button>
     @endforeach
-                            </div> -->
+                                </div> -->
             </div>
 
             <!-- Courses Grid - Premium Cards -->
@@ -1889,7 +1889,7 @@
                                     class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                                 <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                             </span>
-                            <span class="text-yellow-400 font-semibold tracking-wider text-sm">⚡ LIMITED TIME OFFER
+                            <span class="text-yellow-400 font-semibold tracking-wider text-sm">⚡ Bright Your Future
                                 ⚡</span>
                             <span
                                 class="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-xs font-bold animate-pulse">HURRY!</span>
@@ -1930,40 +1930,7 @@
                         <p class="text-gray-400 max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-10">
                             Join <span class="text-yellow-400 font-bold">50,000+</span> students already learning on
                             our platform.
-                            Get <span class="text-yellow-400 font-bold">20% off</span> on annual plans +
-                            <span class="text-yellow-400 font-bold">bonus workshops</span> worth $500
                         </p>
-
-                        <!-- Countdown Timer -->
-                        <div class="flex justify-center items-center gap-6 mb-12">
-                            <div class="text-center">
-                                <div
-                                    class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                                    02</div>
-                                <div class="text-gray-500 text-xs uppercase tracking-wider">Days</div>
-                            </div>
-                            <div class="text-4xl text-yellow-500">:</div>
-                            <div class="text-center">
-                                <div
-                                    class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                                    23</div>
-                                <div class="text-gray-500 text-xs uppercase tracking-wider">Hours</div>
-                            </div>
-                            <div class="text-4xl text-yellow-500">:</div>
-                            <div class="text-center">
-                                <div
-                                    class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                                    59</div>
-                                <div class="text-gray-500 text-xs uppercase tracking-wider">Mins</div>
-                            </div>
-                            <div class="text-4xl text-yellow-500">:</div>
-                            <div class="text-center">
-                                <div
-                                    class="text-4xl md:text-5xl font-bold bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                                    45</div>
-                                <div class="text-gray-500 text-xs uppercase tracking-wider">Secs</div>
-                            </div>
-                        </div>
 
                         <!-- CTA Buttons with Enhanced Design -->
                         <div class="flex flex-wrap gap-6 justify-center mb-12">
