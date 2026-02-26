@@ -258,8 +258,25 @@
         </a>
         @endif
 
+        <a href="{{route('settings.index')}}"
+            class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
+    {{ request()->routeIs('admin.settings') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
 
-        <a href="{{route('settings.index')}}">Settings</a>
+
+
+            <svg class="w-5 h-5 transition-colors duration-500
+        {{ request()->routeIs('admin.settings') ? 'text-yellow-400' : 'text-gray-500 group-hover:text-yellow-400' }}"
+                fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"></path>
+            </svg>
+
+            <span class="flex-1">Settings</span>
+
+
+            @if(request()->routeIs('admin.settings'))
+            <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
+            @endif
+        </a>
 
         <!-- INSTRUCTOR ROUTES - Dashboard, Courses, Lessons, Categories -->
         @if($userRole === 'instructor')
@@ -423,7 +440,7 @@
             <div class="border-t border-yellow-600/20"></div>
         </div>
 
-        <div class="flex justify-center" >
+        <div class="flex justify-center">
             <a href="{{ route('welcome') }}"
                 class="group relative inline-flex items-center gap-3 px-8 py-3 rounded-xl backdrop-blur-xl bg-white/5 border-2 border-yellow-500/30 text-white font-semibold text-lg overflow-hidden hover:bg-white/10 hover:border-yellow-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-yellow-500/20">
 
