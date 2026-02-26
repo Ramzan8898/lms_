@@ -2,17 +2,17 @@
 @section('content')
     <div class="space-y-8">
         <!-- Header Section -->
-        <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-8">
+        <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-8">
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-3xl font-bold text-white mb-2 flex items-center gap-3">
-                        <span class="w-2 h-8 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                        <span class="w-2 h-8 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
                         Settings
                     </h1>
                     <p class="text-gray-400">Manage your website configuration</p>
                 </div>
                 <a href="{{ route('settings.edit') }}"
-                    class="px-6 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 flex items-center gap-2">
+                    class="px-6 py-3 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
                             d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z">
@@ -27,16 +27,16 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <!-- Logo Card -->
             <div class="lg:col-span-1">
-                <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6 h-full">
+                <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6 h-full">
                     <h3 class="text-white font-semibold text-lg mb-4 flex items-center gap-2">
-                        <span class="w-1 h-6 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                        <span class="w-1 h-6 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
                         Website Logo
                     </h3>
                     <div class="flex flex-col items-center">
                         @if ($settings && $settings->logo)
                             <div class="relative group">
                                 <div
-                                    class="absolute -inset-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity">
+                                    class="absolute -inset-3 bg-linear-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity">
                                 </div>
                                 <img src="{{ asset($settings->logo) }}" alt="Website Logo"
                                     class="w-66 h-auto relative z-10 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)] mt-3">
@@ -53,9 +53,9 @@
 
             <!-- Contact Information -->
             <div class="lg:col-span-2">
-                <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
+                <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
                     <h3 class="text-white font-semibold text-lg mb-4 flex items-center gap-2">
-                        <span class="w-1 h-6 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                        <span class="w-1 h-6 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
                         Contact Information
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -108,9 +108,9 @@
 
             <!-- Social Media Links -->
             <div class="lg:col-span-3">
-                <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
+                <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
                     <h3 class="text-white font-semibold text-lg mb-4 flex items-center gap-2">
-                        <span class="w-1 h-6 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                        <span class="w-1 h-6 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
                         Social Media Links
                     </h3>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -205,9 +205,9 @@
 
             <!-- About Section -->
             <div class="lg:col-span-3">
-                <div class="bg-gradient-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
+                <div class="bg-linear-to-br from-gray-900 to-black border border-yellow-600/20 rounded-2xl p-6">
                     <h3 class="text-white font-semibold text-lg mb-4 flex items-center gap-2">
-                        <span class="w-1 h-6 bg-gradient-to-b from-yellow-500 to-orange-500 rounded-full"></span>
+                        <span class="w-1 h-6 bg-linear-to-b from-yellow-500 to-orange-500 rounded-full"></span>
                         About Website
                     </h3>
                     <div class="p-4 bg-black/40 rounded-xl">
