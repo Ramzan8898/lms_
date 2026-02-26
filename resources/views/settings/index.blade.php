@@ -34,7 +34,7 @@
                     @if($settings && $settings->logo)
                     <div class="relative group">
                         <div class="absolute -inset-3 bg-gradient-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                        <img src="{{ asset($settings->logo) }}"
+                        <img src="{{ asset('storage/'.$settings->logo) }}"
                             alt="Website Logo"
                             class="w-48 h-auto relative z-10 drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]">
                     </div>

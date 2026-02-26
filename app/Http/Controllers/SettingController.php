@@ -10,7 +10,7 @@ class SettingController extends Controller
 {
     public function index()
     {
-        $settings = Setting::get();
+        $settings = Setting::first();
         return view('settings.index', compact('settings'));
     }
 
@@ -62,7 +62,7 @@ class SettingController extends Controller
 
         $settings->save();
 
-        return redirect()->route('admin.settings.index')
+        return redirect()->route('settings.index')
             ->with('success', 'Settings updated successfully!');
     }
 }
