@@ -189,7 +189,7 @@
 
                                     <div class="p-6">
                                         <div class="flex items-center gap-3 mb-4">
-                                            <img src="{{ $course->instructor->avatar ? asset('storage/'.$course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . $course->instructor->user->name }}"
+                                            <img src="{{ $course->instructor->avatar ? asset($course->instructor->avatar) : 'https://ui-avatars.com/api/?name=' . $course->instructor->user->name }}"
                                                 class="w-10 h-10 rounded-full border-2 border-yellow-500/50"
                                                 alt="{{ $course->instructor->name }}">
                                             <div>
@@ -246,16 +246,20 @@
                                             </div>
 
 
-                                    <a href="{{route('website.pages.show', $course->slug)}}" class="relative px-6 py-3 rounded-xl overflow-hidden group/btn">
-                                        <span class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
-                                        <span
-                                            class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
-                                        <span class="relative text-black font-semibold text-sm flex items-center gap-2">
-                                            Enroll Now
-                                            <span class="text-lg group-hover/btn:translate-x-1 transition-transform">→</span>
-                                        </span>
-                                    </a>
-                                </div>
+                                            <a href="{{ route('website.pages.show', $course->slug) }}"
+                                                class="relative px-6 py-3 rounded-xl overflow-hidden group/btn">
+                                                <span
+                                                    class="absolute inset-0 bg-linear-to-r from-yellow-500 to-orange-500"></span>
+                                                <span
+                                                    class="absolute inset-0 bg-linear-to-r from-yellow-400 to-orange-400 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-500"></span>
+                                                <span
+                                                    class="relative text-black font-semibold text-sm flex items-center gap-2">
+                                                    Enroll Now
+                                                    <span
+                                                        class="text-lg group-hover/btn:translate-x-1 transition-transform">→</span>
+                                                </span>
+                                            </a>
+                                        </div>
 
                                         <!-- Limited Time Offer Badge -->
                                         @if ($course->has_limited_offer)
