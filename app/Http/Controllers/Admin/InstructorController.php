@@ -65,16 +65,11 @@ class InstructorController extends Controller
                 'status' => $request->status,
                 'avatar' => $avatarPath,
                 'bio' => $request->bio,
-                'description' => $request->description,
-                'facebook' => $request->facebook,
-                'linkedin' => $request->linkedin,
-                'payout_email' => $request->payout_email,
             ]);
 
             DB::commit();
 
-            return redirect()
-                ->route('admin.instructors')
+            return redirect(route('admin.instructors'))
                 ->with('success', 'Instructor created successfully!');
         } catch (\Exception $e) {
             DB::rollBack();
