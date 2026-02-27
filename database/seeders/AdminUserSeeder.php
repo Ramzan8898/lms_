@@ -170,10 +170,10 @@ class AdminUserSeeder extends Seeder
             'number' => '+1 (555) 123-4567',
             'email' => 'info@fullstackinternship.com',
             'address' => '123 Tech Street, Silicon Valley, CA 94025, United States',
-            'facebook' => 'https://facebook.com/fullstackinternship',
-            'instagram' => 'https://instagram.com/fullstackinternship',
-            'youtube' => 'https://youtube.com/@fullstackinternship',
-            'linkedin' => 'https://linkedin.com/company/fullstackinternship',
+            'facebook' => 'https://facebook.com/lms',
+            'instagram' => 'https://instagram.com/lms',
+            'youtube' => 'https://youtube.com/@lms',
+            'linkedin' => 'https://linkedin.com/company/lms',
             'website_about' => "Welcome to Full Stack Internship! We're dedicated to providing high-quality education in web development. Our courses are designed by industry experts to help you master modern technologies and advance your career.",
         ]);
     }
