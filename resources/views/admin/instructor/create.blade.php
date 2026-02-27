@@ -11,23 +11,23 @@
         <div class="w-2/3 bg-linear-to-b from-[#1e1e1e] to-[#141414] border border-yellow-500/20 rounded-2xl shadow-xl p-6">
             <div class="flex flex-row gap-5">
                 <div class="w-full">
-                    <label class="label">Full Name</label>
-                    <input type="text" name="name" class="input" placeholder="e.g: John Doe">
+                    <label class="label">Full Name <span class="text-red-500">*</span></label>
+                    <input type="text" name="name" class="input" placeholder="e.g: John Doe" required>
                 </div>
                 <div class="w-full">
-                    <label class="label">Phone Number</label>
-                    <input type="text" name="phone" class="input" placeholder="e.g: +92 300 1234567">
+                    <label class="label">Phone Number <span class="text-red-500">*</span></label>
+                    <input type="text" name="phone" class="input" placeholder="e.g: +92 300 1234567" required>
                 </div>
             </div>
             <div class="flex flex-row gap-5 mt-4">
                 <div class="w-full">
-                    <label class="label">Email Address</label>
-                    <input type="email" name="email" class="input" placeholder="e.g:johndoe@gmail.com">
+                    <label class="label">Email <span class="text-red-500">*</span></label>
+                    <input type="email" name="email" class="input" placeholder="e.g:johndoe@gmail.com" required>
                 </div>
 
                 <div class="w-full">
-                    <label class="label">Password</label>
-                    <input type="password" name="password" class="input" placeholder="Enter password">
+                    <label class="label">Password <span class="text-red-500">*</span></label>
+                    <input type="password" name="password" class="input" placeholder="Enter password" required>
                 </div>
             </div>
             <div class="flex flex-row gap-5 mt-4">
