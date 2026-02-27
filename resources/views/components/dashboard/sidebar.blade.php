@@ -267,7 +267,6 @@
             class="group relative flex items-center gap-4 px-5 py-3.5 rounded-xl transition-all duration-500
     {{ request()->routeIs('admin.settings') ? 'text-yellow-400 bg-white/5' : 'text-gray-400 hover:text-yellow-400 hover:bg-white/5' }}">
 
-<<<<<<< HEAD
 
 
             <svg class="w-5 h-5 transition-colors duration-500
@@ -283,9 +282,6 @@
             <span class="w-2 h-2 rounded-full bg-yellow-400 animate-ping"></span>
             @endif
         </a>
-=======
-        <a href="{{ route('settings.index') }}">Settings</a>
->>>>>>> 76201b94cbfda31aab0a45a16b6654c53f2e0e4e
 
         <!-- INSTRUCTOR ROUTES - Dashboard, Courses, Lessons, Categories -->
         @if ($userRole === 'instructor')
