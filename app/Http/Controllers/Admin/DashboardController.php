@@ -207,7 +207,7 @@ class DashboardController extends Controller
 
         // Recent lesson updates
         $updatedLessons = Lesson::orderBy('updated_at', 'desc')
-            ->where('updated_at', '>', now()->subDays(7))
+            ->where('updated_at', '>', now()->subDays(1))
             ->take(2)
             ->get()
             ->map(function ($lesson) {
@@ -277,16 +277,6 @@ class DashboardController extends Controller
             ->take(4)
             ->values()
             ->all();
-
-        // If no activities, use fallback
-        if (empty($activities)) {
-            $activities = [
-                ['action' => 'New course created', 'item' => 'Advanced Laravel Techniques', 'user' => 'Admin', 'time' => '10 minutes ago', 'icon' => 'M12 6v14M3 6v14M21 6v14'],
-                ['action' => 'Student enrolled', 'item' => 'John Doe enrolled in Vue.js Mastery', 'user' => 'System', 'time' => '25 minutes ago', 'icon' => 'M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z'],
-                ['action' => 'Lesson updated', 'item' => 'Introduction to React Hooks', 'user' => 'Sarah Smith', 'time' => '1 hour ago', 'icon' => 'M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z'],
-                ['action' => 'New instructor registered', 'item' => 'Mike Johnson created an account', 'user' => 'Mike Johnson', 'time' => '3 hours ago', 'icon' => 'M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z'],
-            ];
-        }
 
         return $activities;
     }
