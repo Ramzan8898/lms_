@@ -13,7 +13,7 @@
                     </h1>
                     <p class="text-gray-400">Update your website configuration</p>
                 </div>
-                <a href="{{ route('settings.index') }}"
+                <a href="{{ route('admin.settings') }}"
                     class="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
@@ -25,7 +25,7 @@
         </div>
 
         <!-- Edit Form -->
-        <form action="{{ route('settings.update') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+        <form action="{{ route('admin.settings.update') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
             @csrf
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -194,7 +194,7 @@
 
                     <!-- Submit Button -->
                     <div class="flex justify-end gap-4">
-                        <a href="{{ route('settings.index') }}"
+                        <a href="{{ route('admin.settings') }}"
                             class="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-white/10 transition-all duration-300">
                             Cancel
                         </a>
