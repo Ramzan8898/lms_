@@ -18,11 +18,11 @@
 
 <body class="bg-(--secondary) text-(--text)]">
 
-    <div class="flex h-screen overflow-hidden italic">
+    <div class="flex h-screen italic">
 
         <x-dashboard.sidebar />
 
-        <div class="flex-1 flex flex-col overflow-hidden">
+        <div class="flex-1 flex flex-col">
 
             <x-dashboard.topbar />
 

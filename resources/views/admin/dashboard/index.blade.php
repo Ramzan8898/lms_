@@ -5,7 +5,7 @@
 <x-dashboard.breadcrumbs :items="[
     ['label' => 'Home']]" />
 
-<div class="relative overflow-hidden mb-8">
+<div class="relative mb-8 z-0">
     <div class="absolute inset-0 bg-linear-to-r from-yellow-500/10 to-orange-500/10 rounded-2xl blur-3xl"></div>
     <div class="relative bg-linear-to-br from-gray-900/50 to-black/50 backdrop-blur-xl border border-yellow-600/20 rounded-2xl p-8">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -272,7 +272,7 @@
     <div class="space-y-4">
         @forelse($recentActivities as $activity)
         <div class="flex items-start gap-4 group hover:bg-white/5 p-3 rounded-xl transition-all">
-            <div class="w-8 h-8 rounded-full bg-yellow-500/10 flex items-center justify-center flex-shrink-0">
+            <div class="w-8 h-8 rounded-full bg-yellow-500/10 flex items-center justify-center shrink-0">
                 <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-width="2" d="{{ $activity['icon'] }}" />
                 </svg>

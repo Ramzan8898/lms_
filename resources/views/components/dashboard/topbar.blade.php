@@ -2,7 +2,7 @@
 
 <!-- Ultra Premium Admin Header -->
 <header
-    class="relative h-24 bg-linear-to-r  from-[#0a0a0a] via-[#0f0f0f] to-black border-b border-yellow-600/20 flex items-center justify-between px-8 lg:px-12 backdrop-blur-xl">
+    class="relative h-24 bg-linear-to-r  from-[#0a0a0a] via-[#0f0f0f] to-black border-b border-yellow-600/20 flex items-center justify-between px-8 lg:px-12 backdrop-blur-xl z-1000">
 
     <!-- Advanced Background Effects -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none">
@@ -106,7 +106,7 @@
         <div class="w-px h-8 bg-linear-to-b from-transparent via-yellow-500/30 to-transparent"></div>
 
         <!-- User Profile Section -->
-        <div class="relative group/profile">
+        <div class="relative group/profile z-50">
             <!-- Glow Effect -->
             <div
                 class="absolute -inset-3 bg-linear-to-r from-yellow-500/20 to-orange-500/20 rounded-full blur-xl opacity-0 group-hover/profile:opacity-100 transition-opacity duration-500">
@@ -161,7 +161,7 @@
 
             <!-- Dropdown Menu -->
             <div
-                class="absolute top-full right-0 mt-4 w-64 opacity-0 invisible group-hover/profile:opacity-100 group-hover/profile:visible transition-all duration-500 transform group-hover/profile:translate-y-0 translate-y-2 z-9999">
+                class="absolute top-full right-0 mt-4 w-64 opacity-0 invisible group-hover/profile:opacity-100 group-hover/profile:visible transition-all duration-500 transform group-hover/profile:translate-y-0 translate-y-2 z-50">
                 <div
                     class="relative bg-linear-to-b from-gray-900/95 to-black/95 backdrop-blur-2xl border border-yellow-500/20 rounded-2xl overflow-hidden shadow-2xl shadow-yellow-500/10">
 
