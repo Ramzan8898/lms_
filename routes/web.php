@@ -150,9 +150,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/queries', [QueryController::class, 'index'])->name('admin.queries');
 
     //settings
-    Route::get('/settings', [SettingController::class, 'index'])->name('settings.index');
-    Route::get('/settings/edit', [SettingController::class, 'edit'])->name('settings.edit');
-    Route::post('/settings/update', [SettingController::class, 'update'])->name('settings.update');
+    Route::get('/settings', [SettingController::class, 'index'])->name('admin.settings');
+    Route::get('/settings/edit', [SettingController::class, 'edit'])->name('admin.settings.edit');
+    Route::post('/settings/update', [SettingController::class, 'update'])->name('admin.settings.update');
 });
 
 Route::middleware(['auth'])->prefix('students')->name('student.')->group(function () {

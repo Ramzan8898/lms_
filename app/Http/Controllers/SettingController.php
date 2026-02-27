@@ -73,7 +73,7 @@ class SettingController extends Controller
         $settings->logo = $logo;
         $settings->save();
 
-        return redirect()->route('settings.index')
+        return redirect()->route('admin.settings')
             ->with('success', 'Settings updated successfully!');
     }
 }

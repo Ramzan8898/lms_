@@ -11,7 +11,7 @@
                     </h1>
                     <p class="text-gray-400">Manage your website configuration</p>
                 </div>
-                <a href="{{ route('settings.edit') }}"
+                <a href="{{ route('admin.settings.edit') }}"
                     class="px-6 py-3 bg-linear-to-r from-yellow-500 to-orange-500 text-black font-semibold rounded-xl hover:shadow-lg hover:shadow-yellow-500/25 transition-all duration-300 flex items-center gap-2">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linecap="round" stroke-width="2"
